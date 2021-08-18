@@ -40,9 +40,13 @@ friendForm.addEventListener("submit", function(e) {
     e.preventDefault();
     person1 = new Person(friendName.value, emoji.value, favFood.value, favDess.value, 
         favBev.value, favGenre.value, favCity.value, favTime.value, country.value)
-    console.log(person1.favoriteFilmGenre);
-    console.log("e listener worked");
-    console.log(friendName.value);
+    //console.log(person1.favoriteFilmGenre);
+    //console.log("e listener worked");
+    //console.log(friendName.value);
+    const person1Name = document.createElement('p');
+    person1Name.textContent = person1.name;
+    personOne.append(person1Name);
+
 })
 
 
