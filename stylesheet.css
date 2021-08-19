@@ -48,3 +48,16 @@ h2 {
 .container__form--closeBtn {
     float: right;
 }
+
+.hidden {
+    display: none;
+}
+
+.person2,
+.person3,
+.person4,
+.person5,
+.person6 {
+        background-color: blanchedalmond;
+    
+}

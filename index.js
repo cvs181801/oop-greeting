@@ -1,6 +1,7 @@
 //grab elements from the DOM
 //const submitBtn = document.querySelector(".container__form--submitBtn");
 const friendForm = document.querySelector(".container__form");
+const header2 = document.querySelector("h2");
 const friendName = document.getElementById("name");
 const emoji = document.getElementById("fav-emoji");
 const favFood = document.getElementById("fav-food");
@@ -67,6 +68,8 @@ friendForm.addEventListener("submit", function(e) {
     const person1emoji = document.createElement('p');
     person1emoji.textContent = person1.favoriteEmoji;
     personOne.append(person1emoji);
+    friendForm.classList.add("hidden");
+    header2.textContent = `Add some information for up to 5 friends below.`
 })
 
 
