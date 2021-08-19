@@ -81,16 +81,37 @@ friendForm.addEventListener("submit", function(e) {
 
 //make the 2nd person button work
 
-button2.addEventListener("submit", function(e) {
+button2.addEventListener("click", function(e) {
     e.preventDefault();
-    person2 = new Person(friendName.value, emoji.value, favFood.value, favDess.value, 
-            favBev.value, favGenre.value, favCity.value, favTime.value, country.value)
-        //console.log(person1.favoriteFilmGenre);
-        //console.log("e listener worked");
-        //console.log(friendName.value);
+    friendForm.classList.remove("hidden");
+    friendForm.className = "container__form2";
+    friendForm2 = document.querySelector(".container__form2");
+    console.log(friendForm2);
+    friendName.value = "";
+    emoji.value = "";
+    favFood.value = "";
+    favDess.value = "";
+    favBev.value = "";
+    favGenre.value = "";
+    favCity.value = "";
+    favTime.value = "";
+    country.value = "";
+ 
+    friendForm2.addEventListener("submit", function(e) {
+        person2 = new Person(friendName.value, emoji.value, favFood.value, favDess.value, 
+                favBev.value, favGenre.value, favCity.value, favTime.value, country.value)
+        
+        console.log(" person 2 e listener worked");
         const person2Name = document.createElement('p');
         person2Name.textContent = person2.name;
         personTwo.append(person2Name);
+        const person2emoji = document.createElement('p');
         person2emoji.textContent = person2.favoriteEmoji;
         personTwo.append(person2emoji);
+
     })
+})
+
+
+
+   
