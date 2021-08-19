@@ -3,12 +3,16 @@
 //subtitle
 const header2 = document.querySelector("h2");
 
-//const submitBtn = document.querySelector(".container__form--submitBtn");
+//containers
+const containerTwo = document.querySelector(".container2");
+const containerThree = document.querySelector(".container3");
+
+//forms
 const friendForm = document.querySelector(".container__form");
 const friendForm2 = document.querySelector(".container__form2");
 const friendForm3 = document.querySelector(".container__form3");
 
-//1st form (user)
+//1st form (user) inputs
 const friendName = document.getElementById("name");
 const emoji = document.getElementById("fav-emoji");
 const favFood = document.getElementById("fav-food");
@@ -19,7 +23,7 @@ const favCity = document.getElementById("fav-city");
 const favTime = document.getElementById("fav-time");
 const country = document.getElementById("country");
 
-//2nd friend form
+//2nd friend form inputs
 const friendName2 = document.getElementById("name2");
 const emoji2 = document.getElementById("fav-emoji2");
 const favFood2 = document.getElementById("fav-food2");
@@ -49,13 +53,17 @@ let personFour = document.querySelector(".person4");
 let personFive = document.querySelector(".person5");
 let personSix = document.querySelector(".person6");
 
+//the cards that have the 'hidden' classes on them
+const hiddenDivs = document.querySelectorAll(".hidden");
+
 //buttons
 const button2 = document.querySelector(".button__person2");
 const button3 = document.querySelector(".button__person3");
 const button4 = document.querySelector(".button__person4");
 const button5 = document.querySelector(".button__person5");
 const button6 = document.querySelector(".button__person6");
-const hiddenDivs = document.querySelectorAll(".hidden");
+
+
 
 //test area
 //enter test console.log code here!
@@ -121,7 +129,8 @@ friendForm.addEventListener("submit", function(e) {
 
 button2.addEventListener("click", function(e) {
     e.preventDefault();
-    friendForm2.classList.remove("hidden");
+    containerTwo.classList.remove("hiddenModal");
+    //friendForm2.classList.remove("hidden");
     // friendName.value = "";
     // emoji.value = "";
     // favFood.value = "";
@@ -153,7 +162,8 @@ friendForm2.addEventListener("submit", function(e) {
 
 button3.addEventListener("click", function(e) {
     e.preventDefault();
-    friendForm3.classList.remove("hidden");
+    containerThree.classList.remove("hiddenModal");
+    //friendForm3.classList.remove("hidden");
     console.log(friendForm3);
     // friendName.value = "";
     // emoji.value = "";
@@ -170,7 +180,7 @@ button3.addEventListener("click", function(e) {
 
 friendForm3.addEventListener("submit", function(e) {
     e.preventDefault();
-    person2 = new Person(friendName.value, emoji.value, favFood.value, favDess.value, 
+    person3 = new Person(friendName.value, emoji.value, favFood.value, favDess.value, 
             favBev.value, favGenre.value, favCity.value, favTime.value, country.value)
     
     console.log(" person 3 e listener worked");
