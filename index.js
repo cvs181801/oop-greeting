@@ -53,7 +53,7 @@ let person4 = "";
 let person5 = "";
 let person6 = "";
 
-console.log(Boolean(!person1));
+
 
 //make the 1st person submit button work
 friendForm.addEventListener("submit", function(e) {
@@ -76,6 +76,11 @@ friendForm.addEventListener("submit", function(e) {
     hiddenDivs.forEach(div => {
         div.classList.remove("hidden");
     })
+
+    const welcomeGreet = document.createElement('p');
+    welcomeGreet.textContent = `Welcome, ${person1.name}!`;
+    header2.append(welcomeGreet);
+   
 })
 
 
@@ -98,6 +103,7 @@ button2.addEventListener("click", function(e) {
     country.value = "";
  
     friendForm2.addEventListener("submit", function(e) {
+        e.preventDefault();
         person2 = new Person(friendName.value, emoji.value, favFood.value, favDess.value, 
                 favBev.value, favGenre.value, favCity.value, favTime.value, country.value)
         

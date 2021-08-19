@@ -59,5 +59,15 @@ h2 {
 .person5,
 .person6 {
         background-color: blanchedalmond;
-    
+}
+
+.button__person2,
+.button__person3,
+.button__person4,
+.button__person5,
+.button__person6 {
+    background-color: grey;
+    border-radius: 3px;
+    font-family: inherit;
+    padding: .3em;
 }
