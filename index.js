@@ -11,9 +11,12 @@ const favCity = document.getElementById("fav-city");
 const favTime = document.getElementById("fav-time");
 const country = document.getElementById("country");
 let personOne = document.querySelector(".person1");
+let personTwo = document.querySelector(".person2");
+const button2 = document.querySelector(".button__person2");
+
 
 //test area
-//console.log(favFood);
+
 
 
 //add a way to add a new person into the group. lets go with ES5 syntax this time.
@@ -35,9 +38,18 @@ function Person(name, favoriteEmoji, favoriteFood, favoriteDessert, favoriteBeve
 }
 
 let person1 = "";
+let person2 = "";
+let person3 = "";
+let person4 = "";
+let person5 = "";
+let person6 = "";
 
+console.log(Boolean(!person1));
+
+//make the 1st person submit button work
 friendForm.addEventListener("submit", function(e) {
     e.preventDefault();
+    
     person1 = new Person(friendName.value, emoji.value, favFood.value, favDess.value, 
         favBev.value, favGenre.value, favCity.value, favTime.value, country.value)
     //console.log(person1.favoriteFilmGenre);
@@ -46,9 +58,24 @@ friendForm.addEventListener("submit", function(e) {
     const person1Name = document.createElement('p');
     person1Name.textContent = person1.name;
     personOne.append(person1Name);
-
+    const person1emoji = document.createElement('p');
+    person1emoji.textContent = person1.favoriteEmoji;
+    personOne.append(person1emoji);
 })
 
 
-//add a way to select a new experience
+//make the 2nd person button work
 
+button2.addEventListener("submit", function(e) {
+    e.preventDefault();
+    person2 = new Person(friendName.value, emoji.value, favFood.value, favDess.value, 
+            favBev.value, favGenre.value, favCity.value, favTime.value, country.value)
+        //console.log(person1.favoriteFilmGenre);
+        //console.log("e listener worked");
+        //console.log(friendName.value);
+        const person2Name = document.createElement('p');
+        person2Name.textContent = person2.name;
+        personTwo.append(person2Name);
+        person2emoji.textContent = person2.favoriteEmoji;
+        personTwo.append(person2emoji);
+    })
