@@ -1,7 +1,14 @@
 //grab elements from the DOM
+
+//subtitle
+const header2 = document.querySelector("h2");
+
 //const submitBtn = document.querySelector(".container__form--submitBtn");
 const friendForm = document.querySelector(".container__form");
-const header2 = document.querySelector("h2");
+const friendForm2 = document.querySelector(".container__form2");
+const friendForm3 = document.querySelector(".container__form3");
+
+//1st form (user)
 const friendName = document.getElementById("name");
 const emoji = document.getElementById("fav-emoji");
 const favFood = document.getElementById("fav-food");
@@ -11,12 +18,38 @@ const favGenre = document.getElementById("fav-genre");
 const favCity = document.getElementById("fav-city");
 const favTime = document.getElementById("fav-time");
 const country = document.getElementById("country");
+
+//2nd friend form
+const friendName2 = document.getElementById("name2");
+const emoji2 = document.getElementById("fav-emoji2");
+const favFood2 = document.getElementById("fav-food2");
+const favDess2 = document.getElementById("fav-dessert2");
+const favBev2 = document.getElementById("fav-bev2");
+const favGenre2 = document.getElementById("fav-genre2");
+const favCity2 = document.getElementById("fav-city2");
+const favTime2 = document.getElementById("fav-time2");
+const country2 = document.getElementById("country2");
+
+//3rd friend form
+const friendName3 = document.getElementById("name3");
+const emoji3 = document.getElementById("fav-emoji3");
+const favFood3 = document.getElementById("fav-food3");
+const favDess3 = document.getElementById("fav-dessert3");
+const favBev3 = document.getElementById("fav-bev3");
+const favGenre3 = document.getElementById("fav-genre3");
+const favCity3 = document.getElementById("fav-city3");
+const favTime3 = document.getElementById("fav-time3");
+const country3 = document.getElementById("country3");
+
+//cards for the friends and user 
 let personOne = document.querySelector(".person1");
 let personTwo = document.querySelector(".person2");
 let personThree = document.querySelector(".person3");
 let personFour = document.querySelector(".person4");
 let personFive = document.querySelector(".person5");
 let personSix = document.querySelector(".person6");
+
+//buttons
 const button2 = document.querySelector(".button__person2");
 const button3 = document.querySelector(".button__person3");
 const button4 = document.querySelector(".button__person4");
@@ -25,7 +58,7 @@ const button6 = document.querySelector(".button__person6");
 const hiddenDivs = document.querySelectorAll(".hidden");
 
 //test area
-
+//enter test console.log code here!
 
 
 //add a way to add a new person into the group. lets go with ES5 syntax this time.
@@ -88,26 +121,23 @@ friendForm.addEventListener("submit", function(e) {
 
 button2.addEventListener("click", function(e) {
     e.preventDefault();
-    friendForm.classList.remove("hidden");
-    friendForm.className = "container__form2";
-    friendName.value = "";
-    emoji.value = "";
-    favFood.value = "";
-    favDess.value = "";
-    favBev.value = "";
-    favGenre.value = "";
-    favCity.value = "";
-    favTime.value = "";
-    country.value = "";
+    friendForm2.classList.remove("hidden");
+    // friendName.value = "";
+    // emoji.value = "";
+    // favFood.value = "";
+    // favDess.value = "";
+    // favBev.value = "";
+    // favGenre.value = "";
+    // favCity.value = "";
+    // favTime.value = "";
+    // country.value = "";
    
 })
-const friendForm2 = document.querySelector(".container__form2");
 
 friendForm2.addEventListener("submit", function(e) {
     e.preventDefault();
     person2 = new Person(friendName.value, emoji.value, favFood.value, favDess.value, 
             favBev.value, favGenre.value, favCity.value, favTime.value, country.value)
-    
     console.log(" person 2 e listener worked");
     const person2Name = document.createElement('p');
     person2Name.textContent = person2.name;
@@ -123,21 +153,20 @@ friendForm2.addEventListener("submit", function(e) {
 
 button3.addEventListener("click", function(e) {
     e.preventDefault();
-    friendForm.classList.remove("hidden");
-    friendForm.className = "container__form3";
+    friendForm3.classList.remove("hidden");
     console.log(friendForm3);
-    friendName.value = "";
-    emoji.value = "";
-    favFood.value = "";
-    favDess.value = "";
-    favBev.value = "";
-    favGenre.value = "";
-    favCity.value = "";
-    favTime.value = "";
-    country.value = "";
+    // friendName.value = "";
+    // emoji.value = "";
+    // favFood.value = "";
+    // favDess.value = "";
+    // favBev.value = "";
+    // favGenre.value = "";
+    // favCity.value = "";
+    // favTime.value = "";
+    // country.value = "";
    
 })
-const friendForm3 = document.querySelector(".container__form3");
+
 
 friendForm3.addEventListener("submit", function(e) {
     e.preventDefault();
