@@ -22,6 +22,8 @@ const button3 = document.querySelector(".button__person3");
 const button4 = document.querySelector(".button__person4");
 const button5 = document.querySelector(".button__person5");
 const button6 = document.querySelector(".button__person6");
+const hiddenDivs = document.querySelectorAll(".hidden");
+
 //test area
 
 
@@ -70,6 +72,10 @@ friendForm.addEventListener("submit", function(e) {
     personOne.append(person1emoji);
     friendForm.classList.add("hidden");
     header2.textContent = `Add some information for up to 5 friends below.`
+    
+    hiddenDivs.forEach(div => {
+        div.classList.remove("hidden");
+    })
 })
 
 
