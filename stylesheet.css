@@ -42,7 +42,13 @@ h2 {
     height: 1.3em;
     max-width: 30em;
     margin: .75em;
+    border: 1px solid grey;
+    font-family: inherit;
+    transition: transform 250ms;
+}
 
+input:focus {
+    transform: scale(1.1);
 }
 
 .container__form--closeBtn {
@@ -67,7 +73,18 @@ h2 {
 .button__person5,
 .button__person6 {
     background-color: grey;
-    border-radius: 3px;
+    border-radius: 7px;
     font-family: inherit;
     padding: .3em;
+}
+
+.person1__container,
+.person2__container,
+.person3__container,
+.person4__container,
+.person5__container,
+.person6__container {
+    background-color: blanchedalmond;
+    padding: .3em;
+    margin: .3em;
 }

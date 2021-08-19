@@ -84,13 +84,12 @@ friendForm.addEventListener("submit", function(e) {
 })
 
 
-//make the 2nd person button work
+//make the 2nd person button open a form where you can input your friend's info
 
 button2.addEventListener("click", function(e) {
     e.preventDefault();
     friendForm.classList.remove("hidden");
     friendForm.className = "container__form2";
-    console.log(friendForm2);
     friendName.value = "";
     emoji.value = "";
     favFood.value = "";
@@ -120,6 +119,41 @@ friendForm2.addEventListener("submit", function(e) {
     console.log(person1.name);
 })
 
+//make the 3rd person button open a form where you can input your friend's info
 
-
+button3.addEventListener("click", function(e) {
+    e.preventDefault();
+    friendForm.classList.remove("hidden");
+    friendForm.className = "container__form3";
+    console.log(friendForm3);
+    friendName.value = "";
+    emoji.value = "";
+    favFood.value = "";
+    favDess.value = "";
+    favBev.value = "";
+    favGenre.value = "";
+    favCity.value = "";
+    favTime.value = "";
+    country.value = "";
    
+})
+const friendForm3 = document.querySelector(".container__form3");
+
+friendForm3.addEventListener("submit", function(e) {
+    e.preventDefault();
+    person2 = new Person(friendName.value, emoji.value, favFood.value, favDess.value, 
+            favBev.value, favGenre.value, favCity.value, favTime.value, country.value)
+    
+    console.log(" person 3 e listener worked");
+    const person3Name = document.createElement('p');
+    person3Name.textContent = person3.name;
+    personThree.append(person3Name);
+    const person3emoji = document.createElement('p');
+    person3emoji.textContent = person3.favoriteEmoji;
+    personThree.append(person3emoji);
+    console.log("person 1 name:", person1.name);
+    console.log("person 2 name:" , person2.name);
+    console.log("person 3 name:" , person3.name);
+    
+})
+
