@@ -1,0 +1,23 @@
+:root {
+    --ff-accent: 'Amatic SC', cursive;
+    --ff-main: 'Josefin Sans', sans-serif;
+    --brown: rgb(122, 61, 0);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    font-family: var(--ff-main);
+    background-color: peachpuff;
+    color: var(--brown);
+}
+
+h1,
+h2 {
+    font-family: var(--ff-accent);
+}

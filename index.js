@@ -12,9 +12,15 @@ const favTime = document.getElementById("fav-time");
 const country = document.getElementById("country");
 let personOne = document.querySelector(".person1");
 let personTwo = document.querySelector(".person2");
+let personThree = document.querySelector(".person3");
+let personFour = document.querySelector(".person4");
+let personFive = document.querySelector(".person5");
+let personSix = document.querySelector(".person6");
 const button2 = document.querySelector(".button__person2");
-
-
+const button3 = document.querySelector(".button__person3");
+const button4 = document.querySelector(".button__person4");
+const button5 = document.querySelector(".button__person5");
+const button6 = document.querySelector(".button__person6");
 //test area
 
 
