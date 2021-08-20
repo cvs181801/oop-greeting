@@ -58,6 +58,7 @@ h2 {
     max-width: 30em;
     margin: .75em;
     border: 1px solid grey;
+    border-radius: 3px;
     font-family: inherit;
     transition: transform 250ms;
 }
@@ -109,4 +110,9 @@ input:focus {
     padding: .3em;
     margin: .3em;
     max-width: 10em;
+    border-radius: 10px;
+}
+
+.personcards {
+    display: grid;
 }
