@@ -98,6 +98,7 @@ let personSix = document.querySelector(".person6");
 const hiddenDivs = document.querySelectorAll(".hidden");
 
 //buttons
+const button1 = document.querySelector(".button__person1");
 const button2 = document.querySelector(".button__person2");
 const button3 = document.querySelector(".button__person3");
 const button4 = document.querySelector(".button__person4");
@@ -160,6 +161,13 @@ friendForm.addEventListener("submit", function(e) {
     welcomeGreet.textContent = person1.welcome();
 })
 
+//make the 1st person( user) edit button work
+
+button1.addEventListener("click", function(e) {
+    e.preventDefault();
+    friendForm.classList.remove("hidden");
+    containerOne.classList.remove("hiddenModal");
+})
 
 //make the 2nd person button open a form where you can input your friend's info
 

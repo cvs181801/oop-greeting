@@ -84,8 +84,10 @@ input:focus {
 .person5,
 .person6 {
         background-color: blanchedalmond;
+        
 }
 
+.button__person1,
 .button__person2,
 .button__person3,
 .button__person4,
@@ -106,4 +108,5 @@ input:focus {
     background-color: blanchedalmond;
     padding: .3em;
     margin: .3em;
+    max-width: 10em;
 }
