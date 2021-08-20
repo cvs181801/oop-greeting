@@ -2,6 +2,7 @@
 
 //subtitle
 const header2 = document.querySelector("h2");
+const welcomeGreet = document.querySelector(".welcome");
 
 //containers
 const containerTwo = document.querySelector(".container2");
@@ -63,8 +64,6 @@ const button4 = document.querySelector(".button__person4");
 const button5 = document.querySelector(".button__person5");
 const button6 = document.querySelector(".button__person6");
 
-
-
 //test area
 //enter test console.log code here!
 
@@ -83,7 +82,10 @@ function Person(name, favoriteEmoji, favoriteFood, favoriteDessert, favoriteBeve
     this.favoriteTimeOfYear = favoriteTimeOfYear;
     this.countryYoudLikeToVisit = countryYoudLikeToVisit;
     this.greeting = function() {
-        `Hi! I'm ${this.name}.`
+        return `Hi! I'm ${this.name}.`
+    }
+    this.welcome = function() {
+        return `Welcome, ${this.name}!`
     }
 }
 
@@ -118,10 +120,7 @@ friendForm.addEventListener("submit", function(e) {
         div.classList.remove("hidden");
     })
 
-    const welcomeGreet = document.createElement('p');
-    welcomeGreet.textContent = `Welcome, ${person1.name}!`;
-    header2.append(welcomeGreet);
-   
+    welcomeGreet.textContent = person1.welcome();
 })
 
 
@@ -145,8 +144,8 @@ button2.addEventListener("click", function(e) {
 
 friendForm2.addEventListener("submit", function(e) {
     e.preventDefault();
-    person2 = new Person(friendName.value, emoji.value, favFood.value, favDess.value, 
-            favBev.value, favGenre.value, favCity.value, favTime.value, country.value)
+    person2 = new Person(friendName2.value, emoji2.value, favFood2.value, favDess2.value, 
+            favBev2.value, favGenre2.value, favCity2.value, favTime2.value, country2.value)
     console.log(" person 2 e listener worked");
     const person2Name = document.createElement('p');
     person2Name.textContent = person2.name;
@@ -154,8 +153,8 @@ friendForm2.addEventListener("submit", function(e) {
     const person2emoji = document.createElement('p');
     person2emoji.textContent = person2.favoriteEmoji;
     personTwo.append(person2emoji);
-    console.log(person2.name);
-    console.log(person1.name);
+    welcomeGreet.textContent = person2.welcome();
+    friendForm2.classList.add("hidden");
 })
 
 //make the 3rd person button open a form where you can input your friend's info
@@ -180,8 +179,8 @@ button3.addEventListener("click", function(e) {
 
 friendForm3.addEventListener("submit", function(e) {
     e.preventDefault();
-    person3 = new Person(friendName.value, emoji.value, favFood.value, favDess.value, 
-            favBev.value, favGenre.value, favCity.value, favTime.value, country.value)
+    person3 = new Person(friendName3.value, emoji3.value, favFood3.value, favDess3.value, 
+            favBev3.value, favGenre3.value, favCity3.value, favTime3.value, country3.value)
     
     console.log(" person 3 e listener worked");
     const person3Name = document.createElement('p');
@@ -193,6 +192,7 @@ friendForm3.addEventListener("submit", function(e) {
     console.log("person 1 name:", person1.name);
     console.log("person 2 name:" , person2.name);
     console.log("person 3 name:" , person3.name);
-    
+    welcomeGreet.textContent = person3.welcome();
+    friendForm3.classList.add("hidden");
 })
 
