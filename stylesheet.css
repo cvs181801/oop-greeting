@@ -36,8 +36,8 @@ h2 {
 .container * button,
 .container2 * button,
 .container3 * button,
-.container4 * button
-.container5 * button
+.container4 * button,
+.container5 * button,
 .container6 * button {
     background-color: grey;
     border-radius: 3px;
@@ -48,8 +48,8 @@ h2 {
 .container * input,
 .container2 * input,
 .container3 * input,
-.container4 * input 
-.container5 * input 
+.container4 * input, 
+.container5 * input, 
 .container6 * input  {
     background-color: blanchedalmond;
     font-family: inherit;
