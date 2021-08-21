@@ -285,93 +285,135 @@ button3.addEventListener("click", function(e) {
 
 //make the 4th person button open a form where you can input your friend's info
 
+let person4Name = document.createElement('p');
+let person4emoji = document.createElement('p');
+
 button4.addEventListener("click", function(e) {
     e.preventDefault();
-    containerFour.classList.remove("hiddenModal");
-})
-
-
-friendForm4.addEventListener("submit", function(e) {
-    e.preventDefault();
-    person4 = new Person(friendName4.value, emoji4.value, favFood4.value, favDess4.value, 
-            favBev4.value, favGenre4.value, favCity4.value, favTime4.value, country4.value)
-    
-    console.log(" person 4 e listener worked");
-    const person4Name = document.createElement('p');
-    person4Name.textContent = person4.name;
-    personFour.append(person4Name);
-    const person4emoji = document.createElement('p');
-    person4emoji.textContent = person4.favoriteEmoji;
-    personFour.append(person4emoji);
-    console.log("person 1 name:", person1.name);
-    console.log("person 2 name:" , person2.name);
-    console.log("person 3 name:" , person3.name);
-    console.log("person 4 name:", person4.name);
-    welcomeGreet.textContent = person4.welcome();
-    friendForm4.classList.add("hidden");
-    containerFour.classList.add("hiddenModal");
-    personFour.setAttribute("title", `${person4.greeting()}`);
+        if (person4) {
+            person4Name.textContent = "";
+            person4emoji.textContent = "";
+            containerFour.classList.remove("hiddenModal");
+            friendForm4.classList.remove("hidden");
+                friendForm4.addEventListener("submit", function(e) {
+                    e.preventDefault();
+                    person4 = new Person(friendName4.value, emoji4.value, favFood4.value, favDess4.value, 
+                            favBev4.value, favGenre4.value, favCity4.value, favTime4.value, country4.value)
+                    console.log(" person 4 edit e listener worked");
+                    person4Name.textContent = person4.name;
+                    person4emoji.textContent = person4.favoriteEmoji;
+                    welcomeGreet.textContent = person4.welcome();
+                    friendForm4.classList.add("hidden");
+                    containerFour.classList.add("hiddenModal");
+                    personFour.setAttribute("title", `${person4.greeting()}`);
+                })
+            } else {
+                button4.textContent = "Edit info";
+                containerFour.classList.remove("hiddenModal");
+                friendForm4.classList.remove("hidden");
+                    friendForm4.addEventListener("submit", function(e) {
+                        e.preventDefault();
+                        person4 = new Person(friendName4.value, emoji4.value, favFood4.value, favDess4.value, 
+                                favBev4.value, favGenre4.value, favCity4.value, favTime4.value, country4.value)
+                        console.log(" person 4 instantiation e listener worked");
+                        person4Name.textContent = person4.name;
+                        personFour.append(person4Name);
+                        person4emoji.textContent = person4.favoriteEmoji;
+                        personFour.append(person4emoji);
+                        welcomeGreet.textContent = person4.welcome();
+                        friendForm4.classList.add("hidden");
+                        containerFour.classList.add("hiddenModal");
+                        personFour.setAttribute("title", `${person4.greeting()}`);
+                    })
+            }
 })
 
 //make the 5th person button open a form where you can input your friend's info
 
+let person5Name = document.createElement('p');
+let person5emoji = document.createElement('p');
+
 button5.addEventListener("click", function(e) {
     e.preventDefault();
-    containerFive.classList.remove("hiddenModal");
-})
-
-
-friendForm5.addEventListener("submit", function(e) {
-    e.preventDefault();
-    person5 = new Person(friendName5.value, emoji5.value, favFood5.value, favDess5.value, 
-            favBev5.value, favGenre5.value, favCity5.value, favTime5.value, country5.value)
-    
-    console.log(" person 5 e listener worked");
-    const person5Name = document.createElement('p');
-    person5Name.textContent = person5.name;
-    personFive.append(person5Name);
-    const person5emoji = document.createElement('p');
-    person5emoji.textContent = person5.favoriteEmoji;
-    personFive.append(person5emoji);
-    console.log("person 1 name:", person1.name);
-    console.log("person 2 name:" , person2.name);
-    console.log("person 3 name:" , person3.name);
-    console.log("person 4 name:", person4.name);
-    console.log("person 5 name:", person5.name);
-    welcomeGreet.textContent = person5.welcome();
-    friendForm5.classList.add("hidden");
-    containerFive.classList.add("hiddenModal");
-    personFive.setAttribute("title", `${person5.greeting()}`);
-})
+    if (person5) {
+        person5Name.textContent = "";
+        person5emoji.textContent = "";
+        friendForm5.classList.remove("hidden");
+        containerFive.classList.remove("hiddenModal");
+            friendForm5.addEventListener("submit", function(e) {
+                e.preventDefault();
+                person5 = new Person(friendName5.value, emoji5.value, favFood5.value, favDess5.value, 
+                        favBev5.value, favGenre5.value, favCity5.value, favTime5.value, country5.value)
+                console.log(" person 5 edit e listener worked");
+                person5Name.textContent = person5.name;
+                person5emoji.textContent = person5.favoriteEmoji;
+                welcomeGreet.textContent = person5.welcome();
+                friendForm5.classList.add("hidden");
+                containerFive.classList.add("hiddenModal");
+                personFive.setAttribute("title", `${person5.greeting()}`);
+            })
+    } else {
+        button5.textContent = "Edit info";
+        friendForm5.classList.remove("hidden");
+        containerFive.classList.remove("hiddenModal");
+            friendForm5.addEventListener("submit", function(e) {
+                e.preventDefault();
+                person5 = new Person(friendName5.value, emoji5.value, favFood5.value, favDess5.value, 
+                        favBev5.value, favGenre5.value, favCity5.value, favTime5.value, country5.value)                
+                console.log(" person 5 instantiation e listener worked");            
+                person5Name.textContent = person5.name;
+                personFive.append(person5Name);
+                person5emoji.textContent = person5.favoriteEmoji;
+                personFive.append(person5emoji);               
+                welcomeGreet.textContent = person5.welcome();
+                friendForm5.classList.add("hidden");
+                containerFive.classList.add("hiddenModal");
+                personFive.setAttribute("title", `${person5.greeting()}`);
+            })
+        }
+    })
 
 //make the 6th person button open a form where you can input your friend's info
 
+let person6Name = document.createElement('p');
+let person6emoji = document.createElement('p');
+
 button6.addEventListener("click", function(e) {
     e.preventDefault();
-    containerSix.classList.remove("hiddenModal");
-})
-
-
-friendForm6.addEventListener("submit", function(e) {
-    e.preventDefault();
-    person6 = new Person(friendName6.value, emoji6.value, favFood6.value, favDess6.value, 
-            favBev6.value, favGenre6.value, favCity6.value, favTime6.value, country6.value)
-    
-    console.log(" person 6 e listener worked");
-    const person6Name = document.createElement('p');
-    person6Name.textContent = person6.name;
-    personSix.append(person6Name);
-    const person6emoji = document.createElement('p');
-    person6emoji.textContent = person6.favoriteEmoji;
-    personSix.append(person6emoji);
-    console.log("person 1 name:", person1.name);
-    console.log("person 2 name:" , person2.name);
-    console.log("person 3 name:" , person3.name);
-    console.log("person 4 name:", person4.name);
-    console.log("person 5 name:", person5.name);
-    console.log("person 6 name:", person6.name);
-    welcomeGreet.textContent = person6.welcome();
-    friendForm6.classList.add("hidden");
-    containerSix.classList.add("hiddenModal");
-    personSix.setAttribute("title", `${person6.greeting()}`);
+    if (person6) {
+        person6Name.textContent = ""; 
+        person6emoji.textContent = "";
+        containerSix.classList.remove("hiddenModal");
+        friendForm6.classList.remove("hidden");
+            friendForm6.addEventListener("submit", function(e) {
+                e.preventDefault();
+                person6 = new Person(friendName6.value, emoji6.value, favFood6.value, favDess6.value, 
+                        favBev6.value, favGenre6.value, favCity6.value, favTime6.value, country6.value)
+                console.log(" person 6 edit e listener worked");
+                person6Name.textContent = person6.name;
+                person6emoji.textContent = person6.favoriteEmoji;
+                welcomeGreet.textContent = person6.welcome();
+                friendForm6.classList.add("hidden");
+                containerSix.classList.add("hiddenModal");
+                personSix.setAttribute("title", `${person6.greeting()}`);
+            })
+    } else {
+        button6.textContent = "Edit info";
+        containerSix.classList.remove("hiddenModal");
+        friendForm6.classList.remove("hidden");
+        friendForm6.addEventListener("submit", function(e) {
+            e.preventDefault();
+            person6 = new Person(friendName6.value, emoji6.value, favFood6.value, favDess6.value, 
+                favBev6.value, favGenre6.value, favCity6.value, favTime6.value, country6.value)
+            console.log(" person 6 instantiation e listener worked");
+            person6Name.textContent = person6.name;
+            personSix.append(person6Name);
+            person6emoji.textContent = person6.favoriteEmoji;
+            personSix.append(person6emoji);
+            welcomeGreet.textContent = person6.welcome();
+            friendForm6.classList.add("hidden");
+            containerSix.classList.add("hiddenModal");
+            personSix.setAttribute("title", `${person6.greeting()}`);
+        })
+        }
 })
