@@ -91,7 +91,10 @@ const country6 = document.getElementById("country6");
 //card container parent element
 const cardContainer = document.querySelector(".personcards");
 
-//cards for the friends and user 
+//container cards for each friend
+const containerCardOne = document.querySelector(".person1__container");
+
+//inner cards for the friends and user 
 let personOne = document.querySelector(".person1");
 let personTwo = document.querySelector(".person2");
 let personThree = document.querySelector(".person3");
@@ -182,10 +185,8 @@ button1.addEventListener("click", function(e) {
         })
     } else {
         header2.textContent = `Oops, please try again!`
-
     }
 })
-
 
 //make the 1st person submit button work upon starting
 friendForm.addEventListener("submit", function(e) {
@@ -193,6 +194,7 @@ friendForm.addEventListener("submit", function(e) {
     
     person1 = new Person(friendName.value, emoji.value, favFood.value, favDess.value, 
         favBev.value, favGenre.value, favCity.value, favTime.value, country.value)
+       
     person1Name.textContent = person1.name;
     personOne.append(person1Name);
     person1emoji.textContent = person1.favoriteEmoji;
@@ -232,7 +234,7 @@ button2.addEventListener("click", function(e) {
         friendForm2.classList.add("hidden");
         containerTwo.classList.add("hiddenModal");
         personTwo.setAttribute("title", `${person2.greeting()}`);
-        return checkSimilarities1and2();
+        return checkFoods1and2();
         })
     } else {
         button2.textContent = "Edit info";
@@ -251,7 +253,7 @@ button2.addEventListener("click", function(e) {
                 friendForm2.classList.add("hidden");
                 containerTwo.classList.add("hiddenModal");
                 personTwo.setAttribute("title", `${person2.greeting()}`);
-                return checkSimilarities1and2();
+                return checkFoods1and2();
         })
     }
     
@@ -441,31 +443,42 @@ button6.addEventListener("click", function(e) {
 
 //create a way to compare each person's data/favs and suggest experience ideas!
 
-function checkSimilarities1and2() {
+const suggestFood = document.createElement("p");
+suggestFood.classList.add("personcards__p");
+suggestFood.style.gridColumn = "4 / 5";
+
+function checkFoods1and2() {
     //console.log(Boolean(person1 || person2));
     //console.log(Boolean(person1 && person2)); why is this returning false while the above is returning true?
     if(person1 || person2) {
-        if(person1.favoriteFood == person2.favoriteFood) {
-            const suggestFood = document.createElement("p");
-            suggestFood.textContent = `You and ${person2.name} both like ${person2.favoriteFood}!`;
-            cardContainer.append(suggestFood);
-        } else if (person1.favoriteBeverage == person2.favoriteBeverage)  {
-            const suggestBev = document.createElement("p");
-            suggestBev.textContent = `You and ${person2.name} both like ${person2.favoriteBeverage}!`;
-            cardContainer.append(suggestBev);
-        } else if (person1.favoriteDessert == person2.favoriteDessert) {
-            const suggestBev = document.createElement("p");
-            suggestDessert.textContent = `You and ${person2.name} both like ${person2.favoriteDessert}!`;
-            cardContainer.append(suggestDessert);
-        } else if (person1.favoriteFilmGenre == person2.favoriteFilmGenre) {
-            const suggestFilm = document.createElement("p");
-            suggestFilm.textContent = `You and ${person2.name} both like ${person2.favoriteFilmGenre}!`;
-            cardContainer.append(suggestFilm);
+        if(person1.favoriteFood == person2.favoriteFood) { 
+            suggestFood.textContent = `${person1.name} and ${person2.name} both like ${person2.favoriteFood}!`;
+            containerCardOne.append(suggestFood);
         } else {
-            suggestFood.textContent = "";
-            suggestBev.textContent = "";
-            suggestDessert.textContent = "";
-            suggestFilm.textContent = "";
+             suggestFood.textContent = "";
         }
     }
 }
+
+//         else if (person1.favoriteBeverage == person2.favoriteBeverage)  {
+//             const suggestBev = document.createElement("p");
+//             suggestBev.textContent = `You and ${person2.name} both like ${person2.favoriteBeverage}!`;
+//             cardContainer.append(suggestBev);
+//         } else if (person1.favoriteDessert == person2.favoriteDessert) {
+//             const suggestBev = document.createElement("p");
+//             suggestDessert.textContent = `You and ${person2.name} both like ${person2.favoriteDessert}!`;
+//             cardContainer.append(suggestDessert);
+//         } else if (person1.favoriteFilmGenre == person2.favoriteFilmGenre) {
+//             const suggestFilm = document.createElement("p");
+//             suggestFilm.textContent = `You and ${person2.name} both like ${person2.favoriteFilmGenre}!`;
+//             cardContainer.append(suggestFilm);
+//         } else {
+//             suggestFood.textContent = "";
+//             suggestBev.textContent = "";
+//             suggestDessert.textContent = "";
+//             suggestFilm.textContent = "";
+//         }
+//     }
+// }
+
+

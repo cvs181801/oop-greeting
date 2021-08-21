@@ -1,5 +1,5 @@
 :root {
-    --ff-accent: 'Amatic SC', cursive;
+    --ff-accent: 'Prompt', sans-serif;
     --ff-main: 'Josefin Sans', sans-serif;
     --brown: rgb(122, 61, 0);
 }
@@ -22,6 +22,7 @@ body {
 h1,
 h2 {
     font-family: var(--ff-accent);
+    line-height: 2rem;
 }
 
 .container,
@@ -165,6 +166,11 @@ border-radius: 50% 40% 33% 33%;
     .welcome {
         margin-bottom: 3em;
     }
+
+    p {
+        text-align: center;
+    }   
+
     .personcards {
         
         display: grid;
@@ -199,4 +205,5 @@ border-radius: 50% 40% 33% 33%;
     .person6__container {
         grid-column: 4 / 5 ;
         }
+     
 }
