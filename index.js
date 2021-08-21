@@ -88,6 +88,9 @@ const favCity6 = document.getElementById("fav-city6");
 const favTime6 = document.getElementById("fav-time6");
 const country6 = document.getElementById("country6");
 
+//card container parent element
+const cardContainer = document.querySelector(".personcards");
+
 //cards for the friends and user 
 let personOne = document.querySelector(".person1");
 let personTwo = document.querySelector(".person2");
@@ -229,6 +232,7 @@ button2.addEventListener("click", function(e) {
         friendForm2.classList.add("hidden");
         containerTwo.classList.add("hiddenModal");
         personTwo.setAttribute("title", `${person2.greeting()}`);
+        return checkSimilarities1and2();
         })
     } else {
         button2.textContent = "Edit info";
@@ -247,8 +251,10 @@ button2.addEventListener("click", function(e) {
                 friendForm2.classList.add("hidden");
                 containerTwo.classList.add("hiddenModal");
                 personTwo.setAttribute("title", `${person2.greeting()}`);
+                return checkSimilarities1and2();
         })
     }
+    
 })
 
 
@@ -432,3 +438,34 @@ button6.addEventListener("click", function(e) {
         })
         }
 })
+
+//create a way to compare each person's data/favs and suggest experience ideas!
+
+function checkSimilarities1and2() {
+    //console.log(Boolean(person1 || person2));
+    //console.log(Boolean(person1 && person2)); why is this returning false while the above is returning true?
+    if(person1 || person2) {
+        if(person1.favoriteFood == person2.favoriteFood) {
+            const suggestFood = document.createElement("p");
+            suggestFood.textContent = `You and ${person2.name} both like ${person2.favoriteFood}!`;
+            cardContainer.append(suggestFood);
+        } else if (person1.favoriteBeverage == person2.favoriteBeverage)  {
+            const suggestBev = document.createElement("p");
+            suggestBev.textContent = `You and ${person2.name} both like ${person2.favoriteBeverage}!`;
+            cardContainer.append(suggestBev);
+        } else if (person1.favoriteDessert == person2.favoriteDessert) {
+            const suggestBev = document.createElement("p");
+            suggestDessert.textContent = `You and ${person2.name} both like ${person2.favoriteDessert}!`;
+            cardContainer.append(suggestDessert);
+        } else if (person1.favoriteFilmGenre == person2.favoriteFilmGenre) {
+            const suggestFilm = document.createElement("p");
+            suggestFilm.textContent = `You and ${person2.name} both like ${person2.favoriteFilmGenre}!`;
+            cardContainer.append(suggestFilm);
+        } else {
+            suggestFood.textContent = "";
+            suggestBev.textContent = "";
+            suggestDessert.textContent = "";
+            suggestFilm.textContent = "";
+        }
+    }
+}
