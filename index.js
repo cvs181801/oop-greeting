@@ -11,6 +11,7 @@ const containerThree = document.querySelector(".container3");
 const containerFour = document.querySelector(".container4");
 const containerFive = document.querySelector(".container5");
 const containerSix = document.querySelector(".container6");
+const containers = document.querySelector(".contain");
 
 //forms
 const friendForm = document.querySelector(".container__form");
@@ -19,6 +20,7 @@ const friendForm3 = document.querySelector(".container__form3");
 const friendForm4 = document.querySelector(".container__form4");
 const friendForm5 = document.querySelector(".container__form5");
 const friendForm6 = document.querySelector(".container__form6");
+const forms = document.querySelectorAll("form");
 
 //1st form (user) inputs
 const friendName = document.getElementById("name");
@@ -104,10 +106,20 @@ const button3 = document.querySelector(".button__person3");
 const button4 = document.querySelector(".button__person4");
 const button5 = document.querySelector(".button__person5");
 const button6 = document.querySelector(".button__person6");
+const formCloseBtns = document.querySelectorAll(".container__form--closeBtn");
 
 //test area
 //enter test console.log code here!
 
+//make the form close buttons work
+
+// formCloseBtns.forEach(closeBtn, form, container => {
+//     closeBtn.addEventListener("click", function(e) {
+//         form.classList.add("hidden");
+//         container.classList.add("hiddenModal");
+//     })
+// })
+//we need to iterate an e listener over nested arrays 
 
 //add a way to add a new person into the group. lets go with ES5 syntax this time.
 
