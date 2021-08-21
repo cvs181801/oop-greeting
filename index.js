@@ -11,7 +11,7 @@ const containerThree = document.querySelector(".container3");
 const containerFour = document.querySelector(".container4");
 const containerFive = document.querySelector(".container5");
 const containerSix = document.querySelector(".container6");
-const containers = document.querySelector(".contain");
+const containers = document.querySelectorAll(".contain");
 
 //forms
 const friendForm = document.querySelector(".container__form");
@@ -20,7 +20,7 @@ const friendForm3 = document.querySelector(".container__form3");
 const friendForm4 = document.querySelector(".container__form4");
 const friendForm5 = document.querySelector(".container__form5");
 const friendForm6 = document.querySelector(".container__form6");
-const forms = document.querySelectorAll("form");
+const formsList = document.getElementsByTagName(".form");
 
 //1st form (user) inputs
 const friendName = document.getElementById("name");
@@ -113,13 +113,16 @@ const formCloseBtns = document.querySelectorAll(".container__form--closeBtn");
 
 //make the form close buttons work
 
-// formCloseBtns.forEach(closeBtn, form, container => {
-//     closeBtn.addEventListener("click", function(e) {
-//         form.classList.add("hidden");
-//         container.classList.add("hiddenModal");
-//     })
-// })
-//we need to iterate an e listener over nested arrays 
+ formCloseBtns.forEach(closeBtn => {
+     closeBtn.addEventListener("click", function(e) {
+         e.preventDefault();
+         console.log("clicked on close btn");
+         for(i=0; i < containers.length; i++) {
+            console.log("contain close btn e listener worked");
+            containers[i].classList.add("hiddenModal");
+         }
+    })
+ })
 
 //add a way to add a new person into the group. lets go with ES5 syntax this time.
 

@@ -121,23 +121,23 @@ input:focus {
 }
 
 .person1__container {
-border-radius: 20% 40% 19% 33%;
+border-radius: 50% 40% 33% 33%;
 }
 
 .person2__container {
-    border-radius: 34% 10% 98% 25%;
+    border-radius: 84% 47% 98% 85%;
 }
 
 .person3__container {
-    border-radius: 50% 1% 29% 80%;
+    border-radius: 50% 45% 29% 80%;
 }
 
 .person4__container {
-    border-radius: 9% 95% 50% 21%;
+    border-radius: 50% 95% 50% 33%;
 }
 
 .person5__container {
-    border-radius: 76% 15% 8% 44%;
+    border-radius: 76% 90% 80% 44%;
 }
 
 .person6__container {
