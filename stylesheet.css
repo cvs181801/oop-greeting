@@ -156,9 +156,35 @@ border-radius: 20% 40% 19% 33%;
     .personcards {
         display: grid;
         grid-template-columns: 
-        minmax(1em, 1fr)
-        repeat(3, minmax(3em, 3em))
-        minmax(1em, 1fr);
-        gap: .5em;
+        33% 33% 33%;
+        /*repeat(3, minmax(3em, 3em));
+        minmax(1em, 1fr);*/
+        grid-auto-rows: 5em;
+        gap: .5em; 
     }
+
+   /* .person1__container {
+        grid-column: 1 ;
+
+        }
+        
+    .person2__container {
+        grid-column: 2;
+        }
+        
+    .person3__container {
+        grid-column: 3 ;
+        }
+        
+    .person4__container {
+        grid-column: 4 ;
+        }
+        
+    .person5__container {
+        grid-column: 5;
+        }
+        
+    .person6__container {
+        grid-column: 6 ;
+        }*/
 }
