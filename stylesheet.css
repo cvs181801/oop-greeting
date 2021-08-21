@@ -15,6 +15,8 @@ body {
     font-family: var(--ff-main);
     background-color: peachpuff;
     color: var(--brown);
+    align-items: center;
+    justify-content: center;
 }
 
 h1,
@@ -79,14 +81,14 @@ input:focus {
     display: none;
 }
 
-.person2,
+/*.person2,
 .person3,
 .person4,
 .person5,
 .person6 {
-        background-color: blanchedalmond;
         
-}
+        
+} */
 
 .button__person1,
 .button__person2,
@@ -98,6 +100,7 @@ input:focus {
     border-radius: 7px;
     font-family: inherit;
     padding: .3em;
+    margin: 1.5em;
 }
 
 .person1__container,
@@ -111,8 +114,37 @@ input:focus {
     margin: .3em;
     max-width: 10em;
     border-radius: 10px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.person1__container {
+border-radius: 20% 40% 19% 33%;
+}
+
+.person2__container {
+    border-radius: 34% 10% 98% 25%;
+}
+
+.person3__container {
+    border-radius: 50% 1% 29% 80%;
+}
+
+.person4__container {
+    border-radius: 9% 95% 50% 21%;
+}
+
+.person5__container {
+    border-radius: 76% 15% 8% 44%;
+}
+
+.person6__container {
+    border-radius: 30% 99% 20% 67%;
 }
 
 .personcards {
     display: grid;
+    align-items: center;
+    justify-content: center;
 }
