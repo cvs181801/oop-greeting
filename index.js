@@ -258,6 +258,7 @@ button2.addEventListener("click", function(e) {
         personTwo.setAttribute("title", `${person2.greeting()}`);
         checkFoods1and2();
         checkDessert();
+        makeArrays()
         })
     } else {
         button2.textContent = "Edit info";
@@ -283,6 +284,7 @@ button2.addEventListener("click", function(e) {
                 personTwo.setAttribute("title", `${person2.greeting()}`);
                 checkFoods1and2();
                 checkDessert();
+                makeArrays()
         })
     }
     
@@ -581,17 +583,20 @@ function checkDessert12and3() {
 
 
  //compare person1 and person2 shared interests (checkboxes)
-
+function makeArrays() {
  const person1interests = [foodCook.value, musicArt.value, histCulture.value, fitSport.value, animalNature.value];
  const person2interests = [foodCook2.value, musicArt2.value, histCulture2.value, fitSport2.value, animalNature2.value];
-
+console.log(person1interests);
+console.log(person2interests);
     person1interests.forEach(interest => {
-        for(i=0; i> person2interests; i++) {
-            if(interest == i) {
-                console.log("they both like" + i);
-            }
+        for(i=0; i> person2interests.length; i++) {
+            // if(interest == person2interest[i]) {
+            //     console.log("loop, it worked");
+            // }
+            console.log(interest, i);
         }
     })
+}
 
 //         else if (person1.favoriteBeverage == person2.favoriteBeverage)  {
 //             const suggestBev = document.createElement("p");
