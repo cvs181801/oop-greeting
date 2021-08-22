@@ -589,11 +589,11 @@ function makeArrays() {
 console.log(person1interests);
 console.log(person2interests);
     person1interests.forEach(interest => {
-        for(i=0; i> person2interests.length; i++) {
+        for(i=0; i< person2interests.length; i++) {
             // if(interest == person2interest[i]) {
             //     console.log("loop, it worked");
             // }
-            console.log(interest, i);
+            console.log("interest person 1" + interest + "interest person 2" + i);
         }
     })
 }
