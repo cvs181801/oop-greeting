@@ -19,6 +19,10 @@ const cardContainer = document.querySelector(".personcards");
 //container cards for each friend
 const containerCardOne = document.querySelector(".person1__container");
 const containerCardTwo = document.querySelector(".person2__container");
+const containerCardThree = document.querySelector(".person3__container");
+const containerCardFour = document.querySelector(".person4__container");
+const containerCardFive = document.querySelector(".person5__container");
+const containerCardSix = document.querySelector(".person6__container");
 
 //forms
 const friendForm = document.querySelector(".container__form");
@@ -235,7 +239,8 @@ button2.addEventListener("click", function(e) {
         friendForm2.classList.add("hidden");
         containerTwo.classList.add("hiddenModal");
         personTwo.setAttribute("title", `${person2.greeting()}`);
-        return checkFoods1and2();
+        checkFoods1and2();
+        checkDessert();
         })
     } else {
         button2.textContent = "Edit info";
@@ -286,6 +291,7 @@ button3.addEventListener("click", function(e) {
                 friendForm3.classList.add("hidden");
                 containerThree.classList.add("hiddenModal");
                 personThree.setAttribute("title", `${person3.greeting()}`);
+                checkFoods12and3()
                 })    
             } else {
                 button3.textContent = "Edit info";
@@ -304,6 +310,7 @@ button3.addEventListener("click", function(e) {
                         friendForm3.classList.add("hidden");
                         containerThree.classList.add("hiddenModal");
                         personThree.setAttribute("title", `${person3.greeting()}`);
+                        checkFoods12and3()
                     })
                 }
             })
@@ -443,7 +450,8 @@ button6.addEventListener("click", function(e) {
         }
 })
 
-//create a way to compare each person's data/favs and suggest experience ideas!
+//**~~  Create a way to compare each person's data/favs and suggest experience ideas!  ~~**//
+
 //1.Fav foods person 1 and 2:
 const suggestFood = document.createElement("div");
 suggestFood.classList.add("personcards__suggest");
@@ -457,7 +465,7 @@ function checkFoods1and2() {
     if(person1 || person2) {
         if(person1.favoriteFood == person2.favoriteFood) { 
             suggestFood.textContent = `${person1.name} and ${person2.name} both like ${person2.favoriteFood}!`;
-            cardContainer.insertBefore(suggestFood, containerCardTwo);
+            //cardContainer.insertBefore(suggestFood, containerCardTwo);
         } else {
              suggestFood.textContent = "";
         }
@@ -476,12 +484,36 @@ function checkDessert() {
     if (person1 || person2) {
         if(person1.favoriteDessert == person2.favoriteDessert) { 
             suggestDessert.textContent = `${person1.name} and ${person2.name} both like ${person2.favoriteDessert}!`;
-            cardContainer.insertBefore(suggestFood, containerCardTwo);
+            //cardContainer.insertBefore(suggestFood, containerCardTwo);
         } else {
              suggestDessert.textContent = "";
         }
     }
 }
+
+//3. Fav food 1, 2, and 3 
+const suggestFood3 = document.createElement("div");
+suggestFood3.classList.add("personcards__suggest");
+//suggestFood3.style.gridColumn = "6";
+cardContainer.insertBefore(suggestFood3, containerCardThree);
+suggestFood3.style.border = "2px solid blue";
+
+function checkFoods12and3() {
+    //console.log(Boolean(person1 || person2));
+    //console.log(Boolean(person1 && person2)); why is this returning false while the above is returning true?
+    if(person3) {
+        if(person2.favoriteFood == person3.favoriteFood) {
+            suggestFood3.textContent = `${person2.name} and ${person3.name} both like ${person3.favoriteFood}!`;
+            //cardContainer.insertBefore(suggestFood, containerCardThree);
+        } else if (person1.favoriteFood == person3.favoriteFood) {
+            suggestFood3.textContent = `${person1.name} and ${person3.name} both like ${person3.favoriteFood}!`;
+            //cardContainer.insertBefore(suggestFood, containerCardThree);
+        } else {
+             suggestFood3.textContent = "";
+        }
+    }
+}
+
 //         else if (person1.favoriteBeverage == person2.favoriteBeverage)  {
 //             const suggestBev = document.createElement("p");
 //             suggestBev.textContent = `You and ${person2.name} both like ${person2.favoriteBeverage}!`;
