@@ -468,7 +468,7 @@ function checkFoods1and2() {
         if(person1.favoriteFood == person2.favoriteFood) { 
             suggestFood.textContent = `${person1.name} and ${person2.name} both like ${person2.favoriteFood}!`;
         } else {
-             suggestFood.textContent = "";
+            suggestFood.textContent = "";
         }
     }
 }
@@ -504,6 +504,7 @@ function checkFoods12and3() {
     //console.log(Boolean(person1 && person2)); why is this returning false while the above is returning true?
     if(person3) {
         if(person2.favoriteFood == person3.favoriteFood && person1.favoriteFood == person3.favoriteFood) {
+            suggestFood.textContent = "";
             suggestFood3.textContent = `${person1.name}, ${person2.name} and ${person3.name} all like ${person3.favoriteFood}!`; 
         } else if (person1.favoriteFood == person3.favoriteFood) {
             suggestFood3.textContent = `${person1.name} and ${person3.name} both like ${person3.favoriteFood}!`;           
@@ -529,6 +530,7 @@ function checkDessert12and3() {
     //console.log(Boolean(person1 && person2)); why is this returning false while the above is returning true?
     if(person3) {
         if(person2.favoriteDessert == person3.favoriteDessert && person1.favoriteDessert == person3.favoriteDessert) {
+            suggestDessert.textContent = "";
             suggestDessert3.textContent = `${person1.name}, ${person2.name} and ${person3.name} all like ${person3.favoriteDessert}!`; 
         } else if (person1.favoriteDessert == person3.favoriteDessert) {
             suggestDessert3.textContent = `${person1.name} and ${person3.name} both like ${person3.favoriteDessert}!`;           
