@@ -4,7 +4,7 @@
 const header2 = document.querySelector("h2");
 const welcomeGreet = document.querySelector(".welcome");
 
-//containers
+//form containers
 const containerOne = document.querySelector(".container");
 const containerTwo = document.querySelector(".container2");
 const containerThree = document.querySelector(".container3");
@@ -12,6 +12,13 @@ const containerFour = document.querySelector(".container4");
 const containerFive = document.querySelector(".container5");
 const containerSix = document.querySelector(".container6");
 const containers = document.querySelectorAll(".contain");
+
+//card container parent element
+const cardContainer = document.querySelector(".personcards");
+
+//container cards for each friend
+const containerCardOne = document.querySelector(".person1__container");
+const containerCardTwo = document.querySelector(".person2__container");
 
 //forms
 const friendForm = document.querySelector(".container__form");
@@ -87,12 +94,6 @@ const favGenre6 = document.getElementById("fav-genre6");
 const favCity6 = document.getElementById("fav-city6");
 const favTime6 = document.getElementById("fav-time6");
 const country6 = document.getElementById("country6");
-
-//card container parent element
-const cardContainer = document.querySelector(".personcards");
-
-//container cards for each friend
-const containerCardOne = document.querySelector(".person1__container");
 
 //inner cards for the friends and user 
 let personOne = document.querySelector(".person1");
@@ -253,7 +254,8 @@ button2.addEventListener("click", function(e) {
                 friendForm2.classList.add("hidden");
                 containerTwo.classList.add("hiddenModal");
                 personTwo.setAttribute("title", `${person2.greeting()}`);
-                return checkFoods1and2();
+                checkFoods1and2();
+                checkDessert();
         })
     }
     
@@ -442,10 +444,12 @@ button6.addEventListener("click", function(e) {
 })
 
 //create a way to compare each person's data/favs and suggest experience ideas!
-
-const suggestFood = document.createElement("p");
-suggestFood.classList.add("personcards__p");
-suggestFood.style.gridColumn = "4 / 5";
+//1.Fav foods person 1 and 2:
+const suggestFood = document.createElement("div");
+suggestFood.classList.add("personcards__suggest");
+//suggestFood.style.gridColumn = "4 / 5";
+cardContainer.insertBefore(suggestFood, containerCardTwo);
+//suggestFood.style.border = "2px solid blue";
 
 function checkFoods1and2() {
     //console.log(Boolean(person1 || person2));
@@ -453,13 +457,31 @@ function checkFoods1and2() {
     if(person1 || person2) {
         if(person1.favoriteFood == person2.favoriteFood) { 
             suggestFood.textContent = `${person1.name} and ${person2.name} both like ${person2.favoriteFood}!`;
-            containerCardOne.append(suggestFood);
+            cardContainer.insertBefore(suggestFood, containerCardTwo);
         } else {
              suggestFood.textContent = "";
         }
     }
 }
+//2. Fav desserts person 1 and 2:
+const suggestDessert = document.createElement("div");
+suggestDessert.classList.add("personcards__suggest");
+cardContainer.insertBefore(suggestDessert, containerCardTwo);
+//suggestDessert.style.border = "2px solid blue";
+//suggestDessert.textContent = "dessert";
+suggestDessert.style.gridColumn = "4 / 5";
+suggestDessert.style.gridRow = "2";
 
+function checkDessert() {
+    if (person1 || person2) {
+        if(person1.favoriteDessert == person2.favoriteDessert) { 
+            suggestDessert.textContent = `${person1.name} and ${person2.name} both like ${person2.favoriteDessert}!`;
+            cardContainer.insertBefore(suggestFood, containerCardTwo);
+        } else {
+             suggestDessert.textContent = "";
+        }
+    }
+}
 //         else if (person1.favoriteBeverage == person2.favoriteBeverage)  {
 //             const suggestBev = document.createElement("p");
 //             suggestBev.textContent = `You and ${person2.name} both like ${person2.favoriteBeverage}!`;
