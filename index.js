@@ -41,6 +41,11 @@ const favBev = document.getElementById("fav-bev");
 const favGenre = document.getElementById("fav-genre");
 const favCity = document.getElementById("fav-city");
 const country = document.getElementById("country");
+const foodCook = document.getElementById("food/cooking");
+const musicArt = document.getElementById("music/art");
+const histCulture = document.getElementById("history/culture");
+const fitSport = document.getElementById("fitness/sports");
+const animalNature = document.getElementById("animals/nature");
 
 //2nd friend form inputs
 const friendName2 = document.getElementById("name2");
@@ -50,6 +55,11 @@ const favBev2 = document.getElementById("fav-bev2");
 const favGenre2 = document.getElementById("fav-genre2");
 const favCity2 = document.getElementById("fav-city2");
 const country2 = document.getElementById("country2");
+const foodCook2 = document.getElementById("food/cooking2");
+const musicArt2 = document.getElementById("music/art2");
+const histCulture2 = document.getElementById("history/culture2");
+const fitSport2 = document.getElementById("fitness/sports2");
+const animalNature2 = document.getElementById("animals/nature2");
 
 //3rd friend form
 const friendName3 = document.getElementById("name3");
@@ -123,10 +133,11 @@ const formCloseBtns = document.querySelectorAll(".container__form--closeBtn");
     })
  })
 
+
 //add a way to add a new person into the group. lets go with ES5 syntax this time.
 
 function Person(name, favoriteFood, favoriteDessert, favoriteBeverage, favoriteFilmGenre, favoriteCity,
-    countryYoudLikeToVisit) {
+    countryYoudLikeToVisit, foodCook, musicArt, histCulture, fitSport, animalNature) {
     this.name = name;
     this.favoriteFood = favoriteFood;
     this.favoriteDessert = favoriteDessert;
@@ -134,6 +145,12 @@ function Person(name, favoriteFood, favoriteDessert, favoriteBeverage, favoriteF
     this.favoriteFilmGenre = favoriteFilmGenre;
     this.favoriteCity = favoriteCity;
     this.countryYoudLikeToVisit = countryYoudLikeToVisit;
+    this.foodCook = foodCook;
+    this.musicArt = musicArt;
+    this.histCulture = histCulture;
+    this.fitSport = fitSport;
+    this.animalNature = animalNature;
+
     this.greeting = function() {
         return `Hi! I'm ${this.name}.`
     }
@@ -166,7 +183,11 @@ button1.addEventListener("click", function(e) {
             e.preventDefault();
             console.log(person1.name, person1.favoriteFood);
         person1 = new Person(friendName.value, favFood.value, favDess.value, 
-            favBev.value, favGenre.value, favCity.value, country.value)
+            favBev.value, favGenre.value, favCity.value, country.value, foodCook.value, 
+            musicArt.value, histCulture.value, 
+            fitSport.value, animalNature.value)
+
+            console.log(`${person1.animalNature}`);
         person1Name.textContent = person1.name;
         person1emoji.textContent = "❧";
         person1emoji.style.fontSize = "1.3rem";
@@ -185,8 +206,11 @@ friendForm.addEventListener("submit", function(e) {
     e.preventDefault();
     
     person1 = new Person(friendName.value, favFood.value, favDess.value, 
-        favBev.value, favGenre.value, favCity.value, country.value)
-       
+        favBev.value, favGenre.value, favCity.value, country.value, foodCook.value, 
+        musicArt.value, histCulture.value, 
+        fitSport.value, animalNature.value)
+    
+    console.log(`${person1.animalNature}`);
     person1Name.textContent = person1.name;
     personOne.append(person1Name);
     person1emoji.textContent = "❧"
@@ -220,7 +244,11 @@ button2.addEventListener("click", function(e) {
             e.preventDefault();
             console.log(" person 2 edit object e listener worked");
                 person2 = new Person(friendName2.value, favFood2.value, favDess2.value, 
-                favBev2.value, favGenre2.value, favCity2.value, country2.value)
+                favBev2.value, favGenre2.value, favCity2.value, country2.value, foodCook2.value, 
+                musicArt2.value, histCulture2.value, 
+                fitSport2.value, animalNature2.value)
+
+        console.log(`${person2.animalNature}`);        
         person2Name.textContent = person2.name;
         person2emoji.textContent = "❡";
         person2emoji.style.fontSize = "1.3rem";
@@ -238,7 +266,11 @@ button2.addEventListener("click", function(e) {
             friendForm2.addEventListener("submit", function(e) {
                 e.preventDefault();
                 person2 = new Person(friendName2.value, favFood2.value, favDess2.value, 
-                        favBev2.value, favGenre2.value, favCity2.value, country2.value)
+                        favBev2.value, favGenre2.value, favCity2.value, country2.value, foodCook2.value, 
+                        musicArt2.value, histCulture2.value, 
+                        fitSport2.value, animalNature2.value)
+
+                console.log(`${person2.animalNature}`);
                 console.log(" person 2 instantiation e listener worked");
                 person2Name.textContent = person2.name;
                 personTwo.append(person2Name);
@@ -255,7 +287,6 @@ button2.addEventListener("click", function(e) {
     }
     
 })
-
 
 //make the 3rd person button open a form where you can input your friend's info
 
@@ -521,7 +552,7 @@ suggestDessert3.classList.add("personcards__suggest");
 suggestDessert3.style.gridColumn = "2";
 suggestDessert3.style.gridRow = "1";
 cardContainer.insertBefore(suggestDessert3, containerCardThree);
-suggestDessert3.style.border = "2px solid blue";
+//suggestDessert3.style.border = "2px solid blue";
 
 function checkDessert12and3() {
     //console.log(Boolean(person1 || person2));
@@ -539,6 +570,28 @@ function checkDessert12and3() {
         }
     }
 }
+
+//test area : test the checkbox fields
+
+// if(person1.animalNature == person2.animalNature) {
+//     console.log("they both like animals & nature");
+// } else {
+//     console.log("they don't both like animals/nature");
+// }
+
+
+ //compare person1 and person2 shared interests (checkboxes)
+
+ const person1interests = [foodCook.value, musicArt.value, histCulture.value, fitSport.value, animalNature.value];
+ const person2interests = [foodCook2.value, musicArt2.value, histCulture2.value, fitSport2.value, animalNature2.value];
+
+    person1interests.forEach(interest => {
+        for(i=0; i> person2interests; i++) {
+            if(interest == i) {
+                console.log("they both like" + i);
+            }
+        }
+    })
 
 //         else if (person1.favoriteBeverage == person2.favoriteBeverage)  {
 //             const suggestBev = document.createElement("p");
