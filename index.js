@@ -584,27 +584,28 @@ function checkDessert12and3() {
 
  //compare person1 and person2 shared interests (checkboxes)
 
-// function addMeaningFoodCook() {
-//     if (foodCook.value == on || foodCook2.value == on) {
-//         return `Food & Cooking`;
-//     } else {
-//         return;
-//     }
-// }
+function addMeaningFoodCook() {
+    if (foodCook.value == "on" || foodCook2.value == "on") {
+        return `Food & Cooking`;
+    } else {
+        return;
+    }
+}
 
 
 function makeArrays1and2() {
- const person1interests = [foodCook.value, musicArt.value, histCulture.value, fitSport.value, animalNature.value];
- const person2interests = [foodCook2.value, musicArt2.value, histCulture2.value, fitSport2.value, animalNature2.value];
+ const person1interests = [addMeaningFoodCook(), musicArt.value, histCulture.value, fitSport.value, animalNature.value];
+ const person2interests = [addMeaningFoodCook(), musicArt2.value, histCulture2.value, fitSport2.value, animalNature2.value];
 console.log(person1interests);
 console.log(person2interests);
     person1interests.forEach(interest => {
         for(i=0; i< person2interests.length; i++) {
-            // if(interest == person2interests[i]) {
-            //     console.log(`${person1.name} and ${person2.name} both like ${interest}!`);
-            // }
-            console.log("interest person 1" + interest + "interest person 2" + person2interests[i]);
-            console.log(person2interests[i].name);
+            if(interest === person2interests[i]) {
+                console.log(`${person1.name} and ${person2.name} both like ${interest}!`);
+                console.log(interest, person2interests[i]);
+            }
+            //console.log("interest person 1" + interest + "interest person 2" + person2interests[i]);
+            
         }
     })
 }
