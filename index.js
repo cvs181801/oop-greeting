@@ -189,7 +189,7 @@ button1.addEventListener("click", function(e) {
 
             console.log(`${person1.animalNature}`);
         person1Name.textContent = person1.name;
-        person1emoji.textContent = "❧";
+        person1emoji.textContent = "⚡︎";
         person1emoji.style.fontSize = "1.3rem";
         friendForm.classList.add("hidden");
         containerOne.classList.add("hiddenModal");
@@ -213,7 +213,7 @@ friendForm.addEventListener("submit", function(e) {
     console.log(`${person1.animalNature}`);
     person1Name.textContent = person1.name;
     personOne.append(person1Name);
-    person1emoji.textContent = "❧"
+    person1emoji.textContent = "⌇"
     person1emoji.style.fontSize = "1.3rem";
     personOne.append(person1emoji);
     friendForm.classList.add("hidden");
@@ -251,7 +251,7 @@ button2.addEventListener("click", function(e) {
 
         console.log(`${person2.animalNature}`);        
         person2Name.textContent = person2.name;
-        person2emoji.textContent = "❡";
+        person2emoji.textContent = "";
         person2emoji.style.fontSize = "1.3rem";
         welcomeGreet.textContent = person2.welcome();
         friendForm2.classList.add("hidden");
@@ -259,7 +259,7 @@ button2.addEventListener("click", function(e) {
         personTwo.setAttribute("title", `${person2.greeting()}`);
         checkFoods1and2();
         checkDessert();
-        makeArrays()
+        //makeArrays()⌓
         })
     } else {
         button2.textContent = "Edit info";
@@ -276,7 +276,7 @@ button2.addEventListener("click", function(e) {
                 console.log(" person 2 instantiation e listener worked");
                 person2Name.textContent = person2.name;
                 personTwo.append(person2Name);
-                person2emoji.textContent = "❡";
+                person2emoji.textContent = "⌓";
                 person2emoji.style.fontSize = "1.3rem";
                 personTwo.append(person2emoji);
                 welcomeGreet.textContent = person2.welcome();
@@ -285,7 +285,7 @@ button2.addEventListener("click", function(e) {
                 personTwo.setAttribute("title", `${person2.greeting()}`);
                 checkFoods1and2();
                 checkDessert1and2();
-                makeArrays1and2();
+                //makeArrays1and2();
         })
     }
     
@@ -361,7 +361,7 @@ button4.addEventListener("click", function(e) {
                             favBev4.value, favGenre4.value, favCity4.value, country4.value)
                     console.log(" person 4 edit e listener worked");
                     person4Name.textContent = person4.name;
-                    person4emoji.textContent = "☙";
+                    person4emoji.textContent = "﹆";
                     person4emoji.style.fontSize = "1.3rem";
                     welcomeGreet.textContent = person4.welcome();
                     friendForm4.classList.add("hidden");
@@ -380,7 +380,7 @@ button4.addEventListener("click", function(e) {
                         console.log(" person 4 instantiation e listener worked");
                         person4Name.textContent = person4.name;
                         personFour.append(person4Name);
-                        person4emoji.textContent = "☙";
+                        person4emoji.textContent = "﹆";
                         person4emoji.style.fontSize = "1.3rem";
                         personFour.append(person4emoji);
                         welcomeGreet.textContent = person4.welcome();
@@ -410,7 +410,7 @@ button5.addEventListener("click", function(e) {
                         favBev5.value, favGenre5.value, favCity5.value, country5.value)
                 console.log(" person 5 edit e listener worked");
                 person5Name.textContent = person5.name;
-                person5emoji.textContent = "❦";
+                person5emoji.textContent = "⌇";
                 person5emoji.style.fontSize = "1.3rem";
                 welcomeGreet.textContent = person5.welcome();
                 friendForm5.classList.add("hidden");
@@ -428,7 +428,7 @@ button5.addEventListener("click", function(e) {
                 console.log(" person 5 instantiation e listener worked");            
                 person5Name.textContent = person5.name;
                 personFive.append(person5Name);
-                person5emoji.textContent = "❦";
+                person5emoji.textContent = "⌇";
                 person5emoji.style.fontSize = "1.3rem";
                 personFive.append(person5emoji);               
                 welcomeGreet.textContent = person5.welcome();
