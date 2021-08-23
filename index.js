@@ -566,6 +566,35 @@ function checkFoods123and4() {
     }
 }
 
+function checkFoods1234and5() {
+    //console.log(Boolean(person1 || person2));
+    //console.log(Boolean(person1 && person2)); why is this returning false while the above is returning true?
+    if(person4) {
+        if(person1.favoriteFood == person5.favoriteFood && person2.favoriteFood == person5.favoriteFood && person3.favoriteFood == person5.favoriteFood
+             && person4.favoriteFood == person5.favoriteFood && person1.favoriteFood == person4.favoriteFood && person2.favoriteFood == person4.favoriteFood &&
+             person3.favoriteFood == person4.favoriteFood && person1.favoriteFood == person3.favoriteFood && person1.favoriteFood == person2.favoriteFood) {
+            suggestFood.textContent = "";
+            suggestFood3.textContent = "";
+            suggestFood4.textContent = "";
+            suggestFood5.textContent = `${person1.name}, ${person2.name}, ${person3.name}, ${person4.name} and ${person5.name} all like ${person5.favoriteFood}!`; 
+        } else if (person1.favoriteFood == person5.favoriteFood && person2.favoriteFood == person5.favoriteFood && person3.favoriteFood == person5.favoriteFood) {
+            suggestFood4.textContent = `${person1.name}, ${person2.name} and ${person3.name} all like ${person5.favoriteFood}!`;           
+        } else if (person2.favoriteFood == person5.favoriteFood && person3.favoriteFood == person5.favoriteFood) { //**add logic 
+            suggestFood4.textContent = `${person2.name} and ${person3.name} both like ${person4.favoriteFood}!`;
+        } else if (person1.favoriteFood == person4.favoriteFood && person3.favoriteFood == person4.favoriteFood) {
+            suggestFood4.textContent = `${person1.name} and ${person3.name} both like ${person4.favoriteFood}!`; 
+        } else if (person1.favoriteFood == person4.favoriteFood) {
+            suggestFood4.textContent = `${person1.name} and ${person4.name} both like ${person4.favoriteFood}!`; 
+        } else if  (person2.favoriteFood == person4.favoriteFood) {
+            suggestFood4.textContent = `${person2.name} and ${person4.name} both like ${person4.favoriteFood}!`; 
+        } else if (person3.favoriteFood == person4.favoriteFood) {
+            suggestFood4.textContent = `${person3.name} and ${person4.name} both like ${person4.favoriteFood}!`; 
+        } else {
+            suggestFood3.textContent = "";
+        }
+    }
+}
+
 // Fav desserts person 1 and 2:
 const suggestDessert = document.createElement("div");
 suggestDessert.classList.add("personcards__suggest");
