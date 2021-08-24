@@ -677,7 +677,7 @@ let allArrays = [["test1", "test2", "test3"], ["test1", "test2", "test3"], ["tes
 
 allArrays.forEach(array => {
     array.forEach(innerproperty=> {
-        console.log(innerproperty[i]);
+        console.log(innerproperty);
     })
     console.log("~~~");
 })
