@@ -672,15 +672,55 @@ function addMeaningFoodCook() {
 }
 
 //let person1array = person1.array();
-let allArrays = [["test1", "test2", "test3"], ["test1", "test2", "test3"], ["test1", "test2", "test3"]]; // I"m just using this to test atm
+// I"m just using this to test atm
+
+let people = [
+    {
+    name: "Amy",
+    likes: ["chocolate", "beer", "summer"],
+    city: "Portland" 
+    }, 
+    {
+    name: "Brian", 
+    likes: ["thai", "coffee", "summer"],
+    city: "Detroit"
+    },
+    {
+    name: "Shannon", 
+    likes: ["pizza", "beer", "summer"],
+    city: "Los Angeles"
+    }
+]
+
+const beerLovers = people.filter((person) => {
+    //const likes = person && person.likes;
+    //console.log(likes);
+    //return likes.includes('beer');
+    console.log(person);
+});
+
+console.log(beerLovers);
+
+//let allArrays = [person1favsArray, person2favsArray, person3favsArray]; 
 
 
-allArrays.forEach(array => {
-    array.forEach(innerproperty=> {
-        console.log(innerproperty);
-    })
-    console.log("~~~");
-})
+// allArrays.forEach(array => {
+//     array.forEach(innerproperty=> {
+//         console.log(innerproperty);
+//     })
+//     console.log("~~~");
+// })
+
+// for (let i=0; i < allArrays.length; i++) {
+//     console.log(allArrays[i]);
+//     for (let j=0; j< allArrays[i].length; j++) {
+        //console.log(allArrays[i][j]);
+        //I want to be able to check each value of the arrays and log out a sentence if there is one or more similarity. For example, since both Shannon and Amy like beer, the statement
+        //"both Shannon and Amy like beer!" would log to the console.
+        //along the same lines, since they all like summer, the statement "Amy, Brian, and Shannon all like summer!" would log to the console.
+    }
+}
+
 
 
 
