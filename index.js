@@ -706,14 +706,71 @@ suggestMusicandArt.style.border = "2px solid skyblue";
             suggestMusicandArt.textContent = "";
         }
     }        
+
+
+//History & Culture:
+const suggestHistandCulture = document.createElement("div");
+suggestHistandCulture.classList.add("personcards__suggest");
+suggestHistandCulture.style.gridColumn = "6";
+suggestHistandCulture.style.gridRow = "3";
+cardContainer.insertBefore(suggestHistandCulture, containerCardSix);
+suggestHistandCulture.style.border = "2px solid aqua";    
+
+ for (let i=0; i<peopleArray.length; i++) {
+    if (peopleArray[i].histCulture && peopleArray[0].histCulture) {
+        suggestHistandCulture.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} are interested in History & Culture!  
+            Why not enjoy a History & Culture related virtual experience together?`
+            console.log(`${peopleArray[i].name} and ${peopleArray[0].name} are interested in History & Culture!  
+            Why not enjoy a History & Culture related virtual experience together?`)
+        } else {
+            suggestHistandCulture.textContent = "";
+        }
+    }        
+
+
+//Fitness & Sports:
+const suggestFitSport = document.createElement("div");
+suggestFitSport.classList.add("personcards__suggest");
+suggestFitSport.style.gridColumn = "4";
+suggestFitSport.style.gridRow = "2";
+cardContainer.insertBefore(suggestFitSport, containerCardSix);
+suggestFitSport.style.border = "2px solid pink";    
+
+ for (let i=0; i<peopleArray.length; i++) {
+    if (peopleArray[i].fitSport && peopleArray[0].fitSport) {
+        suggestFitSport.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} are interested in Fitness & Sports!  
+            Why not enjoy a Fitness & Sports related virtual experience together?`
+            console.log(`${peopleArray[i].name} and ${peopleArray[0].name} are interested in Fitness & Sports!  
+            Why not enjoy a Fitness & Sports related virtual experience together?`)
+        } else {
+            suggestFitSport.textContent = "";
+        }
+    }    
+    
+//Animals & Nature:
+const suggestAnimalNature = document.createElement("div");
+suggestAnimalNature.classList.add("personcards__suggest");
+suggestAnimalNature.style.gridColumn = "1";
+suggestAnimalNature.style.gridRow = "1";
+cardContainer.insertBefore(suggestAnimalNature, containerCardSix);
+suggestAnimalNature.style.border = "2px solid goldenrod";    
+
+ for (let i=0; i<peopleArray.length; i++) {
+    if (peopleArray[i].animalNature && peopleArray[0].animalNature) {
+        suggestAnimalNature.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} are interested in Animals & Nature!  
+            Why not enjoy a Animal and/or Nature related virtual experience together?`
+            console.log(`${peopleArray[i].name} and ${peopleArray[0].name} are interested in Animals & Nature!  
+            Why not enjoy a Animal and/or Nature related virtual experience together?`)
+        } else {
+            suggestAnimalNature.textContent = "";
+        }
+    }      
 })
 
 
 
 
-
-
-
+//the rest of this code can be deleted when finished...
 
 
 
