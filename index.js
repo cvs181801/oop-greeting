@@ -158,12 +158,12 @@ function Person(name, favoriteFood, favoriteDessert, favoriteBeverage, favoriteF
         return `Welcome, ${this.name}!`
     }
 
-    this.array = function() {
-        let array = [];
-        array.push(this.name, this.favoriteFood, this.favoriteDessert, this.favoriteBeverage, this.favoriteFilmGenre, this.favoriteCity, 
-            this.countryYoudLikeToVisit, this.foodCook, this.musicArt, this.histCulture, this.fitSport, this.animalNature);
-            return array;
-    }
+    // this.array = function() {
+    //     let array = [];
+    //     array.push(this.name, this.favoriteFood, this.favoriteDessert, this.favoriteBeverage, this.favoriteFilmGenre, this.favoriteCity, 
+    //         this.countryYoudLikeToVisit, this.foodCook, this.musicArt, this.histCulture, this.fitSport, this.animalNature);
+    //         return array;
+    // }
 }
 
 let person1 = "";
@@ -173,12 +173,15 @@ let person4 = "";
 let person5 = "";
 let person6 = "";
 
+let peopleArray = [];
+
 //make the 1st person( user) edit button work
 
 let person1Name = document.createElement('p');
 let person1emoji = document.createElement('p');
 
 button1.addEventListener("click", function(e) {
+    peopleArray.pop(person1);
     e.preventDefault();
     person1Name.textContent = "";
     person1emoji.textContent = "";
@@ -206,6 +209,7 @@ button1.addEventListener("click", function(e) {
     } else {
         header2.textContent = `Oops, please try again!`
     }
+    peopleArray.push(person1);
 })
 
 //make the 1st person submit button work upon starting
@@ -232,8 +236,8 @@ friendForm.addEventListener("submit", function(e) {
         div.classList.remove("hidden");
     })
     welcomeGreet.textContent = person1.welcome();
-    addMeaningFoodCook();
-    console.log(person1.array());
+    peopleArray.push(person1);
+    console.log(peopleArray);
 })
 
 
@@ -247,6 +251,7 @@ button2.addEventListener("click", function(e) {
     if (person2) { //if person2 object exists, edit it
     person2Name.textContent = "";
     person2emoji.textContent = "";
+    peopleArray.pop(person2);
     containerTwo.classList.remove("hiddenModal");
     friendForm2.classList.remove("hidden");
         friendForm2.addEventListener("submit", function(e) {
@@ -265,9 +270,7 @@ button2.addEventListener("click", function(e) {
         friendForm2.classList.add("hidden");
         containerTwo.classList.add("hiddenModal");
         personTwo.setAttribute("title", `${person2.greeting()}`);
-        checkFoods1and2();
-        checkDessert();
-        //makeArrays()⌓
+        peopleArray.push(person2);
         })
     } else {
         button2.textContent = "Edit info";
@@ -275,6 +278,7 @@ button2.addEventListener("click", function(e) {
         containerTwo.classList.remove("hiddenModal");
             friendForm2.addEventListener("submit", function(e) {
                 e.preventDefault();
+                peopleArray.pop(person2);
                 person2 = new Person(friendName2.value, favFood2.value, favDess2.value, 
                         favBev2.value, favGenre2.value, favCity2.value, country2.value, foodCook2.value, 
                         musicArt2.value, histCulture2.value, 
@@ -291,9 +295,7 @@ button2.addEventListener("click", function(e) {
                 friendForm2.classList.add("hidden");
                 containerTwo.classList.add("hiddenModal");
                 personTwo.setAttribute("title", `${person2.greeting()}`);
-                checkFoods1and2();
-                checkDessert1and2();
-                //makeArrays1and2();
+                peopleArray.push(person2);
         })
     }
     
@@ -309,6 +311,7 @@ button3.addEventListener("click", function(e) {
     if (person3) {
         person3Name.textContent = "";
         person3emoji.textContent = "";
+        peopleArray.pop(person3);
         friendForm3.classList.remove("hidden");
         containerThree.classList.remove("hiddenModal");
             friendForm3.addEventListener("submit", function(e) {
@@ -324,10 +327,10 @@ button3.addEventListener("click", function(e) {
                 friendForm3.classList.add("hidden");
                 containerThree.classList.add("hiddenModal");
                 personThree.setAttribute("title", `${person3.greeting()}`);
-                checkFoods12and3()
-                checkDessert12and3()
+                peopleArray.push(person3);
                 })    
             } else {
+                peopleArray.pop(person3);
                 button3.textContent = "Edit info";
                 friendForm3.classList.remove("hidden");
                 containerThree.classList.remove("hiddenModal");
@@ -345,8 +348,7 @@ button3.addEventListener("click", function(e) {
                         friendForm3.classList.add("hidden");
                         containerThree.classList.add("hiddenModal");
                         personThree.setAttribute("title", `${person3.greeting()}`);
-                        checkFoods12and3()
-                        checkDessert12and3()
+                        peopleArray.push(person1);
                     })
                 }
             })
@@ -359,6 +361,7 @@ let person4emoji = document.createElement('p');
 button4.addEventListener("click", function(e) {
     e.preventDefault();
         if (person4) {
+            peopleArray.pop(person4);
             person4Name.textContent = "";
             person4emoji.textContent = "";
             containerFour.classList.remove("hiddenModal");
@@ -375,7 +378,7 @@ button4.addEventListener("click", function(e) {
                     friendForm4.classList.add("hidden");
                     containerFour.classList.add("hiddenModal");
                     personFour.setAttribute("title", `${person4.greeting()}`);
-                    checkFoods123and4();
+                    peopleArray.push(person1);
                 })
             } else {
                 button4.textContent = "Edit info";
@@ -395,7 +398,7 @@ button4.addEventListener("click", function(e) {
                         friendForm4.classList.add("hidden");
                         containerFour.classList.add("hiddenModal");
                         personFour.setAttribute("title", `${person4.greeting()}`);
-                        checkFoods123and4();
+                        peopleArray.push(person4);
                     })
             }
 })
@@ -408,6 +411,7 @@ let person5emoji = document.createElement('p');
 button5.addEventListener("click", function(e) {
     e.preventDefault();
     if (person5) {
+        peopleArray.pop(person5);
         person5Name.textContent = "";
         person5emoji.textContent = "";
         friendForm5.classList.remove("hidden");
@@ -424,6 +428,7 @@ button5.addEventListener("click", function(e) {
                 friendForm5.classList.add("hidden");
                 containerFive.classList.add("hiddenModal");
                 personFive.setAttribute("title", `${person5.greeting()}`);
+                peopleArray.push(person5);
             })
     } else {
         button5.textContent = "Edit info";
@@ -443,6 +448,7 @@ button5.addEventListener("click", function(e) {
                 friendForm5.classList.add("hidden");
                 containerFive.classList.add("hiddenModal");
                 personFive.setAttribute("title", `${person5.greeting()}`);
+                peopleArray.push(person5);
             })
         }
     })
@@ -455,6 +461,7 @@ let person6emoji = document.createElement('p');
 button6.addEventListener("click", function(e) {
     e.preventDefault();
     if (person6) {
+        peopleArray.pop(person6);
         person6Name.textContent = ""; 
         person6emoji.textContent = "";
         containerSix.classList.remove("hiddenModal");
@@ -471,6 +478,7 @@ button6.addEventListener("click", function(e) {
                 friendForm6.classList.add("hidden");
                 containerSix.classList.add("hiddenModal");
                 personSix.setAttribute("title", `${person6.greeting()}`);
+                peopleArray.push(person6);
             })
     } else {
         button6.textContent = "Edit info";
@@ -490,6 +498,8 @@ button6.addEventListener("click", function(e) {
             friendForm6.classList.add("hidden");
             containerSix.classList.add("hiddenModal");
             personSix.setAttribute("title", `${person6.greeting()}`);
+            peopleArray.push(person6);
+            console.log(peopleArray);
         })
         }
 })
@@ -663,13 +673,13 @@ button6.addEventListener("click", function(e) {
 
  //compare person1 and person2 shared interests (checkboxes)
 
-function addMeaningFoodCook() {
-    if (foodCook.checked == true) {
-        console.log(`person1 Food & Cooking is checked`);
-    } else {
-        return;
-    }
-}
+// function addMeaningFoodCook() {
+//     if (foodCook.checked == true) {
+//         console.log(`person1 Food & Cooking is checked`);
+//     } else {
+//         return;
+//     }
+// }
 
 //let person1array = person1.array();
 // I"m just using this to test atm
@@ -679,7 +689,7 @@ let people = [
     name: "Amy",
     likes: ["chocolate", "beer", "summer"],
     city: "Portland" 
-    }, 
+    },
     {
     name: "Brian", 
     likes: ["thai", "coffee", "summer"],
@@ -693,10 +703,10 @@ let people = [
 ]
 
 const beerLovers = people.filter((person) => {
-    //const likes = person && person.likes;
+    const likes = person && person.likes;
     //console.log(likes);
-    //return likes.includes('beer');
-    console.log(person);
+    return likes.includes('beer');
+    //console.log(person);
 });
 
 console.log(beerLovers);
@@ -718,8 +728,8 @@ console.log(beerLovers);
         //I want to be able to check each value of the arrays and log out a sentence if there is one or more similarity. For example, since both Shannon and Amy like beer, the statement
         //"both Shannon and Amy like beer!" would log to the console.
         //along the same lines, since they all like summer, the statement "Amy, Brian, and Shannon all like summer!" would log to the console.
-    }
-}
+  //  }
+//}
 
 
 
