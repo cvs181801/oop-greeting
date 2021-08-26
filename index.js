@@ -591,8 +591,48 @@ suggestFilm.style.border = "2px solid black";
         } else {
         suggestFilm.textContent = "";
         }
-    }    
+    }   
+    
+//City:
+const suggestCity = document.createElement("div");
+suggestCity.classList.add("personcards__suggest");
+//suggestCity.style.gridColumn = "2";
+//suggestCity.style.gridRow = "1";
+cardContainer.insertBefore(suggestCity, containerCardSix);
+suggestCity.style.border = "2px solid red";    
+
+ for (let i=0; i<peopleArray.length; i++) {
+    if (peopleArray[i].favoriteCity == peopleArray[0].favoriteCity) {
+        suggestCity.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteCity}!  
+        Why not enjoy a virtual experience together in ${peopleArray[0].favoriteCity}?`
+        console.log(`${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteCity}!  
+        Why not enjoy a virtual experience together in ${peopleArray[0].favoriteCity}?`)
+        } else {
+        suggestCity.textContent = "";
+        }
+    }   
+    
+//Country:
+const suggestCountry = document.createElement("div");
+suggestCountry.classList.add("personcards__suggest");
+suggestCountry.style.gridColumn = "5";
+suggestCountry.style.gridRow = "3";
+cardContainer.insertBefore(suggestCountry, containerCardSix);
+suggestCountry.style.border = "2px solid white";    
+
+ for (let i=0; i<peopleArray.length; i++) {
+    if (peopleArray[i].countryYoudLikeToVisit == peopleArray[0].countryYoudLikeToVisit) {
+        suggestCountry.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} want to visit ${peopleArray[0].countryYoudLikeToVisit}!  
+        Why not enjoy a virtual experience together in ${peopleArray[0].countryYoudLikeToVisit}?`
+        console.log(`${peopleArray[i].name} and ${peopleArray[0].name} want to visit ${peopleArray[0].countryYoudLikeToVisit}!  
+        Why not enjoy a virtual experience together in ${peopleArray[0].countryYoudLikeToVisit}?`)
+        } else {
+        suggestCountry.textContent = "";
+        }
+    }      
 })
+
+
 
 
 
