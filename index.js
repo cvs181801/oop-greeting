@@ -630,6 +630,26 @@ suggestCountry.style.border = "2px solid white";
         suggestCountry.textContent = "";
         }
     }      
+
+
+//Food & Cooking:
+const suggestFoodandCooking = document.createElement("div");
+suggestFoodandCooking.classList.add("personcards__suggest");
+suggestFoodandCooking.style.gridColumn = "5";
+suggestFoodandCooking.style.gridRow = "2";
+cardContainer.insertBefore(suggestFoodandCooking, containerCardSix);
+suggestFoodandCooking.style.border = "2px solid purple";    
+
+ for (let i=0; i<peopleArray.length; i++) {
+    if (peopleArray[i].foodCook.checked && peopleArray[0].foodCook.checked) {
+            suggestFoodandCooking.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} are interested in Food & Cooking!  
+            Why not enjoy a Food & Cooking virtual experience together?`
+            console.log(`${peopleArray[i].name} and ${peopleArray[0].name} are interested in Food & Cooking!  
+            Why not enjoy a Food & Cooking virtual experience together?`)
+        } else {
+            suggestFoodandCooking.textContent = "";
+        }
+    }      
 })
 
 
