@@ -237,8 +237,7 @@ friendForm.addEventListener("submit", function(e) {
         div.classList.remove("hidden");
     })
     welcomeGreet.textContent = person1.welcome();
-    peopleArray.push(person1);
-    console.log(peopleArray);
+    
 })
 
 
@@ -249,7 +248,7 @@ let person2emoji = document.createElement('p');
 
 button2.addEventListener("click", function(e) {
     e.preventDefault();
-    if (person2) { //if person2 object exists, edit it
+    if (person2) { 
     person2Name.textContent = "";
     person2emoji.textContent = "";
     
@@ -257,7 +256,6 @@ button2.addEventListener("click", function(e) {
     friendForm2.classList.remove("hidden");
         friendForm2.addEventListener("submit", function(e) {
             e.preventDefault();
-            console.log(" person 2 edit object e listener worked");
                 person2 = new Person(friendName2.value, favFood2.value, favDess2.value, 
                 favBev2.value, favGenre2.value, favCity2.value, country2.value, foodCook2.value, 
                 musicArt2.value, histCulture2.value, 
@@ -271,7 +269,6 @@ button2.addEventListener("click", function(e) {
         friendForm2.classList.add("hidden");
         containerTwo.classList.add("hiddenModal");
         personTwo.setAttribute("title", `${person2.greeting()}`);
-        peopleArray.push(person2);
         })
     } else {
         button2.textContent = "Edit info";
@@ -286,7 +283,6 @@ button2.addEventListener("click", function(e) {
                         fitSport2.value, animalNature2.value)
 
                 console.log(`${person2.animalNature}`);
-                console.log(" person 2 instantiation e listener worked");
                 person2Name.textContent = person2.name;
                 personTwo.append(person2Name);
                 person2emoji.textContent = "⌓";
@@ -296,7 +292,6 @@ button2.addEventListener("click", function(e) {
                 friendForm2.classList.add("hidden");
                 containerTwo.classList.add("hiddenModal");
                 personTwo.setAttribute("title", `${person2.greeting()}`);
-                peopleArray.push(person2);
         })
     }
     
@@ -339,7 +334,6 @@ button3.addEventListener("click", function(e) {
                         e.preventDefault();
                         person3 = new Person(friendName3.value, favFood3.value, favDess3.value, 
                         favBev3.value, favGenre3.value, favCity3.value, country3.value)
-                        console.log(" person 3 instantiation e listener worked");
                         person3Name.textContent = person3.name;
                         personThree.append(person3Name);
                         person3emoji.textContent = "✷";
@@ -371,7 +365,6 @@ button4.addEventListener("click", function(e) {
                     e.preventDefault();
                     person4 = new Person(friendName4.value, favFood4.value, favDess4.value, 
                             favBev4.value, favGenre4.value, favCity4.value, country4.value)
-                    console.log(" person 4 edit e listener worked");
                     person4Name.textContent = person4.name;
                     person4emoji.textContent = "﹆";
                     person4emoji.style.fontSize = "1.3rem";
@@ -389,7 +382,6 @@ button4.addEventListener("click", function(e) {
                         e.preventDefault();
                         person4 = new Person(friendName4.value, favFood4.value, favDess4.value, 
                                 favBev4.value, favGenre4.value, favCity4.value, country4.value)
-                        console.log(" person 4 instantiation e listener worked");
                         person4Name.textContent = person4.name;
                         personFour.append(person4Name);
                         person4emoji.textContent = "﹆";
@@ -421,7 +413,6 @@ button5.addEventListener("click", function(e) {
                 e.preventDefault();
                 person5 = new Person(friendName5.value, favFood5.value, favDess5.value, 
                         favBev5.value, favGenre5.value, favCity5.value, country5.value)
-                console.log(" person 5 edit e listener worked");
                 person5Name.textContent = person5.name;
                 person5emoji.textContent = "⌇";
                 person5emoji.style.fontSize = "1.3rem";
@@ -438,8 +429,7 @@ button5.addEventListener("click", function(e) {
             friendForm5.addEventListener("submit", function(e) {
                 e.preventDefault();
                 person5 = new Person(friendName5.value, favFood5.value, favDess5.value, 
-                        favBev5.value, favGenre5.value, favCity5.value, country5.value)                
-                console.log(" person 5 instantiation e listener worked");            
+                        favBev5.value, favGenre5.value, favCity5.value, country5.value)                          
                 person5Name.textContent = person5.name;
                 personFive.append(person5Name);
                 person5emoji.textContent = "⌇";
@@ -471,7 +461,6 @@ button6.addEventListener("click", function(e) {
                 e.preventDefault();
                 person6 = new Person(friendName6.value, favFood6.value, favDess6.value, 
                         favBev6.value, favGenre6.value, favCity6.value, country6.value)
-                console.log(" person 6 edit e listener worked");
                 person6Name.textContent = person6.name;
                 person6emoji.textContent = "✰";
                 person6emoji.style.fontSize = "1.3rem";
@@ -489,7 +478,6 @@ button6.addEventListener("click", function(e) {
             e.preventDefault();
             person6 = new Person(friendName6.value, favFood6.value, favDess6.value, 
                 favBev6.value, favGenre6.value, favCity6.value, country6.value)
-            console.log(" person 6 instantiation e listener worked");
             person6Name.textContent = person6.name;
             personSix.append(person6Name);
             person6emoji.textContent = "✰";
@@ -507,14 +495,105 @@ button6.addEventListener("click", function(e) {
 })
 
 //**~~  Create a way to compare each person's data/favs and suggest experience ideas!  ~~**//
+//Food:
+const suggestFood = document.createElement("div");
+suggestFood.classList.add("personcards__suggest");
+suggestFood.style.gridColumn = "4 / 5";
+cardContainer.insertBefore(suggestFood, containerCardTwo);
+suggestFood.style.border = "2px solid blue";
+
+
 
 goButton.addEventListener("click", function(e) {
-    peopleArray = [person1, person2, person3, person4, person5, person6];
-    // console.log(peopleArray);
-    
-    peopleArray.filter()
+    e.preventDefault();
+    if (person1 && person2 && person3 && person4 && person5 && person6) {
+        peopleArray = [person1, person2, person3, person4, person5, person6];
+    } else if (person1 && person2 && person4, person6, person5) {
+        peopleArray = [person1, person2, person4, person6, person5];
+    } else if (person1 && person2 && person4 && person6) {
+        peopleArray = [person1, person2, person4, person6];
+    } else if (person1 && person2 && person4) {
+        peopleArray = [person1, person2, person4];
+    } else if (person1 && person2) {
+        peopleArray = [person1, person2];
+    } else {
+        console.log("please add some friends to get started!");
+    }
 
+    console.log(peopleArray);
+   
+    for (let i=0; i<peopleArray.length; i++) {
+        if (peopleArray[i].favoriteFood == peopleArray[0].favoriteFood) {
+            suggestFood.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteFood}!  
+            Why not get take out and share a socially distant meal?`
+            console.log(`${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteFood}!  
+            Why not get take out and share a socially distant meal?`)
+            } else {
+            suggestFood.textContent = "";
+            }
+        }
+    
+
+//Dessert:
+const suggestDessert = document.createElement("div");
+suggestDessert.classList.add("personcards__suggest");
+suggestDessert.style.gridColumn = "2";
+suggestDessert.style.gridRow = "1";
+cardContainer.insertBefore(suggestDessert, containerCardThree);
+suggestDessert.style.border = "2px solid magenta";    
+
+ for (let i=0; i<peopleArray.length; i++) {
+    if (peopleArray[i].favoriteDessert == peopleArray[0].favoriteDessert) {
+        suggestDessert.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteDessert}!  
+        Why not get take out and share a socially distant treat?`
+        console.log(`${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteDessert}!  
+        Why not get take out and share a socially distant meal?`)
+        } else {
+        suggestDessert.textContent = "";
+        }
+    }
+
+
+//Beverage:
+const suggestBev = document.createElement("div");
+suggestBev.classList.add("personcards__suggest");
+//suggestBev.style.gridColumn = "2";
+//suggestBev.style.gridRow = "1";
+cardContainer.insertBefore(suggestBev, containerCardFour);
+suggestBev.style.border = "2px solid green";    
+
+ for (let i=0; i<peopleArray.length; i++) {
+    if (peopleArray[i].favoriteBeverage == peopleArray[0].favoriteBeverage) {
+        suggestBev.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteBeverage}!  
+        Why not bond over a socially distant beverage?`
+        console.log(`${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteBeverage}!  
+        Why not bond over a socially distant beverage?`)
+        } else {
+        suggestBev.textContent = "";
+        }
+    }
+
+
+//Film Genre:
+const suggestFilm = document.createElement("div");
+suggestFilm.classList.add("personcards__suggest");
+//suggestBev.style.gridColumn = "2";
+//suggestBev.style.gridRow = "1";
+cardContainer.insertBefore(suggestFilm, containerCardFive);
+suggestFilm.style.border = "2px solid black";    
+
+ for (let i=0; i<peopleArray.length; i++) {
+    if (peopleArray[i].favoriteFilmGenre == peopleArray[0].favoriteFilmGenre) {
+        suggestFilm.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteFilmGenre}!  
+        Why not set up a watch party?!`
+        console.log(`${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteFilmGenre}!  
+        Why not set up a watch party?!`)
+        } else {
+        suggestFilm.textContent = "";
+        }
+    }    
 })
+
 
 
 
