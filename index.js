@@ -116,6 +116,7 @@ const button4 = document.querySelector(".button__person4");
 const button5 = document.querySelector(".button__person5");
 const button6 = document.querySelector(".button__person6");
 const formCloseBtns = document.querySelectorAll(".container__form--closeBtn");
+const goButton = document.querySelector(".gobutton");
 
 //test area
 //enter test console.log code here!
@@ -181,7 +182,7 @@ let person1Name = document.createElement('p');
 let person1emoji = document.createElement('p');
 
 button1.addEventListener("click", function(e) {
-    peopleArray.pop(person1);
+  
     e.preventDefault();
     person1Name.textContent = "";
     person1emoji.textContent = "";
@@ -251,7 +252,7 @@ button2.addEventListener("click", function(e) {
     if (person2) { //if person2 object exists, edit it
     person2Name.textContent = "";
     person2emoji.textContent = "";
-    peopleArray.pop(person2);
+    
     containerTwo.classList.remove("hiddenModal");
     friendForm2.classList.remove("hidden");
         friendForm2.addEventListener("submit", function(e) {
@@ -278,7 +279,7 @@ button2.addEventListener("click", function(e) {
         containerTwo.classList.remove("hiddenModal");
             friendForm2.addEventListener("submit", function(e) {
                 e.preventDefault();
-                peopleArray.pop(person2);
+                
                 person2 = new Person(friendName2.value, favFood2.value, favDess2.value, 
                         favBev2.value, favGenre2.value, favCity2.value, country2.value, foodCook2.value, 
                         musicArt2.value, histCulture2.value, 
@@ -311,7 +312,7 @@ button3.addEventListener("click", function(e) {
     if (person3) {
         person3Name.textContent = "";
         person3emoji.textContent = "";
-        peopleArray.pop(person3);
+        
         friendForm3.classList.remove("hidden");
         containerThree.classList.remove("hiddenModal");
             friendForm3.addEventListener("submit", function(e) {
@@ -330,7 +331,7 @@ button3.addEventListener("click", function(e) {
                 peopleArray.push(person3);
                 })    
             } else {
-                peopleArray.pop(person3);
+               
                 button3.textContent = "Edit info";
                 friendForm3.classList.remove("hidden");
                 containerThree.classList.remove("hiddenModal");
@@ -361,7 +362,7 @@ let person4emoji = document.createElement('p');
 button4.addEventListener("click", function(e) {
     e.preventDefault();
         if (person4) {
-            peopleArray.pop(person4);
+            
             person4Name.textContent = "";
             person4emoji.textContent = "";
             containerFour.classList.remove("hiddenModal");
@@ -499,12 +500,27 @@ button6.addEventListener("click", function(e) {
             containerSix.classList.add("hiddenModal");
             personSix.setAttribute("title", `${person6.greeting()}`);
             peopleArray.push(person6);
-            console.log(peopleArray);
+            
         })
         }
+        
 })
 
 //**~~  Create a way to compare each person's data/favs and suggest experience ideas!  ~~**//
+
+goButton.addEventListener("click", function(e) {
+    peopleArray = [person1, person2, person3, person4, person5, person6];
+    // console.log(peopleArray);
+    
+    peopleArray.filter()
+
+})
+
+
+
+
+
+
 
 // //Fav foods person 1 and 2:
 // const suggestFood = document.createElement("div");
@@ -684,34 +700,32 @@ button6.addEventListener("click", function(e) {
 //let person1array = person1.array();
 // I"m just using this to test atm
 
-let people = [
-    {
-    name: "Amy",
-    likes: ["chocolate", "beer", "summer"],
-    city: "Portland" 
-    },
-    {
-    name: "Brian", 
-    likes: ["thai", "coffee", "summer"],
-    city: "Detroit"
-    },
-    {
-    name: "Shannon", 
-    likes: ["pizza", "beer", "summer"],
-    city: "Los Angeles"
-    }
-]
+// let people = [
+//     {
+//     name: "Amy",
+//     likes: ["chocolate", "beer", "summer"],
+//     city: "Portland" 
+//     },
+//     {
+//     name: "Brian", 
+//     likes: ["thai", "coffee", "summer"],
+//     city: "Detroit"
+//     },
+//     {
+//     name: "Shannon", 
+//     likes: ["pizza", "beer", "summer"],
+//     city: "Los Angeles"
+//     }
+// ]
 
-const beerLovers = people.filter((person) => {
-    const likes = person && person.likes;
-    //console.log(likes);
-    return likes.includes('beer');
-    //console.log(person);
-});
+// const beerLovers = people.filter((person) => {
+//     const likes = person && person.likes;
+//     //console.log(likes);
+//     return likes.includes('beer');
+//     //console.log(person);
+// });
 
-console.log(beerLovers);
-
-//let allArrays = [person1favsArray, person2favsArray, person3favsArray]; 
+// console.log(beerLovers);
 
 
 // allArrays.forEach(array => {
