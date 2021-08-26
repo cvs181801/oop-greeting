@@ -43,6 +43,7 @@ const favCity = document.getElementById("fav-city");
 const country = document.getElementById("country");
 const foodCook = document.getElementById("food/cooking");
 const musicArt = document.getElementById("music/art");
+    
 const histCulture = document.getElementById("history/culture");
 const fitSport = document.getElementById("fitness/sports");
 const animalNature = document.getElementById("animals/nature");
@@ -69,6 +70,11 @@ const favBev3 = document.getElementById("fav-bev3");
 const favGenre3 = document.getElementById("fav-genre3");
 const favCity3 = document.getElementById("fav-city3");
 const country3 = document.getElementById("country3");
+const foodCook3 = document.getElementById("food/cooking3");
+const musicArt3 = document.getElementById("music/art3");
+const histCulture3 = document.getElementById("history/culture3");
+const fitSport3 = document.getElementById("fitness/sports3");
+const animalNature3 = document.getElementById("animals/nature3");
 
 //4th friend form
 const friendName4 = document.getElementById("name4");
@@ -78,6 +84,11 @@ const favBev4 = document.getElementById("fav-bev4");
 const favGenre4 = document.getElementById("fav-genre4");
 const favCity4 = document.getElementById("fav-city4");
 const country4 = document.getElementById("country4");
+const foodCook4 = document.getElementById("food/cooking4");
+const musicArt4 = document.getElementById("music/art4");
+const histCulture4 = document.getElementById("history/culture4");
+const fitSport4 = document.getElementById("fitness/sports4");
+const animalNature4 = document.getElementById("animals/nature4");
 
 //5th friend form
 const friendName5 = document.getElementById("name5");
@@ -87,6 +98,11 @@ const favBev5 = document.getElementById("fav-bev5");
 const favGenre5 = document.getElementById("fav-genre5");
 const favCity5 = document.getElementById("fav-city5");
 const country5 = document.getElementById("country5");
+const foodCook5 = document.getElementById("food/cooking5");
+const musicArt5 = document.getElementById("music/art5");
+const histCulture5 = document.getElementById("history/culture5");
+const fitSport5 = document.getElementById("fitness/sports5");
+const animalNature5 = document.getElementById("animals/nature5");
 
 //6th friend form
 const friendName6 = document.getElementById("name6");
@@ -96,6 +112,11 @@ const favBev6 = document.getElementById("fav-bev6");
 const favGenre6 = document.getElementById("fav-genre6");
 const favCity6 = document.getElementById("fav-city6");
 const country6 = document.getElementById("country6");
+const foodCook6 = document.getElementById("food/cooking6");
+const musicArt6 = document.getElementById("music/art6");
+const histCulture6 = document.getElementById("history/culture6");
+const fitSport6 = document.getElementById("fitness/sports6");
+const animalNature6 = document.getElementById("animals/nature6");
 
 //inner cards for the friends and user 
 let personOne = document.querySelector(".person1");
@@ -194,9 +215,9 @@ button1.addEventListener("click", function(e) {
             e.preventDefault();
             console.log(person1.name, person1.favoriteFood);
         person1 = new Person(friendName.value, favFood.value, favDess.value, 
-            favBev.value, favGenre.value, favCity.value, country.value, foodCook.value, 
-            musicArt.value, histCulture.value, 
-            fitSport.value, animalNature.value)
+            favBev.value, favGenre.value, favCity.value, country.value, foodCook.checked, 
+            musicArt.checked, histCulture.checked, 
+            fitSport.checked, animalNature.checked)
 
             console.log(`${person1.animalNature}`);
         person1Name.textContent = person1.name;
@@ -218,9 +239,9 @@ friendForm.addEventListener("submit", function(e) {
     e.preventDefault();
     
     person1 = new Person(friendName.value, favFood.value, favDess.value, 
-        favBev.value, favGenre.value, favCity.value, country.value, foodCook.value, 
-        musicArt.value, histCulture.value, 
-        fitSport.value, animalNature.value)
+        favBev.value, favGenre.value, favCity.value, country.value, foodCook.checked, 
+        musicArt.checked, histCulture.checked, 
+        fitSport.checked, animalNature.checked)
     
     console.log(`${person1.animalNature}`);
     person1Name.textContent = person1.name;
@@ -236,8 +257,7 @@ friendForm.addEventListener("submit", function(e) {
     hiddenDivs.forEach(div => {
         div.classList.remove("hidden");
     })
-    welcomeGreet.textContent = person1.welcome();
-    
+    welcomeGreet.textContent = person1.welcome();  
 })
 
 
@@ -257,9 +277,9 @@ button2.addEventListener("click", function(e) {
         friendForm2.addEventListener("submit", function(e) {
             e.preventDefault();
                 person2 = new Person(friendName2.value, favFood2.value, favDess2.value, 
-                favBev2.value, favGenre2.value, favCity2.value, country2.value, foodCook2.value, 
-                musicArt2.value, histCulture2.value, 
-                fitSport2.value, animalNature2.value)
+                favBev2.value, favGenre2.value, favCity2.value, country2.value, foodCook2.checked, 
+                musicArt2.checked, histCulture2.checked, 
+                fitSport2.checked, animalNature2.checked)
 
         console.log(`${person2.animalNature}`);        
         person2Name.textContent = person2.name;
@@ -278,9 +298,9 @@ button2.addEventListener("click", function(e) {
                 e.preventDefault();
                 
                 person2 = new Person(friendName2.value, favFood2.value, favDess2.value, 
-                        favBev2.value, favGenre2.value, favCity2.value, country2.value, foodCook2.value, 
-                        musicArt2.value, histCulture2.value, 
-                        fitSport2.value, animalNature2.value)
+                        favBev2.value, favGenre2.value, favCity2.value, country2.value, foodCook2.checked, 
+                        musicArt2.checked, histCulture2.checked, 
+                        fitSport2.checked, animalNature2.checked)
 
                 console.log(`${person2.animalNature}`);
                 person2Name.textContent = person2.name;
@@ -517,7 +537,7 @@ goButton.addEventListener("click", function(e) {
     } else if (person1 && person2) {
         peopleArray = [person1, person2];
     } else {
-        console.log("please add some friends to get started!");
+        welcomeGreet.textContent = "Please add some friends to get started!";
     }
 
     console.log(peopleArray);
@@ -641,7 +661,8 @@ cardContainer.insertBefore(suggestFoodandCooking, containerCardSix);
 suggestFoodandCooking.style.border = "2px solid purple";    
 
  for (let i=0; i<peopleArray.length; i++) {
-    if (peopleArray[i].foodCook.checked && peopleArray[0].foodCook.checked) {
+     
+    if (peopleArray[i].foodCook && peopleArray[0].foodCook) {
             suggestFoodandCooking.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} are interested in Food & Cooking!  
             Why not enjoy a Food & Cooking virtual experience together?`
             console.log(`${peopleArray[i].name} and ${peopleArray[0].name} are interested in Food & Cooking!  
@@ -649,7 +670,26 @@ suggestFoodandCooking.style.border = "2px solid purple";
         } else {
             suggestFoodandCooking.textContent = "";
         }
-    }      
+    }     
+    
+//Music & Art:
+const suggestMusicandArt = document.createElement("div");
+suggestMusicandArt.classList.add("personcards__suggest");
+suggestMusicandArt.style.gridColumn = "6";
+suggestMusicandArt.style.gridRow = "1";
+cardContainer.insertBefore(suggestMusicandArt, containerCardSix);
+suggestMusicandArt.style.border = "2px solid skyblue";    
+
+ for (let i=0; i<peopleArray.length; i++) {
+    if (peopleArray[i].musicArt && peopleArray[0].musicArt) {
+        suggestMusicandArt.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} are interested in Music & Art!  
+            Why not enjoy a Music & Art related virtual experience together?`
+            console.log(`${peopleArray[i].name} and ${peopleArray[0].name} are interested in Music & Art!  
+            Why not enjoy a Music & Art related virtual experience together?`)
+        } else {
+            suggestMusicandArt.textContent = "";
+        }
+    }        
 })
 
 
