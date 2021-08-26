@@ -333,7 +333,9 @@ button3.addEventListener("click", function(e) {
             friendForm3.addEventListener("submit", function(e) {
                 e.preventDefault();
                 person3 = new Person(friendName3.value, favFood3.value, favDess3.value, 
-                        favBev3.value, favGenre3.value, favCity3.value, country3.value)
+                        favBev3.value, favGenre3.value, favCity3.value, country3.value, foodCook3.checked, 
+                        musicArt3.checked, histCulture3.checked, 
+                        fitSport3.checked, animalNature3.checked)
                 
                 console.log(" person 3 edit e listener worked");
                 person3Name.textContent = person3.name;
@@ -353,7 +355,9 @@ button3.addEventListener("click", function(e) {
                     friendForm3.addEventListener("submit", function(e) {
                         e.preventDefault();
                         person3 = new Person(friendName3.value, favFood3.value, favDess3.value, 
-                        favBev3.value, favGenre3.value, favCity3.value, country3.value)
+                        favBev3.value, favGenre3.value, favCity3.value, country3.value, foodCook3.checked, 
+                        musicArt3.checked, histCulture3.checked, 
+                        fitSport3.checked, animalNature3.checked)
                         person3Name.textContent = person3.name;
                         personThree.append(person3Name);
                         person3emoji.textContent = "✷";
@@ -384,7 +388,9 @@ button4.addEventListener("click", function(e) {
                 friendForm4.addEventListener("submit", function(e) {
                     e.preventDefault();
                     person4 = new Person(friendName4.value, favFood4.value, favDess4.value, 
-                            favBev4.value, favGenre4.value, favCity4.value, country4.value)
+                            favBev4.value, favGenre4.value, favCity4.value, country4.value, foodCook4.checked, 
+                            musicArt4.checked, histCulture4.checked, 
+                            fitSport4.checked, animalNature4.checked)
                     person4Name.textContent = person4.name;
                     person4emoji.textContent = "﹆";
                     person4emoji.style.fontSize = "1.3rem";
@@ -401,7 +407,9 @@ button4.addEventListener("click", function(e) {
                     friendForm4.addEventListener("submit", function(e) {
                         e.preventDefault();
                         person4 = new Person(friendName4.value, favFood4.value, favDess4.value, 
-                                favBev4.value, favGenre4.value, favCity4.value, country4.value)
+                                favBev4.value, favGenre4.value, favCity4.value, country4.value, foodCook4.checked, 
+                                musicArt4.checked, histCulture4.checked, 
+                                fitSport4.checked, animalNature4.checked)
                         person4Name.textContent = person4.name;
                         personFour.append(person4Name);
                         person4emoji.textContent = "﹆";
@@ -432,7 +440,9 @@ button5.addEventListener("click", function(e) {
             friendForm5.addEventListener("submit", function(e) {
                 e.preventDefault();
                 person5 = new Person(friendName5.value, favFood5.value, favDess5.value, 
-                        favBev5.value, favGenre5.value, favCity5.value, country5.value)
+                        favBev5.value, favGenre5.value, favCity5.value, country5.value, foodCook5.checked, 
+                        musicArt5.checked, histCulture5.checked, 
+                        fitSport5.checked, animalNature5.checked)
                 person5Name.textContent = person5.name;
                 person5emoji.textContent = "⌇";
                 person5emoji.style.fontSize = "1.3rem";
@@ -449,7 +459,9 @@ button5.addEventListener("click", function(e) {
             friendForm5.addEventListener("submit", function(e) {
                 e.preventDefault();
                 person5 = new Person(friendName5.value, favFood5.value, favDess5.value, 
-                        favBev5.value, favGenre5.value, favCity5.value, country5.value)                          
+                        favBev5.value, favGenre5.value, favCity5.value, country5.value, foodCook5.checked, 
+                        musicArt5.checked, histCulture5.checked, 
+                        fitSport5.checked, animalNature5.checked)                          
                 person5Name.textContent = person5.name;
                 personFive.append(person5Name);
                 person5emoji.textContent = "⌇";
@@ -480,7 +492,9 @@ button6.addEventListener("click", function(e) {
             friendForm6.addEventListener("submit", function(e) {
                 e.preventDefault();
                 person6 = new Person(friendName6.value, favFood6.value, favDess6.value, 
-                        favBev6.value, favGenre6.value, favCity6.value, country6.value)
+                        favBev6.value, favGenre6.value, favCity6.value, country6.value, foodCook6.checked, 
+                        musicArt6.checked, histCulture6.checked, 
+                        fitSport6.checked, animalNature6.checked)
                 person6Name.textContent = person6.name;
                 person6emoji.textContent = "✰";
                 person6emoji.style.fontSize = "1.3rem";
@@ -497,7 +511,9 @@ button6.addEventListener("click", function(e) {
         friendForm6.addEventListener("submit", function(e) {
             e.preventDefault();
             person6 = new Person(friendName6.value, favFood6.value, favDess6.value, 
-                favBev6.value, favGenre6.value, favCity6.value, country6.value)
+                favBev6.value, favGenre6.value, favCity6.value, country6.value, foodCook6.checked, 
+                musicArt6.checked, histCulture6.checked, 
+                fitSport6.checked, animalNature6.checked)
             person6Name.textContent = person6.name;
             personSix.append(person6Name);
             person6emoji.textContent = "✰";
