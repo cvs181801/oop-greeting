@@ -1,7 +1,10 @@
 :root {
     --ff-accent: 'Prompt', sans-serif;
     --ff-main: 'Josefin Sans', sans-serif;
-    --brown: rgb(122, 61, 0);
+    --brown: rgb(88, 44, 0);
+    --blanchedAlmond: rgb(255, 235, 205);
+    --peachy: rgb(247, 226, 199);
+    --slateGreen: rgb(86, 128, 115);
 }
 
 * {
@@ -18,25 +21,23 @@ body {
     color: var(--brown);
     align-items: center;
     justify-content: center;
-    z-index: 1;
+
 }
 
 .backgrounddiv {
     background-image: url(/Users/casvalkyriespicer/Documents/GitHub/oop-greeting/pics/terrazo2.jpeg);
-    background-color: peachpuff;
-    background-blend-mode: multiply;
-    opacity: .8;
+    background-color: rgba(255, 235, 205, 0.5);
+    background-blend-mode: screen;
     width: 100%;
     min-height: 100vh;
     background-size: cover;
-    z-index: 2;
+  
 }
 
 h1,
 h2 {
     font-family: var(--ff-accent);
     line-height: 2rem;
-    
 }
 
 .container,
@@ -49,19 +50,23 @@ h2 {
     padding: .5em;
     max-width: 25em;
     z-index: 3;
+    
 }
+ 
 
 .container * button,
 .container2 * button,
 .container3 * button,
 .container4 * button,
 .container5 * button,
-.container6 * button {
-    background-color: grey;
+.container6 * button,
+.gobutton {
+    background-color: rgb(86, 128, 115);
     border-radius: 3px;
     font-family: inherit;
     padding: .3em;
     z-index: 3;
+    
 }
 
 .container * input,
@@ -70,17 +75,17 @@ h2 {
 .container4 * input, 
 .container5 * input, 
 .container6 * input  {
-    background-color: blanchedalmond;
+    background-color: peachpuff;
     font-family: inherit;
     font-size: 1rem;
     height: 1.3em;
     max-width: 30em;
     margin: .75em;
-    border: 1px solid grey;
+    border: 1px solid var(--slateGreen);
     border-radius: 3px;
     font-family: inherit;
     transition: transform 250ms;
-    z-index: 3;
+   
 }
 
 input:focus {
@@ -89,7 +94,10 @@ input:focus {
 
 .container__form--closeBtn {
     float: right;
-    z-index: 3;
+    background-color: var(--slateGreen);
+    border-radius: 7px;
+    font-family: inherit;
+    padding: .3em;
 }
 
 .hidden {
@@ -99,30 +107,33 @@ input:focus {
 
 .hiddenModal {
     display: none;
-    
 }
 
-/*.person2,
-.person3,
-.person4,
-.person5,
-.person6 {
-        
-        
-} */
+.personcards {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: peru;
+    max-width: 75vw;
+    margin: 0 auto;
+    border-radius: 67% 80% 78% 90%;
+    padding: 2em;
+   
+}
+
 
 .button__person1,
 .button__person2,
 .button__person3,
 .button__person4,
 .button__person5,
-.button__person6 {
-    background-color: grey;
+.button__person6,
+.gobutton {
+    background-color: var(--slateGreen);
     border-radius: 7px;
     font-family: inherit;
     padding: .3em;
-    margin: 1.5em;
-    z-index: 3;
+    margin: 1.5em; 
 }
 
 .person1__container,
@@ -131,7 +142,7 @@ input:focus {
 .person4__container,
 .person5__container,
 .person6__container {
-    background-color: blanchedalmond;
+    background-color: var(--peachy);
     padding: .3em;
     margin: .3em;
     max-width: 10em;
@@ -140,11 +151,11 @@ input:focus {
     text-align: center;
     justify-content: center;
     padding: .5em;
-    z-index: 3;
+    
 }
 
 .person1__container {
-border-radius: 50% 40% 33% 33%;
+    border-radius: 50% 40% 33% 33%;
 }
 
 .person2__container {
@@ -167,17 +178,15 @@ border-radius: 50% 40% 33% 33%;
     border-radius: 30% 99% 20% 67%;
 }
 
-.personcards {
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    z-index: 3;
-}
+
 
 /* MEDIA QUERiES*/
 
 @media (min-width: 800px) {
 
+    h1 {
+        padding-top: 1em;
+    }
     h1,
     h2,
     .welcome {
@@ -187,22 +196,20 @@ border-radius: 50% 40% 33% 33%;
     }
 
     .welcome {
-        margin-bottom: 3em;
+        margin-bottom: 1.5em;
     }
 
     p {
         text-align: center;
     }   
 
-    .personcards {
-        
+    .personcards {  
         display: grid;
         grid-template-columns: 
         minmax(10em, 10em) minmax(10em, 10em) minmax(10em, 10em) minmax(10em, 10em) minmax(10em, 10em) minmax(10em, 10em);
-        
         grid-template-rows: minmax(10em, 10em) minmax(10em, 10em) minmax(10em, 10em);
         gap: .5em; 
-       
+        padding: 2em;
     }
 
    .person1__container {
@@ -228,5 +235,11 @@ border-radius: 50% 40% 33% 33%;
     .person6__container {
         grid-column: 4 / 5 ;
         }
+
+    .gobutton {
+        grid-column: 3;
+        grid-row: 2;
+        justify-self: right;
+    }
      
 }

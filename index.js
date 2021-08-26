@@ -536,7 +536,7 @@ const suggestFood = document.createElement("div");
 suggestFood.classList.add("personcards__suggest");
 suggestFood.style.gridColumn = "4 / 5";
 cardContainer.insertBefore(suggestFood, containerCardTwo);
-suggestFood.style.border = "2px solid blue";
+//suggestFood.style.border = "2px solid blue";
 
 
 
@@ -576,7 +576,7 @@ suggestDessert.classList.add("personcards__suggest");
 suggestDessert.style.gridColumn = "2";
 suggestDessert.style.gridRow = "1";
 cardContainer.insertBefore(suggestDessert, containerCardThree);
-suggestDessert.style.border = "2px solid magenta";    
+//suggestDessert.style.border = "2px solid magenta";    
 
  for (let i=0; i<peopleArray.length; i++) {
     if (peopleArray[i].favoriteDessert == peopleArray[0].favoriteDessert) {
@@ -596,7 +596,7 @@ suggestBev.classList.add("personcards__suggest");
 //suggestBev.style.gridColumn = "2";
 //suggestBev.style.gridRow = "1";
 cardContainer.insertBefore(suggestBev, containerCardFour);
-suggestBev.style.border = "2px solid green";    
+//suggestBev.style.border = "2px solid green";    
 
  for (let i=0; i<peopleArray.length; i++) {
     if (peopleArray[i].favoriteBeverage == peopleArray[0].favoriteBeverage) {
@@ -616,7 +616,7 @@ suggestFilm.classList.add("personcards__suggest");
 //suggestBev.style.gridColumn = "2";
 //suggestBev.style.gridRow = "1";
 cardContainer.insertBefore(suggestFilm, containerCardFive);
-suggestFilm.style.border = "2px solid black";    
+//suggestFilm.style.border = "2px solid black";    
 
  for (let i=0; i<peopleArray.length; i++) {
     if (peopleArray[i].favoriteFilmGenre == peopleArray[0].favoriteFilmGenre) {
@@ -635,7 +635,7 @@ suggestCity.classList.add("personcards__suggest");
 //suggestCity.style.gridColumn = "2";
 //suggestCity.style.gridRow = "1";
 cardContainer.insertBefore(suggestCity, containerCardSix);
-suggestCity.style.border = "2px solid red";    
+//suggestCity.style.border = "2px solid red";    
 
  for (let i=0; i<peopleArray.length; i++) {
     if (peopleArray[i].favoriteCity == peopleArray[0].favoriteCity) {
@@ -654,7 +654,7 @@ suggestCountry.classList.add("personcards__suggest");
 suggestCountry.style.gridColumn = "5";
 suggestCountry.style.gridRow = "3";
 cardContainer.insertBefore(suggestCountry, containerCardSix);
-suggestCountry.style.border = "2px solid white";    
+//suggestCountry.style.border = "2px solid white";    
 
  for (let i=0; i<peopleArray.length; i++) {
     if (peopleArray[i].countryYoudLikeToVisit == peopleArray[0].countryYoudLikeToVisit) {
@@ -674,7 +674,7 @@ suggestFoodandCooking.classList.add("personcards__suggest");
 suggestFoodandCooking.style.gridColumn = "5";
 suggestFoodandCooking.style.gridRow = "2";
 cardContainer.insertBefore(suggestFoodandCooking, containerCardSix);
-suggestFoodandCooking.style.border = "2px solid purple";    
+//suggestFoodandCooking.style.border = "2px solid purple";    
 
  for (let i=0; i<peopleArray.length; i++) {
      
@@ -694,7 +694,7 @@ suggestMusicandArt.classList.add("personcards__suggest");
 suggestMusicandArt.style.gridColumn = "6";
 suggestMusicandArt.style.gridRow = "1";
 cardContainer.insertBefore(suggestMusicandArt, containerCardSix);
-suggestMusicandArt.style.border = "2px solid skyblue";    
+//suggestMusicandArt.style.border = "2px solid skyblue";    
 
  for (let i=0; i<peopleArray.length; i++) {
     if (peopleArray[i].musicArt && peopleArray[0].musicArt) {
@@ -714,7 +714,7 @@ suggestHistandCulture.classList.add("personcards__suggest");
 suggestHistandCulture.style.gridColumn = "6";
 suggestHistandCulture.style.gridRow = "3";
 cardContainer.insertBefore(suggestHistandCulture, containerCardSix);
-suggestHistandCulture.style.border = "2px solid aqua";    
+//suggestHistandCulture.style.border = "2px solid aqua";    
 
  for (let i=0; i<peopleArray.length; i++) {
     if (peopleArray[i].histCulture && peopleArray[0].histCulture) {
@@ -734,7 +734,7 @@ suggestFitSport.classList.add("personcards__suggest");
 suggestFitSport.style.gridColumn = "4";
 suggestFitSport.style.gridRow = "2";
 cardContainer.insertBefore(suggestFitSport, containerCardSix);
-suggestFitSport.style.border = "2px solid pink";    
+//suggestFitSport.style.border = "2px solid pink";    
 
  for (let i=0; i<peopleArray.length; i++) {
     if (peopleArray[i].fitSport && peopleArray[0].fitSport) {
@@ -753,7 +753,7 @@ suggestAnimalNature.classList.add("personcards__suggest");
 suggestAnimalNature.style.gridColumn = "1";
 suggestAnimalNature.style.gridRow = "1";
 cardContainer.insertBefore(suggestAnimalNature, containerCardSix);
-suggestAnimalNature.style.border = "2px solid goldenrod";    
+//suggestAnimalNature.style.border = "2px solid goldenrod";    
 
  for (let i=0; i<peopleArray.length; i++) {
     if (peopleArray[i].animalNature && peopleArray[0].animalNature) {
