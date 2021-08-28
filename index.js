@@ -569,17 +569,27 @@ goButton.addEventListener("click", function(e) {
         //     }
         //}
 
-let peopleFoodMap = peopleArray.map((person) => {
-         return person.favoriteFood;
+let peopleFoodMap = peopleArray.map((person) => { //still havent figured out how to access the person object at 0 index favFood value*** Object.entries() ***
+    
+    // if (person[0].favoriteFood === person[i].favoriteFood) {
+    //     return person.favoriteFood;
+    // }
+
+    // for(const[key,value] of Object.entries(person)) {
+    //     console.log(`${key}, ${value}`);
+    // }
+         
     });
 
-peopleFoodMap = peopleFoodMap.map(string => string.toLowerCase());
-
-peopleFoodMap = peopleFoodMap.map(food => {
-    console.log(food[0], food[1], food[2]);
-})
+//peopleFoodMap = peopleFoodMap.map(string => string.toLowerCase());
 
 //console.log(peopleFoodMap);  
+
+// peopleFoodMap = peopleFoodMap.map(food => {
+//     console.log(food[0], food[1], food[2]);
+// })
+
+
 
 //Dessert:
 const suggestDessert = document.createElement("div");
