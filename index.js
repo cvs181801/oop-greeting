@@ -649,19 +649,20 @@ cardContainer.insertBefore(suggestDessert, containerCardThree);
 
 
 //Beverage:
-const suggestBev = document.createElement("div");
+let suggestBev = document.createElement("div");
 suggestBev.classList.add("personcards__suggest");
 //suggestBev.style.gridColumn = "2";
 //suggestBev.style.gridRow = "1";
 cardContainer.insertBefore(suggestBev, containerCardFour);
 //suggestBev.style.border = "2px solid green";    
 
- for (let i=0; i<peopleArray.length; i++) {
+ for (let i=1; i<peopleArray.length; i++) {
     if (peopleArray[i].favoriteBeverage == peopleArray[0].favoriteBeverage) {
-        suggestBev.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteBeverage}!  
-        Why not bond over a socially distant beverage?`
+        //suggestBev.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteBeverage}!  
+        //Why not bond over a socially distant beverage?`
+        suggestBev.textContent += `${peopleArray[i].name}`;
         console.log(`${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteBeverage}!  
-        Why not bond over a socially distant beverage?`)
+        Why not bond over a socially distant beverage?`);
         } else {
         suggestBev.textContent = "";
         }
