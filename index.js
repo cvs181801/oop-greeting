@@ -559,32 +559,29 @@ goButton.addEventListener("click", function(e) {
     console.log(peopleArray);
 
 
-    //let peopleFoodMap = peopleArray.map((person) => { //still havent figured out how to access the person object at 0 index favFood value*** Object.entries() ***
-    
-    //for (const [key, value] of Object.entries(person))
-         //return `${key}, ${value}`;
+    //let peopleFoodMap = peopleArray.map((person) => { 
+    //first, access the value of the favoriteFood key:value pairs and change all the values toLowerCase().  //peopleFoodMap = peopleFoodMap.map(string => string.toLowerCase());
+    //if the other person objects have the same favorite food as the person object at index 0, map the entire person object, along with the person object at index 0 , into a new array called peopleFoodMap.
     //});
 
-//peopleFoodMap = peopleFoodMap.map(string => string.toLowerCase());
+    //from there, return the names of the people in this newly mapped array. 
+    
 
-//console.log(peopleFoodMap);  
-
-// peopleFoodMap = peopleFoodMap.map(food => {
-//     console.log(food[0], food[1], food[2]);
-// })
+    
 
 
-   //Food:
-    //for (let i=0; i<peopleArray.length; i++) {
-        // if (peopleArray[i].favoriteFood == peopleArray[0].favoriteFood) {
-        //     suggestFood.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteFood}!  
-        //     Why not get take out and share a socially distant meal?`
-        //     console.log(`${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteFood}!  
-        //     Why not get take out and share a socially distant meal?`)
-        //     } else {
-        //     suggestFood.textContent = "";
-        //     }
-        //}
+
+//Food:
+for (let i=0; i<peopleArray.length; i++) {
+    if (peopleArray[i].favoriteFood == peopleArray[0].favoriteFood) {
+        suggestFood.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteFood}!  
+        Why not get take out and share a socially distant meal?`
+        console.log(`${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteFood}!  
+        Why not get take out and share a socially distant meal?`)
+        } else {
+        suggestFood.textContent = "";
+        }
+    }
 
 
 //Dessert:
