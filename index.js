@@ -558,26 +558,49 @@ goButton.addEventListener("click", function(e) {
 
     console.log(peopleArray);
 
-//*** */
-    //let peopleFoodMap = peopleArray.map((person) => { 
-    //first, access the value of the favoriteFood key:value pairs and change all the values toLowerCase().  //peopleFoodMap = peopleFoodMap.map(string => string.toLowerCase());
-    //if the other person objects have the same favorite food as the person object at index 0, map the entire person object, along with the person object at index 0 , into a new array called peopleFoodMap.
-    //});
-
-    //from there, return the names of the people in this newly mapped array. 
-    //***
-
-    
 
 //Food:
-for (let i=0; i<peopleArray.length; i++) {
-    if (peopleArray[i].favoriteFood == peopleArray[0].favoriteFood) {
-        suggestFood.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteFood}!  
+// for (let i=0; i<peopleArray.length; i++) {
+//     if (peopleArray[i].favoriteFood == peopleArray[0].favoriteFood) {
+//         suggestFood.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteFood}!  
+//         Why not get take out and share a socially distant meal?`
+//         } else {
+//         suggestFood.textContent = "";
+//         }
+//     }
+
+// let foodArray = peopleArray.map(person => {
+//     return person.favoriteFood.toLowerCase();
+// })
+
+const filterFoodArray = peopleArray.filter((person) => {
+    //person.favoriteFood.toLowerCase();
+    return person.favoriteFood === peopleArray[0].favoriteFood;
+})
+
+console.log(filterFoodArray);
+console.log(peopleArray[5].favoriteFood);
+
+if (filterFoodArray.length === 6) {
+        suggestFood.textContent = `You, ${filterFoodArray[4].name}, ${filterFoodArray[3].name},
+        ${filterFoodArray[2].name}, ${filterFoodArray[1].name}, and ${filterFoodArray[0].name}, like ${filterFoodArray[0].favoriteFood}!  
         Why not get take out and share a socially distant meal?`
-        } else {
-        suggestFood.textContent = "";
-        }
-    }
+    } else if (filterFoodArray.length === 5){
+        suggestFood.textContent = `You, ${filterFoodArray[3].name},
+        ${filterFoodArray[2].name}, ${filterFoodArray[1].name}, and ${filterFoodArray[0].name}, like ${filterFoodArray[0].favoriteFood}!  
+        Why not get take out and share a socially distant meal?`
+    } else if (filterFoodArray.length === 4) {
+        suggestFood.textContent = `You, ${filterFoodArray[2].name}, ${filterFoodArray[1].name}, and ${filterFoodArray[0].name}, like ${filterFoodArray[0].favoriteFood}! 
+        Why not get take out and share a socially distant meal?`
+    } else if (filterFoodArray.length === 3) {
+        suggestFood.textContent = `You, ${filterFoodArray[1].name}, and ${filterFoodArray[0].name}, like ${filterFoodArray[0].favoriteFood}! 
+        Why not get take out and share a socially distant meal?`
+    } else if (filterFoodArray.length === 2) {
+        suggestFood.textContent = `You and ${filterFoodArray[0].name} like ${filterFoodArray[0].favoriteFood}! 
+        Why not get take out and share a socially distant meal?`
+    } else {
+    suggestFood.textContent = "";
+    } 
 
 
 //Dessert:
