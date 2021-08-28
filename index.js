@@ -559,7 +559,7 @@ goButton.addEventListener("click", function(e) {
     console.log(peopleArray);
 
 
-//Food:
+
 // for (let i=0; i<peopleArray.length; i++) {
 //     if (peopleArray[i].favoriteFood == peopleArray[0].favoriteFood) {
 //         suggestFood.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteFood}!  
@@ -578,25 +578,22 @@ const filterFoodArray = peopleArray.filter((person) => {
     return person.favoriteFood === peopleArray[0].favoriteFood;
 })
 
-console.log(filterFoodArray);
-console.log(peopleArray[5].favoriteFood);
-
 if (filterFoodArray.length === 6) {
-        suggestFood.textContent = `You, ${filterFoodArray[4].name}, ${filterFoodArray[3].name},
-        ${filterFoodArray[2].name}, ${filterFoodArray[1].name}, and ${filterFoodArray[0].name}, like ${filterFoodArray[0].favoriteFood}!  
+        suggestFood.textContent = `You, ${filterFoodArray[5].name}, ${filterFoodArray[4].name},
+        ${filterFoodArray[3].name}, ${filterFoodArray[2].name} and ${filterFoodArray[1].name} like ${filterFoodArray[0].favoriteFood}!  
         Why not get take out and share a socially distant meal?`
     } else if (filterFoodArray.length === 5){
-        suggestFood.textContent = `You, ${filterFoodArray[3].name},
-        ${filterFoodArray[2].name}, ${filterFoodArray[1].name}, and ${filterFoodArray[0].name}, like ${filterFoodArray[0].favoriteFood}!  
+        suggestFood.textContent = `You, ${filterFoodArray[4].name},
+        ${filterFoodArray[3].name}, ${filterFoodArray[2].name} and ${filterFoodArray[1].name} like ${filterFoodArray[0].favoriteFood}! 
         Why not get take out and share a socially distant meal?`
     } else if (filterFoodArray.length === 4) {
-        suggestFood.textContent = `You, ${filterFoodArray[2].name}, ${filterFoodArray[1].name}, and ${filterFoodArray[0].name}, like ${filterFoodArray[0].favoriteFood}! 
+        suggestFood.textContent = `You, ${filterFoodArray[3].name}, ${filterFoodArray[2].name} and ${filterFoodArray[1].name} like ${filterFoodArray[0].favoriteFood}! 
         Why not get take out and share a socially distant meal?`
     } else if (filterFoodArray.length === 3) {
-        suggestFood.textContent = `You, ${filterFoodArray[1].name}, and ${filterFoodArray[0].name}, like ${filterFoodArray[0].favoriteFood}! 
+        suggestFood.textContent = `You, ${filterFoodArray[2].name} and ${filterFoodArray[1].name} like ${filterFoodArray[0].favoriteFood}! 
         Why not get take out and share a socially distant meal?`
     } else if (filterFoodArray.length === 2) {
-        suggestFood.textContent = `You and ${filterFoodArray[0].name} like ${filterFoodArray[0].favoriteFood}! 
+        suggestFood.textContent = `You and ${filterFoodArray[1].name} like ${filterFoodArray[0].favoriteFood}! 
         Why not get take out and share a socially distant meal?`
     } else {
     suggestFood.textContent = "";
@@ -611,16 +608,44 @@ suggestDessert.style.gridRow = "1";
 cardContainer.insertBefore(suggestDessert, containerCardThree);
 //suggestDessert.style.border = "2px solid magenta";    
 
- for (let i=0; i<peopleArray.length; i++) {
-    if (peopleArray[i].favoriteDessert == peopleArray[0].favoriteDessert) {
-        suggestDessert.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteDessert}!  
-        Why not get take out and share a socially distant treat?`
-        console.log(`${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteDessert}!  
-        Why not get take out and share a socially distant meal?`)
+//  for (let i=0; i<peopleArray.length; i++) {
+//     if (peopleArray[i].favoriteDessert == peopleArray[0].favoriteDessert) {
+//         suggestDessert.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteDessert}!  
+//         Why not get take out and share a socially distant treat?`
+//         console.log(`${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteDessert}!  
+//         Why not get take out and share a socially distant meal?`)
+//         } else {
+//         suggestDessert.textContent = "";
+//         }
+//     }
+
+    const filterDessertArray = peopleArray.filter((person) => {
+        //person.favoriteFood.toLowerCase();
+        return person.favoriteDessert === peopleArray[0].favoriteDessert;
+    })
+    
+    console.log(filterDessertArray);
+    
+    if (filterDessertArray.length === 6) {
+            suggestDessert.textContent = `You, ${filterDessertArray[5].name}, ${filterDessertArray[4].name},
+            ${filterDessertArray[3].name}, ${filterDessertArray[2].name} and ${filterDessertArray[1].name} like ${filterDessertArray[0].favoriteDessert}!  
+            Why not share a socially distant treat?`
+        } else if (filterDessertArray.length === 5){
+            suggestDessert.textContent = `You, ${filterDessertArray[4].name},
+            ${filterDessertArray[3].name}, ${filterDessertArray[2].name} and ${filterDessertArray[1].name} like ${filterDessertArray[0].favoriteDessert}! 
+            Why not share a socially distant treat?`
+        } else if (filterDessertArray.length === 4) {
+            suggestDessert.textContent = `You, ${filterDessertArray[3].name}, ${filterDessertArray[2].name} and ${filterDessertArray[1].name} like ${filterDessertArray[0].favoriteDessert}! 
+            Why not share a socially distant treat?`
+        } else if (filterDessertArray.length === 3) {
+            suggestDessert.textContent = `You, ${filterDessertArray[2].name} and ${filterDessertArray[1].name} like ${filterDessertArray[0].favoriteDessert}! 
+            Why not share a socially distant treat?`
+        } else if (filterDessertArray.length === 2) {
+            suggestDessert.textContent = `You and ${filterDessertArray[1].name} like ${filterDessertArray[0].favoriteDessert}! 
+            Why not share a socially distant treat?`
         } else {
         suggestDessert.textContent = "";
-        }
-    }
+        }     
 
 
 //Beverage:
