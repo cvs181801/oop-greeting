@@ -558,17 +558,28 @@ goButton.addEventListener("click", function(e) {
 
     console.log(peopleArray);
    
-    for (let i=0; i<peopleArray.length; i++) {
-        if (peopleArray[i].favoriteFood == peopleArray[0].favoriteFood) {
-            suggestFood.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteFood}!  
-            Why not get take out and share a socially distant meal?`
-            console.log(`${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteFood}!  
-            Why not get take out and share a socially distant meal?`)
-            } else {
-            suggestFood.textContent = "";
-            }
-        }
-    
+    //for (let i=0; i<peopleArray.length; i++) {
+        // if (peopleArray[i].favoriteFood == peopleArray[0].favoriteFood) {
+        //     suggestFood.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteFood}!  
+        //     Why not get take out and share a socially distant meal?`
+        //     console.log(`${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteFood}!  
+        //     Why not get take out and share a socially distant meal?`)
+        //     } else {
+        //     suggestFood.textContent = "";
+        //     }
+        //}
+
+let peopleFoodMap = peopleArray.map((person) => {
+         return person.favoriteFood;
+    });
+
+peopleFoodMap = peopleFoodMap.map(string => string.toLowerCase());
+
+peopleFoodMap = peopleFoodMap.map(food => {
+    console.log(food[0], food[1], food[2]);
+})
+
+//console.log(peopleFoodMap);  
 
 //Dessert:
 const suggestDessert = document.createElement("div");
