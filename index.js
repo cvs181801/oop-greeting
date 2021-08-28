@@ -557,7 +557,24 @@ goButton.addEventListener("click", function(e) {
     }
 
     console.log(peopleArray);
-   
+
+
+    //let peopleFoodMap = peopleArray.map((person) => { //still havent figured out how to access the person object at 0 index favFood value*** Object.entries() ***
+    
+    //for (const [key, value] of Object.entries(person))
+         //return `${key}, ${value}`;
+    //});
+
+//peopleFoodMap = peopleFoodMap.map(string => string.toLowerCase());
+
+//console.log(peopleFoodMap);  
+
+// peopleFoodMap = peopleFoodMap.map(food => {
+//     console.log(food[0], food[1], food[2]);
+// })
+
+
+   //Food:
     //for (let i=0; i<peopleArray.length; i++) {
         // if (peopleArray[i].favoriteFood == peopleArray[0].favoriteFood) {
         //     suggestFood.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteFood}!  
@@ -568,27 +585,6 @@ goButton.addEventListener("click", function(e) {
         //     suggestFood.textContent = "";
         //     }
         //}
-
-let peopleFoodMap = peopleArray.map((person) => { //still havent figured out how to access the person object at 0 index favFood value*** Object.entries() ***
-    
-    // if (person[0].favoriteFood === person[i].favoriteFood) {
-    //     return person.favoriteFood;
-    // }
-
-    // for(const[key,value] of Object.entries(person)) {
-    //     console.log(`${key}, ${value}`);
-    // }
-         
-    });
-
-//peopleFoodMap = peopleFoodMap.map(string => string.toLowerCase());
-
-//console.log(peopleFoodMap);  
-
-// peopleFoodMap = peopleFoodMap.map(food => {
-//     console.log(food[0], food[1], food[2]);
-// })
-
 
 
 //Dessert:
