@@ -4,7 +4,7 @@
     --brown: rgb(88, 44, 0);
     --blanchedAlmond: rgb(255, 235, 205);
     --peachy: rgb(247, 226, 199);
-    --slateGreen: rgb(86, 128, 115);
+    --slateGreen: rgb(115, 139, 132);
 }
 
 * {
@@ -113,10 +113,10 @@ input:focus {
     display: grid;
     align-items: center;
     justify-content: center;
-    background-color: peru;
+    background-color: blanchedalmond;
     max-width: 75vw;
     margin: 0 auto;
-    border-radius: 67% 80% 78% 90%;
+    border-radius: 20px 20px 20px 20px;
     padding: 2em;
    
 }
@@ -142,7 +142,7 @@ input:focus {
 .person4__container,
 .person5__container,
 .person6__container {
-    background-color: var(--peachy);
+    background-color: peachpuff;
     padding: .3em;
     margin: .3em;
     max-width: 10em;

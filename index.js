@@ -558,26 +558,22 @@ goButton.addEventListener("click", function(e) {
 
     console.log(peopleArray);
 
-
+//*** */
     //let peopleFoodMap = peopleArray.map((person) => { 
     //first, access the value of the favoriteFood key:value pairs and change all the values toLowerCase().  //peopleFoodMap = peopleFoodMap.map(string => string.toLowerCase());
     //if the other person objects have the same favorite food as the person object at index 0, map the entire person object, along with the person object at index 0 , into a new array called peopleFoodMap.
     //});
 
     //from there, return the names of the people in this newly mapped array. 
-    
+    //***
 
     
-
-
 
 //Food:
 for (let i=0; i<peopleArray.length; i++) {
     if (peopleArray[i].favoriteFood == peopleArray[0].favoriteFood) {
         suggestFood.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteFood}!  
         Why not get take out and share a socially distant meal?`
-        console.log(`${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteFood}!  
-        Why not get take out and share a socially distant meal?`)
         } else {
         suggestFood.textContent = "";
         }
