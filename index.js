@@ -138,6 +138,7 @@ const button5 = document.querySelector(".button__person5");
 const button6 = document.querySelector(".button__person6");
 const formCloseBtns = document.querySelectorAll(".container__form--closeBtn");
 const goButton = document.querySelector(".gobutton");
+const clearButton = document.querySelector(".clearbutton");
 
 //test area
 //enter test console.log code here!
@@ -536,6 +537,8 @@ cardContainer.insertBefore(suggestFood, containerCardTwo);
 
 goButton.addEventListener("click", function(e) {
     e.preventDefault();
+    goButton.classList.add("hidden");
+    clearButton.classList.remove("hidden");
     if (person1 && person2 && person3 && person4 && person5 && person6) {
         peopleArray = [person1, person2, person3, person4, person5, person6];
     } else if (person1 && person2 && person4, person6, person5) {
@@ -917,4 +920,9 @@ if (filterAnimalNatureArray.length === 6) {
 
 })
 
+clearButton.addEventListener("click", function(e) {
+    e.preventDefault();
+    goButton.classList.remove("hidden");
+    clearButton.classList.add("hidden");
+})
 
