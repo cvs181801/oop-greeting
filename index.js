@@ -142,6 +142,7 @@ const goButton = document.querySelector(".gobutton");
 //test area
 //enter test console.log code here!
 
+
 //make the form close buttons work
 
  formCloseBtns.forEach(closeBtn => {
@@ -213,13 +214,12 @@ button1.addEventListener("click", function(e) {
     if (person1) {
             friendForm.addEventListener("submit", function(e) {
             e.preventDefault();
-            console.log(person1.name, person1.favoriteFood);
+
         person1 = new Person(friendName.value, favFood.value, favDess.value, 
             favBev.value, favGenre.value, favCity.value, country.value, foodCook.checked, 
             musicArt.checked, histCulture.checked, 
             fitSport.checked, animalNature.checked)
 
-            console.log(`${person1.animalNature}`);
         person1Name.textContent = person1.name;
         person1emoji.textContent = "⚡︎";
         person1emoji.style.fontSize = "1.3rem";
