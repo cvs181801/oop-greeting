@@ -772,9 +772,12 @@ cardContainer.insertBefore(suggestFoodandCooking, containerCardSix);
 //suggestFoodandCooking.style.border = "2px solid purple";    
 
 const filterFoodAndCookArray = peopleArray.filter((person) => {
-    //person.favoriteFood.toLowerCase();
-    return person.foodCook === peopleArray[0].foodCook;
+    if (person1.foodCook === true) {
+        return person.foodCook === true;
+    }
 })
+
+console.log("filterfoodandcookarray =", filterFoodAndCookArray);
 
 if (filterFoodAndCookArray.length === 6) {
         suggestFoodandCooking.textContent = `You, ${filterFoodAndCookArray[5].name}, ${filterFoodAndCookArray[4].name},
@@ -806,8 +809,9 @@ cardContainer.insertBefore(suggestMusicandArt, containerCardSix);
 //suggestMusicandArt.style.border = "2px solid skyblue";        
 
 const filterMusicAndArtArray = peopleArray.filter((person) => {
-    //person.favoriteFood.toLowerCase();
+    if (person1.musicArt === true) {
     return person.musicArt === peopleArray[0].musicArt;
+    }
 })
 
 if (filterMusicAndArtArray.length === 6) {
@@ -841,8 +845,10 @@ cardContainer.insertBefore(suggestHistandCulture, containerCardSix);
 //suggestHistandCulture.style.border = "2px solid aqua";       
 
 const filterHistAndCultureArray = peopleArray.filter((person) => {
-    //person.favoriteFood.toLowerCase();
-    return person.histCulture === peopleArray[0].histCulture;
+    if (person1.histCulture === true) {
+        return person.histCulture === peopleArray[0].histCulture;
+    }
+    
 })
 
 if (filterHistAndCultureArray.length === 6) {
@@ -876,8 +882,9 @@ cardContainer.insertBefore(suggestFitSport, containerCardSix);
 //suggestFitSport.style.border = "2px solid pink";    
 
 const filterFitSportArray = peopleArray.filter((person) => {
-    //person.favoriteFood.toLowerCase();
+    if (person1.fitSport === true) {
     return person.fitSport === peopleArray[0].fitSport;
+    }
 })
 
 if (filterFitSportArray.length === 6) {
@@ -911,8 +918,9 @@ cardContainer.insertBefore(suggestAnimalNature, containerCardSix);
 //suggestAnimalNature.style.border = "2px solid goldenrod";       
 
 const filterAnimalNatureArray = peopleArray.filter((person) => {
-    //person.favoriteFood.toLowerCase();
+    if (person1.animalNature === true) {
     return person.animalNature === peopleArray[0].animalNature;
+    }
 })
 
 if (filterAnimalNatureArray.length === 6) {
