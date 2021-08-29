@@ -656,17 +656,33 @@ suggestBev.classList.add("personcards__suggest");
 cardContainer.insertBefore(suggestBev, containerCardFour);
 //suggestBev.style.border = "2px solid green";    
 
- for (let i=1; i<peopleArray.length; i++) {
-    if (peopleArray[i].favoriteBeverage == peopleArray[0].favoriteBeverage) {
-        //suggestBev.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteBeverage}!  
-        //Why not bond over a socially distant beverage?`
-        suggestBev.textContent += `${peopleArray[i].name}`;
-        console.log(`${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteBeverage}!  
-        Why not bond over a socially distant beverage?`);
+    const filterBevArray = peopleArray.filter((person) => {
+        //person.favoriteFood.toLowerCase();
+        return person.favoriteBeverage === peopleArray[0].favoriteBeverage;
+    })
+    
+    console.log(filterBevArray);
+    
+    if (filterBevArray.length === 6) {
+            suggestBev.textContent = `You, ${filterBevArray[5].name}, ${filterBevArray[4].name},
+            ${filterBevArray[3].name}, ${filterBevArray[2].name} and ${filterBevArray[1].name} like ${filterBevArray[0].favoriteBeverage}!  
+            Why not bond over a socially distant beverage?`
+        } else if (filterBevArray.length === 5){
+            suggestBev.textContent = `You, ${filterBevArray[4].name},
+            ${filterBevArray[3].name}, ${filterBevArray[2].name} and ${filterBevArray[1].name} like ${filterBevArray[0].favoriteBeverage}! 
+            Why not bond over a socially distant beverage?`
+        } else if (filterBevArray.length === 4) {
+            suggestBev.textContent = `You, ${filterBevArray[3].name}, ${filterBevArray[2].name} and ${filterBevArray[1].name} like ${filterBevArray[0].favoriteBeverage}! 
+            Why not bond over a socially distant beverage?`
+        } else if (filterBevArray.length === 3) {
+            suggestBev.textContent = `You, ${filterBevArray[2].name} and ${filterBevArray[1].name} like ${filterBevArray[0].favoriteBeverage}! 
+            Why not bond over a socially distant beverage?`
+        } else if (filterBevArray.length === 2) {
+            suggestBev.textContent = `You and ${filterBevArray[1].name} like ${filterBevArray[0].favoriteBeverage}! 
+            Why not bond over a socially distant beverage?`
         } else {
         suggestBev.textContent = "";
-        }
-    }
+        }     
 
 
 //Film Genre:
@@ -677,16 +693,34 @@ suggestFilm.classList.add("personcards__suggest");
 cardContainer.insertBefore(suggestFilm, containerCardFive);
 //suggestFilm.style.border = "2px solid black";    
 
- for (let i=0; i<peopleArray.length; i++) {
-    if (peopleArray[i].favoriteFilmGenre == peopleArray[0].favoriteFilmGenre) {
-        suggestFilm.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteFilmGenre}!  
+
+const filterFilmArray = peopleArray.filter((person) => {
+    //person.favoriteFood.toLowerCase();
+    return person.favoriteFilmGenre === peopleArray[0].favoriteFilmGenre;
+})
+
+console.log(filterFilmArray);
+
+if (filterFilmArray.length === 6) {
+        suggestFilm.textContent = `You, ${filterFilmArray[5].name}, ${filterFilmArray[4].name},
+        ${filterFilmArray[3].name}, ${filterFilmArray[2].name} and ${filterFilmArray[1].name} like ${filterFilmArray[0].favoriteFilmGenre}!  
         Why not set up a watch party?!`
-        console.log(`${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteFilmGenre}!  
-        Why not set up a watch party?!`)
-        } else {
-        suggestFilm.textContent = "";
-        }
-    }   
+    } else if (filterFilmArray.length === 5){
+        suggestFilm.textContent = `You, ${filterFilmArray[4].name},
+        ${filterFilmArray[3].name}, ${filterFilmArray[2].name} and ${filterFilmArray[1].name} like ${filterFilmArray[0].favoriteFilmGenre}! 
+        Why not set up a watch party?!`
+    } else if (filterFilmArray.length === 4) {
+        suggestFilm.textContent = `You, ${filterFilmArray[3].name}, ${filterFilmArray[2].name} and ${filterFilmArray[1].name} like ${filterFilmArray[0].favoriteFilmGenre}! 
+        Why not set up a watch party?!`
+    } else if (filterFilmArray.length === 3) {
+        suggestFilm.textContent = `You, ${filterFilmArray[2].name} and ${filterFilmArray[1].name} like ${filterFilmArray[0].favoriteFilmGenre}! 
+        Why not set up a watch party?!`
+    } else if (filterFilmArray.length === 2) {
+        suggestFilm.textContent = `You and ${filterFilmArray[1].name} like ${filterFilmArray[0].favoriteFilmGenre}! 
+        Why not set up a watch party?!`
+    } else {
+    suggestFilm.textContent = "";
+    }     
     
 //City:
 const suggestCity = document.createElement("div");
@@ -696,16 +730,34 @@ suggestCity.classList.add("personcards__suggest");
 cardContainer.insertBefore(suggestCity, containerCardSix);
 //suggestCity.style.border = "2px solid red";    
 
- for (let i=0; i<peopleArray.length; i++) {
-    if (peopleArray[i].favoriteCity == peopleArray[0].favoriteCity) {
-        suggestCity.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteCity}!  
+
+const filterCityArray = peopleArray.filter((person) => {
+    //person.favoriteFood.toLowerCase();
+    return person.favoriteCity === peopleArray[0].favoriteCity;
+})
+
+console.log(filterCityArray);
+
+if (filterCityArray.length === 6) {
+        suggestCity.textContent = `You, ${filterCityArray[5].name}, ${filterCityArray[4].name},
+        ${filterCityArray[3].name}, ${filterCityArray[2].name} and ${filterCityArray[1].name} like ${filterCityArray[0].favoriteCity}!  
         Why not enjoy a virtual experience together in ${peopleArray[0].favoriteCity}?`
-        console.log(`${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteCity}!  
-        Why not enjoy a virtual experience together in ${peopleArray[0].favoriteCity}?`)
-        } else {
-        suggestCity.textContent = "";
-        }
-    }   
+    } else if (filterCityArray.length === 5){
+        suggestCity.textContent = `You, ${filterCityArray[4].name},
+        ${filterCityArray[3].name}, ${filterCityArray[2].name} and ${filterCityArray[1].name} like ${filterCityArray[0].favoriteCity}! 
+        Why not enjoy a virtual experience together in ${peopleArray[0].favoriteCity}?`
+    } else if (filterCityArray.length === 4) {
+        suggestCity.textContent = `You, ${filterCityArray[3].name}, ${filterCityArray[2].name} and ${filterCityArray[1].name} like ${filterCityArray[0].favoriteCity}! 
+        Why not enjoy a virtual experience together in ${peopleArray[0].favoriteCity}?`
+    } else if (filterCityArray.length === 3) {
+        suggestCity.textContent = `You, ${filterCityArray[2].name} and ${filterCityArray[1].name} like ${filterCityArray[0].favoriteCity}! 
+        Why not enjoy a virtual experience together in ${peopleArray[0].favoriteCity}?`
+    } else if (filterCityArray.length === 2) {
+        suggestCity.textContent = `You and ${filterCityArray[1].name} like ${filterCityArray[0].favoriteCity}! 
+        Why not enjoy a virtual experience together in ${peopleArray[0].favoriteCity}?`
+    } else {
+    suggestCity.textContent = "";
+    }     
     
 //Country:
 const suggestCountry = document.createElement("div");
@@ -715,16 +767,33 @@ suggestCountry.style.gridRow = "3";
 cardContainer.insertBefore(suggestCountry, containerCardSix);
 //suggestCountry.style.border = "2px solid white";    
 
- for (let i=0; i<peopleArray.length; i++) {
-    if (peopleArray[i].countryYoudLikeToVisit == peopleArray[0].countryYoudLikeToVisit) {
-        suggestCountry.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} want to visit ${peopleArray[0].countryYoudLikeToVisit}!  
+const filterCountryArray = peopleArray.filter((person) => {
+    //person.favoriteFood.toLowerCase();
+    return person.countryYoudLikeToVisit === peopleArray[0].countryYoudLikeToVisit;
+})
+
+console.log(filterCountryArray);
+
+if (filterCountryArray.length === 6) {
+        suggestCountry.textContent = `You, ${filterCountryArray[5].name}, ${filterCountryArray[4].name},
+        ${filterCountryArray[3].name}, ${filterCountryArray[2].name} and ${filterCountryArray[1].name} like ${filterCountryArray[0].countryYoudLikeToVisit}!  
         Why not enjoy a virtual experience together in ${peopleArray[0].countryYoudLikeToVisit}?`
-        console.log(`${peopleArray[i].name} and ${peopleArray[0].name} want to visit ${peopleArray[0].countryYoudLikeToVisit}!  
-        Why not enjoy a virtual experience together in ${peopleArray[0].countryYoudLikeToVisit}?`)
-        } else {
-        suggestCountry.textContent = "";
-        }
-    }      
+    } else if (filterCountryArray.length === 5){
+        suggestCountry.textContent = `You, ${filterCountryArray[4].name},
+        ${filterCountryArray[3].name}, ${filterCountryArray[2].name} and ${filterCountryArray[1].name} like ${filterCountryArray[0].countryYoudLikeToVisit}! 
+        Why not enjoy a virtual experience together in ${peopleArray[0].countryYoudLikeToVisit}?`
+    } else if (filterCountryArray.length === 4) {
+        suggestCountry.textContent = `You, ${filterCountryArray[3].name}, ${filterCountryArray[2].name} and ${filterCountryArray[1].name} like ${filterCountryArray[0].countryYoudLikeToVisit}! 
+        Why not enjoy a virtual experience together in ${peopleArray[0].countryYoudLikeToVisit}?`
+    } else if (filterCountryArray.length === 3) {
+        suggestCountry.textContent = `You, ${filterCountryArray[2].name} and ${filterCountryArray[1].name} like ${filterCountryArray[0].countryYoudLikeToVisit}! 
+        Why not enjoy a virtual experience together in ${peopleArray[0].countryYoudLikeToVisit}?`
+    } else if (filterCountryArray.length === 2) {
+        suggestCountry.textContent = `You and ${filterCountryArray[1].name} like ${filterCountryArray[0].countryYoudLikeToVisit}! 
+        Why not enjoy a virtual experience together in ${peopleArray[0].countryYoudLikeToVisit}?`
+    } else {
+    suggestCountry.textContent = "";
+    }     
 
 
 //Food & Cooking:
