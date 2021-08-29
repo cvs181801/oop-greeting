@@ -162,10 +162,10 @@ const goButton = document.querySelector(".gobutton");
 function Person(name, favoriteFood, favoriteDessert, favoriteBeverage, favoriteFilmGenre, favoriteCity,
     countryYoudLikeToVisit, foodCook, musicArt, histCulture, fitSport, animalNature) {
     this.name = name;
-    this.favoriteFood = favoriteFood;
-    this.favoriteDessert = favoriteDessert;
-    this.favoriteBeverage = favoriteBeverage;
-    this.favoriteFilmGenre = favoriteFilmGenre;
+    this.favoriteFood = favoriteFood.toLowerCase();
+    this.favoriteDessert = favoriteDessert.toLowerCase();
+    this.favoriteBeverage = favoriteBeverage.toLowerCase();
+    this.favoriteFilmGenre = favoriteFilmGenre.toLowerCase();
     this.favoriteCity = favoriteCity;
     this.countryYoudLikeToVisit = countryYoudLikeToVisit;
     this.foodCook = foodCook;
@@ -180,13 +180,6 @@ function Person(name, favoriteFood, favoriteDessert, favoriteBeverage, favoriteF
     this.welcome = function() {
         return `Welcome, ${this.name}!`
     }
-
-    // this.array = function() {
-    //     let array = [];
-    //     array.push(this.name, this.favoriteFood, this.favoriteDessert, this.favoriteBeverage, this.favoriteFilmGenre, this.favoriteCity, 
-    //         this.countryYoudLikeToVisit, this.foodCook, this.musicArt, this.histCulture, this.fitSport, this.animalNature);
-    //         return array;
-    // }
 }
 
 let person1 = "";
@@ -231,7 +224,6 @@ button1.addEventListener("click", function(e) {
     } else {
         header2.textContent = `Oops, please try again!`
     }
-    peopleArray.push(person1);
 })
 
 //make the 1st person submit button work upon starting
@@ -243,7 +235,6 @@ friendForm.addEventListener("submit", function(e) {
         musicArt.checked, histCulture.checked, 
         fitSport.checked, animalNature.checked)
     
-    console.log(`${person1.animalNature}`);
     person1Name.textContent = person1.name;
     personOne.append(person1Name);
     person1emoji.textContent = "⌇"
@@ -337,7 +328,6 @@ button3.addEventListener("click", function(e) {
                         musicArt3.checked, histCulture3.checked, 
                         fitSport3.checked, animalNature3.checked)
                 
-                console.log(" person 3 edit e listener worked");
                 person3Name.textContent = person3.name;
                 person3emoji.textContent = "✷";
                 person3emoji.style.fontSize = "1.3rem";
@@ -345,7 +335,6 @@ button3.addEventListener("click", function(e) {
                 friendForm3.classList.add("hidden");
                 containerThree.classList.add("hiddenModal");
                 personThree.setAttribute("title", `${person3.greeting()}`);
-                peopleArray.push(person3);
                 })    
             } else {
                
@@ -367,7 +356,6 @@ button3.addEventListener("click", function(e) {
                         friendForm3.classList.add("hidden");
                         containerThree.classList.add("hiddenModal");
                         personThree.setAttribute("title", `${person3.greeting()}`);
-                        peopleArray.push(person1);
                     })
                 }
             })
@@ -398,7 +386,6 @@ button4.addEventListener("click", function(e) {
                     friendForm4.classList.add("hidden");
                     containerFour.classList.add("hiddenModal");
                     personFour.setAttribute("title", `${person4.greeting()}`);
-                    peopleArray.push(person1);
                 })
             } else {
                 button4.textContent = "Edit info";
@@ -432,7 +419,6 @@ let person5emoji = document.createElement('p');
 button5.addEventListener("click", function(e) {
     e.preventDefault();
     if (person5) {
-        peopleArray.pop(person5);
         person5Name.textContent = "";
         person5emoji.textContent = "";
         friendForm5.classList.remove("hidden");
@@ -450,7 +436,6 @@ button5.addEventListener("click", function(e) {
                 friendForm5.classList.add("hidden");
                 containerFive.classList.add("hiddenModal");
                 personFive.setAttribute("title", `${person5.greeting()}`);
-                peopleArray.push(person5);
             })
     } else {
         button5.textContent = "Edit info";
@@ -471,7 +456,6 @@ button5.addEventListener("click", function(e) {
                 friendForm5.classList.add("hidden");
                 containerFive.classList.add("hiddenModal");
                 personFive.setAttribute("title", `${person5.greeting()}`);
-                peopleArray.push(person5);
             })
         }
     })
@@ -484,7 +468,6 @@ let person6emoji = document.createElement('p');
 button6.addEventListener("click", function(e) {
     e.preventDefault();
     if (person6) {
-        peopleArray.pop(person6);
         person6Name.textContent = ""; 
         person6emoji.textContent = "";
         containerSix.classList.remove("hiddenModal");
@@ -502,7 +485,6 @@ button6.addEventListener("click", function(e) {
                 friendForm6.classList.add("hidden");
                 containerSix.classList.add("hiddenModal");
                 personSix.setAttribute("title", `${person6.greeting()}`);
-                peopleArray.push(person6);
             })
     } else {
         button6.textContent = "Edit info";
@@ -523,7 +505,6 @@ button6.addEventListener("click", function(e) {
             friendForm6.classList.add("hidden");
             containerSix.classList.add("hiddenModal");
             personSix.setAttribute("title", `${person6.greeting()}`);
-            peopleArray.push(person6);
             
         })
         }
@@ -555,18 +536,14 @@ goButton.addEventListener("click", function(e) {
     } else {
         welcomeGreet.textContent = "Please add some friends to get started!";
     }
-//test **
-    console.log(person1.favoriteFood);
-    let firstPersonFavFood = person1.favoriteFood;
-    console.log(firstPersonFavFood);
-    const lowerCaseFood = firstPersonFavFood.toLowerCase();
-    console.log(lowerCaseFood); //this worked!
-//** */
+    
+console.log("peopleArray =", peopleArray);
 
 const filterFoodArray = peopleArray.filter((person) => {
-    //person.favoriteFood.toLowerCase();
     return person.favoriteFood === peopleArray[0].favoriteFood;
 })
+
+console.log(filterFoodArray);
 
 if (filterFoodArray.length === 6) {
         suggestFood.textContent = `You, ${filterFoodArray[5].name}, ${filterFoodArray[4].name},
