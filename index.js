@@ -804,16 +804,30 @@ suggestFoodandCooking.style.gridRow = "2";
 cardContainer.insertBefore(suggestFoodandCooking, containerCardSix);
 //suggestFoodandCooking.style.border = "2px solid purple";    
 
- for (let i=0; i<peopleArray.length; i++) {
-     
-    if (peopleArray[i].foodCook && peopleArray[0].foodCook) {
-            suggestFoodandCooking.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} are interested in Food & Cooking!  
-            Why not enjoy a Food & Cooking virtual experience together?`
-            console.log(`${peopleArray[i].name} and ${peopleArray[0].name} are interested in Food & Cooking!  
-            Why not enjoy a Food & Cooking virtual experience together?`)
-        } else {
-            suggestFoodandCooking.textContent = "";
-        }
+const filterFoodAndCookArray = peopleArray.filter((person) => {
+    //person.favoriteFood.toLowerCase();
+    return person.foodCook === peopleArray[0].foodCook;
+})
+
+if (filterFoodAndCookArray.length === 6) {
+        suggestFoodandCooking.textContent = `You, ${filterFoodAndCookArray[5].name}, ${filterFoodAndCookArray[4].name},
+        ${filterFoodAndCookArray[3].name}, ${filterFoodAndCookArray[2].name} and ${filterFoodAndCookArray[1].name} like ${filterFoodAndCookArray[0].foodCook}!  
+        Why not enjoy a Food & Cooking virtual experience together?`
+    } else if (filterFoodAndCookArray.length === 5){
+        suggestFoodandCooking.textContent = `You, ${filterFoodAndCookArray[4].name},
+        ${filterFoodAndCookArray[3].name}, ${filterFoodAndCookArray[2].name} and ${filterFoodAndCookArray[1].name} like ${filterFoodAndCookArray[0].foodCook}! 
+        Why not enjoy a Food & Cooking virtual experience together?`
+    } else if (filterFoodAndCookArray.length === 4) {
+        suggestFoodandCooking.textContent = `You, ${filterFoodAndCookArray[3].name}, ${filterFoodAndCookArray[2].name} and ${filterFoodAndCookArray[1].name} like ${filterFoodAndCookArray[0].foodCook}! 
+        Why not enjoy a Food & Cooking virtual experience together?`
+    } else if (filterFoodAndCookArray.length === 3) {
+        suggestFoodandCooking.textContent = `You, ${filterFoodAndCookArray[2].name} and ${filterFoodAndCookArray[1].name} like ${filterFoodAndCookArray[0].foodCook}! 
+        Why not enjoy a Food & Cooking virtual experience together?`
+    } else if (filterFoodAndCookArray.length === 2) {
+        suggestFoodandCooking.textContent = `You and ${filterFoodAndCookArray[1].name} like ${filterFoodAndCookArray[0].foodCook}! 
+        Why not enjoy a Food & Cooking virtual experience together?`
+    } else {
+        suggestFoodandCooking.textContent = "";
     }     
     
 //Music & Art:
@@ -824,16 +838,42 @@ suggestMusicandArt.style.gridRow = "1";
 cardContainer.insertBefore(suggestMusicandArt, containerCardSix);
 //suggestMusicandArt.style.border = "2px solid skyblue";    
 
- for (let i=0; i<peopleArray.length; i++) {
-    if (peopleArray[i].musicArt && peopleArray[0].musicArt) {
-        suggestMusicandArt.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} are interested in Music & Art!  
-            Why not enjoy a Music & Art related virtual experience together?`
-            console.log(`${peopleArray[i].name} and ${peopleArray[0].name} are interested in Music & Art!  
-            Why not enjoy a Music & Art related virtual experience together?`)
-        } else {
-            suggestMusicandArt.textContent = "";
-        }
-    }        
+//  for (let i=0; i<peopleArray.length; i++) {
+//     if (peopleArray[i].musicArt && peopleArray[0].musicArt) {
+//         suggestMusicandArt.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} are interested in Music & Art!  
+//             Why not enjoy a Music & Art related virtual experience together?`
+//             console.log(`${peopleArray[i].name} and ${peopleArray[0].name} are interested in Music & Art!  
+//             Why not enjoy a Music & Art related virtual experience together?`)
+//         } else {
+//             suggestMusicandArt.textContent = "";
+//         }
+//     }      
+
+const filterMusicAndArtArray = peopleArray.filter((person) => {
+    //person.favoriteFood.toLowerCase();
+    return person.musicArt === peopleArray[0].musicArt;
+})
+
+if (filterMusicAndArtArray.length === 6) {
+        suggestMusicandArt.textContent = `You, ${filterMusicAndArtArray[5].name}, ${filterMusicAndArtArray[4].name},
+        ${filterMusicAndArtArray[3].name}, ${filterMusicAndArtArray[2].name} and ${filterMusicAndArtArray[1].name} like ${filterMusicAndArtArray[0].musicArt}!  
+        Why not enjoy a Music & Art related virtual experience together?`
+    } else if (filterMusicAndArtArray.length === 5){
+        suggestMusicandArt.textContent = `You, ${filterMusicAndArtArray[4].name},
+        ${filterMusicAndArtArray[3].name}, ${filterMusicAndArtArray[2].name} and ${filterMusicAndArtArray[1].name} like ${filterMusicAndArtArray[0].musicArt}! 
+        Why not enjoy a Music & Art related virtual experience together?`
+    } else if (filterMusicAndArtArray.length === 4) {
+        suggestMusicandArt.textContent = `You, ${filterMusicAndArtArray[3].name}, ${filterMusicAndArtArray[2].name} and ${filterMusicAndArtArray[1].name} like ${filterMusicAndArtArray[0].musicArt}! 
+        Why not enjoy a Music & Art related virtual experience together?`
+    } else if (filterMusicAndArtArray.length === 3) {
+        suggestMusicandArt.textContent = `You, ${filterMusicAndArtArray[2].name} and ${filterMusicAndArtArray[1].name} like ${filterMusicAndArtArray[0].musicArt}! 
+        Why not enjoy a Music & Art related virtual experience together?`
+    } else if (filterMusicAndArtArray.length === 2) {
+        suggestMusicandArt.textContent = `You and ${filterMusicAndArtArray[1].name} like ${filterMusicAndArtArray[0].musicArt}! 
+        Why not enjoy a Music & Art related virtual experience together?`
+    } else {
+        suggestMusicandArt.textContent = "";
+    }   
 
 
 //History & Culture:
