@@ -555,23 +555,13 @@ goButton.addEventListener("click", function(e) {
     } else {
         welcomeGreet.textContent = "Please add some friends to get started!";
     }
-
-    console.log(peopleArray);
-
-
-
-// for (let i=0; i<peopleArray.length; i++) {
-//     if (peopleArray[i].favoriteFood == peopleArray[0].favoriteFood) {
-//         suggestFood.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} like ${peopleArray[0].favoriteFood}!  
-//         Why not get take out and share a socially distant meal?`
-//         } else {
-//         suggestFood.textContent = "";
-//         }
-//     }
-
-// let foodArray = peopleArray.map(person => {
-//     return person.favoriteFood.toLowerCase();
-// })
+//test **
+    console.log(person1.favoriteFood);
+    let firstPersonFavFood = person1.favoriteFood;
+    console.log(firstPersonFavFood);
+    const lowerCaseFood = firstPersonFavFood.toLowerCase();
+    console.log(lowerCaseFood); //this worked!
+//** */
 
 const filterFoodArray = peopleArray.filter((person) => {
     //person.favoriteFood.toLowerCase();
