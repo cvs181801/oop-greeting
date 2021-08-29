@@ -811,20 +811,20 @@ const filterFoodAndCookArray = peopleArray.filter((person) => {
 
 if (filterFoodAndCookArray.length === 6) {
         suggestFoodandCooking.textContent = `You, ${filterFoodAndCookArray[5].name}, ${filterFoodAndCookArray[4].name},
-        ${filterFoodAndCookArray[3].name}, ${filterFoodAndCookArray[2].name} and ${filterFoodAndCookArray[1].name} like ${filterFoodAndCookArray[0].foodCook}!  
+        ${filterFoodAndCookArray[3].name}, ${filterFoodAndCookArray[2].name} and ${filterFoodAndCookArray[1].name} like $Food & Cooking!  
         Why not enjoy a Food & Cooking virtual experience together?`
     } else if (filterFoodAndCookArray.length === 5){
         suggestFoodandCooking.textContent = `You, ${filterFoodAndCookArray[4].name},
-        ${filterFoodAndCookArray[3].name}, ${filterFoodAndCookArray[2].name} and ${filterFoodAndCookArray[1].name} like ${filterFoodAndCookArray[0].foodCook}! 
+        ${filterFoodAndCookArray[3].name}, ${filterFoodAndCookArray[2].name} and ${filterFoodAndCookArray[1].name} like Food & Cooking! 
         Why not enjoy a Food & Cooking virtual experience together?`
     } else if (filterFoodAndCookArray.length === 4) {
-        suggestFoodandCooking.textContent = `You, ${filterFoodAndCookArray[3].name}, ${filterFoodAndCookArray[2].name} and ${filterFoodAndCookArray[1].name} like ${filterFoodAndCookArray[0].foodCook}! 
+        suggestFoodandCooking.textContent = `You, ${filterFoodAndCookArray[3].name}, ${filterFoodAndCookArray[2].name} and ${filterFoodAndCookArray[1].name} like Food & Cooking! 
         Why not enjoy a Food & Cooking virtual experience together?`
     } else if (filterFoodAndCookArray.length === 3) {
-        suggestFoodandCooking.textContent = `You, ${filterFoodAndCookArray[2].name} and ${filterFoodAndCookArray[1].name} like ${filterFoodAndCookArray[0].foodCook}! 
+        suggestFoodandCooking.textContent = `You, ${filterFoodAndCookArray[2].name} and ${filterFoodAndCookArray[1].name} like Food & Cooking! 
         Why not enjoy a Food & Cooking virtual experience together?`
     } else if (filterFoodAndCookArray.length === 2) {
-        suggestFoodandCooking.textContent = `You and ${filterFoodAndCookArray[1].name} like ${filterFoodAndCookArray[0].foodCook}! 
+        suggestFoodandCooking.textContent = `You and ${filterFoodAndCookArray[1].name} like Food & Cooking! 
         Why not enjoy a Food & Cooking virtual experience together?`
     } else {
         suggestFoodandCooking.textContent = "";
@@ -836,18 +836,7 @@ suggestMusicandArt.classList.add("personcards__suggest");
 suggestMusicandArt.style.gridColumn = "6";
 suggestMusicandArt.style.gridRow = "1";
 cardContainer.insertBefore(suggestMusicandArt, containerCardSix);
-//suggestMusicandArt.style.border = "2px solid skyblue";    
-
-//  for (let i=0; i<peopleArray.length; i++) {
-//     if (peopleArray[i].musicArt && peopleArray[0].musicArt) {
-//         suggestMusicandArt.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} are interested in Music & Art!  
-//             Why not enjoy a Music & Art related virtual experience together?`
-//             console.log(`${peopleArray[i].name} and ${peopleArray[0].name} are interested in Music & Art!  
-//             Why not enjoy a Music & Art related virtual experience together?`)
-//         } else {
-//             suggestMusicandArt.textContent = "";
-//         }
-//     }      
+//suggestMusicandArt.style.border = "2px solid skyblue";        
 
 const filterMusicAndArtArray = peopleArray.filter((person) => {
     //person.favoriteFood.toLowerCase();
@@ -856,20 +845,20 @@ const filterMusicAndArtArray = peopleArray.filter((person) => {
 
 if (filterMusicAndArtArray.length === 6) {
         suggestMusicandArt.textContent = `You, ${filterMusicAndArtArray[5].name}, ${filterMusicAndArtArray[4].name},
-        ${filterMusicAndArtArray[3].name}, ${filterMusicAndArtArray[2].name} and ${filterMusicAndArtArray[1].name} like ${filterMusicAndArtArray[0].musicArt}!  
+        ${filterMusicAndArtArray[3].name}, ${filterMusicAndArtArray[2].name} and ${filterMusicAndArtArray[1].name} like Music & Art!  
         Why not enjoy a Music & Art related virtual experience together?`
     } else if (filterMusicAndArtArray.length === 5){
         suggestMusicandArt.textContent = `You, ${filterMusicAndArtArray[4].name},
-        ${filterMusicAndArtArray[3].name}, ${filterMusicAndArtArray[2].name} and ${filterMusicAndArtArray[1].name} like ${filterMusicAndArtArray[0].musicArt}! 
+        ${filterMusicAndArtArray[3].name}, ${filterMusicAndArtArray[2].name} and ${filterMusicAndArtArray[1].name} like Music & Art! 
         Why not enjoy a Music & Art related virtual experience together?`
     } else if (filterMusicAndArtArray.length === 4) {
-        suggestMusicandArt.textContent = `You, ${filterMusicAndArtArray[3].name}, ${filterMusicAndArtArray[2].name} and ${filterMusicAndArtArray[1].name} like ${filterMusicAndArtArray[0].musicArt}! 
+        suggestMusicandArt.textContent = `You, ${filterMusicAndArtArray[3].name}, ${filterMusicAndArtArray[2].name} and ${filterMusicAndArtArray[1].name} like Music & Art! 
         Why not enjoy a Music & Art related virtual experience together?`
     } else if (filterMusicAndArtArray.length === 3) {
-        suggestMusicandArt.textContent = `You, ${filterMusicAndArtArray[2].name} and ${filterMusicAndArtArray[1].name} like ${filterMusicAndArtArray[0].musicArt}! 
+        suggestMusicandArt.textContent = `You, ${filterMusicAndArtArray[2].name} and ${filterMusicAndArtArray[1].name} like Music & Art! 
         Why not enjoy a Music & Art related virtual experience together?`
     } else if (filterMusicAndArtArray.length === 2) {
-        suggestMusicandArt.textContent = `You and ${filterMusicAndArtArray[1].name} like ${filterMusicAndArtArray[0].musicArt}! 
+        suggestMusicandArt.textContent = `You and ${filterMusicAndArtArray[1].name} like Music & Art! 
         Why not enjoy a Music & Art related virtual experience together?`
     } else {
         suggestMusicandArt.textContent = "";
@@ -882,18 +871,33 @@ suggestHistandCulture.classList.add("personcards__suggest");
 suggestHistandCulture.style.gridColumn = "6";
 suggestHistandCulture.style.gridRow = "3";
 cardContainer.insertBefore(suggestHistandCulture, containerCardSix);
-//suggestHistandCulture.style.border = "2px solid aqua";    
+//suggestHistandCulture.style.border = "2px solid aqua";       
 
- for (let i=0; i<peopleArray.length; i++) {
-    if (peopleArray[i].histCulture && peopleArray[0].histCulture) {
-        suggestHistandCulture.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} are interested in History & Culture!  
-            Why not enjoy a History & Culture related virtual experience together?`
-            console.log(`${peopleArray[i].name} and ${peopleArray[0].name} are interested in History & Culture!  
-            Why not enjoy a History & Culture related virtual experience together?`)
-        } else {
-            suggestHistandCulture.textContent = "";
-        }
-    }        
+const filterHistAndCultureArray = peopleArray.filter((person) => {
+    //person.favoriteFood.toLowerCase();
+    return person.histCulture === peopleArray[0].histCulture;
+})
+
+if (filterHistAndCultureArray.length === 6) {
+        suggestHistandCulture.textContent = `You, ${filterHistAndCultureArray[5].name}, ${filterHistAndCultureArray[4].name},
+        ${filterHistAndCultureArray[3].name}, ${filterHistAndCultureArray[2].name} and ${filterHistAndCultureArray[1].name} like History & Culture!  
+        Why not enjoy a History & Culture related virtual experience together?`
+    } else if (filterHistAndCultureArray.length === 5){
+        suggestHistandCulture.textContent = `You, ${filterHistAndCultureArray[4].name},
+        ${filterHistAndCultureArray[3].name}, ${filterHistAndCultureArray[2].name} and ${filterHistAndCultureArray[1].name} like History & Culture! 
+        Why not enjoy a History & Culture related virtual experience together?`
+    } else if (filterHistAndCultureArray.length === 4) {
+        suggestHistandCulture.textContent = `You, ${filterHistAndCultureArray[3].name}, ${filterHistAndCultureArray[2].name} and ${filterHistAndCultureArray[1].name} like History & Culture! 
+        Why not enjoy a History & Culture related virtual experience together?`
+    } else if (filterHistAndCultureArray.length === 3) {
+        suggestHistandCulture.textContent = `You, ${filterHistAndCultureArray[2].name} and ${filterHistAndCultureArray[1].name} like History & Culture! 
+        Why not enjoy a History & Culture related virtual experience together?`
+    } else if (filterHistAndCultureArray.length === 2) {
+        suggestHistandCulture.textContent = `You and ${filterHistAndCultureArray[1].name} like History & Culture! 
+        Why not enjoy a History & Culture related virtual experience together?`
+    } else {
+        suggestHistandCulture.textContent = "";
+    }   
 
 
 //Fitness & Sports:
@@ -904,16 +908,32 @@ suggestFitSport.style.gridRow = "2";
 cardContainer.insertBefore(suggestFitSport, containerCardSix);
 //suggestFitSport.style.border = "2px solid pink";    
 
- for (let i=0; i<peopleArray.length; i++) {
-    if (peopleArray[i].fitSport && peopleArray[0].fitSport) {
-        suggestFitSport.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} are interested in Fitness & Sports!  
-            Why not enjoy a Fitness & Sports related virtual experience together?`
-            console.log(`${peopleArray[i].name} and ${peopleArray[0].name} are interested in Fitness & Sports!  
-            Why not enjoy a Fitness & Sports related virtual experience together?`)
-        } else {
-            suggestFitSport.textContent = "";
-        }
-    }    
+const filterFitSportArray = peopleArray.filter((person) => {
+    //person.favoriteFood.toLowerCase();
+    return person.fitSport === peopleArray[0].fitSport;
+})
+
+if (filterFitSportArray.length === 6) {
+        suggestFitSport.textContent = `You, ${filterFitSportArray[5].name}, ${filterFitSportArray[4].name},
+        ${filterFitSportArray[3].name}, ${filterFitSportArray[2].name} and ${filterFitSportArray[1].name} like Fitness & Sports!  
+        Why not enjoy a Fitness & Sports related virtual experience together?`
+    } else if (filterFitSportArray.length === 5){
+        suggestFitSport.textContent = `You, ${filterFitSportArray[4].name},
+        ${filterFitSportArray[3].name}, ${filterFitSportArray[2].name} and ${filterFitSportArray[1].name} like Fitness & Sports! 
+        Why not enjoy a Fitness & Sports related virtual experience together?`
+    } else if (filterFitSportArray.length === 4) {
+        suggestFitSport.textContent = `You, ${filterFitSportArray[3].name}, ${filterFitSportArray[2].name} and ${filterFitSportArray[1].name} like Fitness & Sports! 
+        Why not enjoy a Fitness & Sports related virtual experience together?`
+    } else if (filterFitSportArray.length === 3) {
+        suggestFitSport.textContent = `You, ${filterFitSportArray[2].name} and ${filterFitSportArray[1].name} like Fitness & Sports! 
+        Why not enjoy a Fitness & Sports related virtual experience together?`
+    } else if (filterFitSportArray.length === 2) {
+        suggestFitSport.textContent = `You and ${filterFitSportArray[1].name} like Fitness & Sports! 
+        Why not enjoy a Fitness & Sports related virtual experience together?`
+    } else {
+        suggestFitSport.textContent = "";
+    }   
+
     
 //Animals & Nature:
 const suggestAnimalNature = document.createElement("div");
@@ -921,293 +941,35 @@ suggestAnimalNature.classList.add("personcards__suggest");
 suggestAnimalNature.style.gridColumn = "1";
 suggestAnimalNature.style.gridRow = "1";
 cardContainer.insertBefore(suggestAnimalNature, containerCardSix);
-//suggestAnimalNature.style.border = "2px solid goldenrod";    
+//suggestAnimalNature.style.border = "2px solid goldenrod";       
 
- for (let i=0; i<peopleArray.length; i++) {
-    if (peopleArray[i].animalNature && peopleArray[0].animalNature) {
-        suggestAnimalNature.textContent = `${peopleArray[i].name} and ${peopleArray[0].name} are interested in Animals & Nature!  
-            Why not enjoy a Animal and/or Nature related virtual experience together?`
-            console.log(`${peopleArray[i].name} and ${peopleArray[0].name} are interested in Animals & Nature!  
-            Why not enjoy a Animal and/or Nature related virtual experience together?`)
-        } else {
-            suggestAnimalNature.textContent = "";
-        }
-    }      
+const filterAnimalNatureArray = peopleArray.filter((person) => {
+    //person.favoriteFood.toLowerCase();
+    return person.animalNature === peopleArray[0].animalNature;
 })
 
+if (filterAnimalNatureArray.length === 6) {
+        suggestAnimalNature.textContent = `You, ${filterAnimalNatureArray[5].name}, ${filterAnimalNatureArray[4].name},
+        ${filterAnimalNatureArray[3].name}, ${filterAnimalNatureArray[2].name} and ${filterAnimalNatureArray[1].name} like Animals & Nature!  
+        Why not enjoy a Animal and/or Nature related related virtual experience together?`
+    } else if (filterAnimalNatureArray.length === 5){
+        suggestAnimalNature.textContent = `You, ${filterAnimalNatureArray[4].name},
+        ${filterAnimalNatureArray[3].name}, ${filterAnimalNatureArray[2].name} and ${filterAnimalNatureArray[1].name} like Animals & Nature! 
+        Why not enjoy a Animal and/or Nature related related virtual experience together?`
+    } else if (filterAnimalNatureArray.length === 4) {
+        suggestAnimalNature.textContent = `You, ${filterAnimalNatureArray[3].name}, ${filterAnimalNatureArray[2].name} and ${filterAnimalNatureArray[1].name} like Animals & Nature! 
+        Why not enjoy a Animal and/or Nature related related virtual experience together?`
+    } else if (filterAnimalNatureArray.length === 3) {
+        suggestAnimalNature.textContent = `You, ${filterAnimalNatureArray[2].name} and ${filterAnimalNatureArray[1].name} like Animals & Nature! 
+        Why not enjoy a Animal and/or Nature related related virtual experience together?`
+    } else if (filterAnimalNatureArray.length === 2) {
+        suggestAnimalNature.textContent = `You and ${filterAnimalNatureArray[1].name} like Animals & Nature! 
+        Why not enjoy a Animal and/or Nature related related virtual experience together?`
+    } else {
+        suggestAnimalNature.textContent = "";
+    }   
 
 
-
-//the rest of this code can be deleted when finished...
-
-
-
-// //Fav foods person 1 and 2:
-// const suggestFood = document.createElement("div");
-// suggestFood.classList.add("personcards__suggest");
-// //suggestFood.style.gridColumn = "4 / 5";
-// cardContainer.insertBefore(suggestFood, containerCardTwo);
-// //suggestFood.style.border = "2px solid blue";
-
-// function checkFoods1and2() {
-//     //console.log(Boolean(person1 || person2));
-//     //console.log(Boolean(person1 && person2)); why is this returning false while the above is returning true?
-//     if(person1 || person2) {
-//         if(person1.favoriteFood == person2.favoriteFood) { 
-//             suggestFood.textContent = `${person1.name} and ${person2.name} both like ${person2.favoriteFood}!`;
-//         } else {
-//             suggestFood.textContent = "";
-//         }
-//     }
-// }
-
-// //Fav food 1, 2, and 3 
-// const suggestFood3 = document.createElement("div");
-// suggestFood3.classList.add("personcards__suggest");
-// suggestFood3.style.gridColumn = "1";
-// suggestFood3.style.gridRow = "1";
-// cardContainer.insertBefore(suggestFood3, containerCardThree);
-// //suggestFood3.style.border = "2px solid blue";
-
-// function checkFoods12and3() {
-//     //console.log(Boolean(person1 || person2));
-//     //console.log(Boolean(person1 && person2)); why is this returning false while the above is returning true?
-//     if(person3) {
-//         if(person2.favoriteFood == person3.favoriteFood && person1.favoriteFood == person3.favoriteFood) {
-//             suggestFood.textContent = "";
-//             suggestFood3.textContent = `${person1.name}, ${person2.name} and ${person3.name} all like ${person3.favoriteFood}!`; 
-//         } else if (person1.favoriteFood == person3.favoriteFood) {
-//             suggestFood3.textContent = `${person1.name} and ${person3.name} both like ${person3.favoriteFood}!`;           
-//         } else if (person2.favoriteFood == person3.favoriteFood ) {
-//             suggestFood3.textContent = `${person2.name} and ${person3.name} both like ${person3.favoriteFood}!`;
-//         } else {
-//             suggestFood3.textContent = "";
-//         }
-//     }
-// }
-
-// //Fav food 1, 2, 3 and 4 
-// const suggestFood4 = document.createElement("div");
-// suggestFood4.classList.add("personcards__suggest");
-// suggestFood4.style.gridColumn = "2";
-// suggestFood3.style.gridRow = "2";
-// cardContainer.insertBefore(suggestFood4, containerCardFour);
-// suggestFood4.style.border = "2px solid blue";
-
-// function checkFoods123and4() {
-//     //console.log(Boolean(person1 || person2));
-//     //console.log(Boolean(person1 && person2)); why is this returning false while the above is returning true?
-//     if(person4) {
-//         if(person1.favoriteFood == person4.favoriteFood && person2.favoriteFood == person4.favoriteFood && person3.favoriteFood == person4.favoriteFood) {
-//             suggestFood.textContent = "";
-//             suggestFood3.textContent = "";
-//             suggestFood4.textContent = `${person1.name}, ${person2.name}, ${person3.name} and ${person4.name} all like ${person4.favoriteFood}!`; 
-//         } else if (person1.favoriteFood == person4.favoriteFood && person2.favoriteFood == person4.favoriteFood) {
-//             suggestFood4.textContent = `${person1.name} and ${person2.name} both like ${person4.favoriteFood}!`;           
-//         } else if (person2.favoriteFood == person4.favoriteFood && person3.favoriteFood == person4.favoriteFood) {
-//             suggestFood4.textContent = `${person2.name} and ${person3.name} both like ${person4.favoriteFood}!`;
-//         } else if (person1.favoriteFood == person4.favoriteFood && person3.favoriteFood == person4.favoriteFood) {
-//             suggestFood4.textContent = `${person1.name} and ${person3.name} both like ${person4.favoriteFood}!`; 
-//         } else if (person1.favoriteFood == person4.favoriteFood) {
-//             suggestFood4.textContent = `${person1.name} and ${person4.name} both like ${person4.favoriteFood}!`; 
-//         } else if  (person2.favoriteFood == person4.favoriteFood) {
-//             suggestFood4.textContent = `${person2.name} and ${person4.name} both like ${person4.favoriteFood}!`; 
-//         } else if (person3.favoriteFood == person4.favoriteFood) {
-//             suggestFood4.textContent = `${person3.name} and ${person4.name} both like ${person4.favoriteFood}!`; 
-//         } else {
-//             suggestFood3.textContent = "";
-//         }
-//     }
-// }
-
-// function checkFoods1234and5() {
-//     //console.log(Boolean(person1 || person2));
-//     //console.log(Boolean(person1 && person2)); why is this returning false while the above is returning true?
-//     if(person4) {
-//         if(person1.favoriteFood == person5.favoriteFood && person2.favoriteFood == person5.favoriteFood && person3.favoriteFood == person5.favoriteFood
-//              && person4.favoriteFood == person5.favoriteFood && person1.favoriteFood == person4.favoriteFood && person2.favoriteFood == person4.favoriteFood &&
-//              person3.favoriteFood == person4.favoriteFood && person1.favoriteFood == person3.favoriteFood && person1.favoriteFood == person2.favoriteFood) {
-//             suggestFood.textContent = "";
-//             suggestFood3.textContent = "";
-//             suggestFood4.textContent = "";
-//             suggestFood5.textContent = `${person1.name}, ${person2.name}, ${person3.name}, ${person4.name} and ${person5.name} all like ${person5.favoriteFood}!`; 
-//         } else if (person1.favoriteFood == person5.favoriteFood && person2.favoriteFood == person5.favoriteFood && person3.favoriteFood == person5.favoriteFood) {
-//             suggestFood4.textContent = `${person1.name}, ${person2.name} and ${person3.name} all like ${person5.favoriteFood}!`;           
-//         } else if (person2.favoriteFood == person5.favoriteFood && person3.favoriteFood == person5.favoriteFood) { //**add logic 
-//             suggestFood4.textContent = `${person2.name} and ${person3.name} both like ${person4.favoriteFood}!`;
-//         } else if (person1.favoriteFood == person4.favoriteFood && person3.favoriteFood == person4.favoriteFood) {
-//             suggestFood4.textContent = `${person1.name} and ${person3.name} both like ${person4.favoriteFood}!`; 
-//         } else if (person1.favoriteFood == person4.favoriteFood) {
-//             suggestFood4.textContent = `${person1.name} and ${person4.name} both like ${person4.favoriteFood}!`; 
-//         } else if  (person2.favoriteFood == person4.favoriteFood) {
-//             suggestFood4.textContent = `${person2.name} and ${person4.name} both like ${person4.favoriteFood}!`; 
-//         } else if (person3.favoriteFood == person4.favoriteFood) {
-//             suggestFood4.textContent = `${person3.name} and ${person4.name} both like ${person4.favoriteFood}!`; 
-//         } else {
-//             suggestFood3.textContent = "";
-//         }
-//     }
-// }
-
-// // Fav desserts person 1 and 2:
-// const suggestDessert = document.createElement("div");
-// suggestDessert.classList.add("personcards__suggest");
-// cardContainer.insertBefore(suggestDessert, containerCardTwo);
-// //suggestDessert.style.border = "2px solid blue";
-// //suggestDessert.textContent = "dessert";
-// suggestDessert.style.gridColumn = "4 / 5";
-// suggestDessert.style.gridRow = "2";
-
-// function checkDessert1and2() {
-//     if (person1 || person2) {
-//         if(person1.favoriteDessert == person2.favoriteDessert) { 
-//             suggestDessert.textContent = `${person1.name} and ${person2.name} both like ${person2.favoriteDessert}!`;
-//         } else {
-//              suggestDessert.textContent = "";
-//         }
-//     }
-// }
-
-
-// //Fav Dessert 1, 2 and 3 
-
-// const suggestDessert3 = document.createElement("div");
-// suggestDessert3.classList.add("personcards__suggest");
-// suggestDessert3.style.gridColumn = "2";
-// suggestDessert3.style.gridRow = "1";
-// cardContainer.insertBefore(suggestDessert3, containerCardThree);
-// //suggestDessert3.style.border = "2px solid blue";
-
-// function checkDessert12and3() {
-//     //console.log(Boolean(person1 || person2));
-//     //console.log(Boolean(person1 && person2)); why is this returning false while the above is returning true?
-//     if(person3) {
-//         if(person2.favoriteDessert == person3.favoriteDessert && person1.favoriteDessert == person3.favoriteDessert) {
-//             suggestDessert.textContent = "";
-//             suggestDessert3.textContent = `${person1.name}, ${person2.name} and ${person3.name} all like ${person3.favoriteDessert}!`; 
-//         } else if (person1.favoriteDessert == person3.favoriteDessert) {
-//             suggestDessert3.textContent = `${person1.name} and ${person3.name} both like ${person3.favoriteDessert}!`;           
-//         } else if (person2.favoriteDessert == person3.favoriteDessert ) {
-//             suggestDessert3.textContent = `${person2.name} and ${person3.name} both like ${person3.favoriteDessert}!`;
-//         } else {
-//             suggestDessert3.textContent = "";
-//         }
-//     }
-// }
-
-
-
-
-//test area : test the checkbox fields
-
-// if(person1.animalNature == person2.animalNature) {
-//     console.log("they both like animals & nature");
-// } else {
-//     console.log("they don't both like animals/nature");
-// }
-
-
- //compare person1 and person2 shared interests (checkboxes)
-
-// function addMeaningFoodCook() {
-//     if (foodCook.checked == true) {
-//         console.log(`person1 Food & Cooking is checked`);
-//     } else {
-//         return;
-//     }
-// }
-
-//let person1array = person1.array();
-// I"m just using this to test atm
-
-// let people = [
-//     {
-//     name: "Amy",
-//     likes: ["chocolate", "beer", "summer"],
-//     city: "Portland" 
-//     },
-//     {
-//     name: "Brian", 
-//     likes: ["thai", "coffee", "summer"],
-//     city: "Detroit"
-//     },
-//     {
-//     name: "Shannon", 
-//     likes: ["pizza", "beer", "summer"],
-//     city: "Los Angeles"
-//     }
-// ]
-
-// const beerLovers = people.filter((person) => {
-//     const likes = person && person.likes;
-//     //console.log(likes);
-//     return likes.includes('beer');
-//     //console.log(person);
-// });
-
-// console.log(beerLovers);
-
-
-// allArrays.forEach(array => {
-//     array.forEach(innerproperty=> {
-//         console.log(innerproperty);
-//     })
-//     console.log("~~~");
-// })
-
-// for (let i=0; i < allArrays.length; i++) {
-//     console.log(allArrays[i]);
-//     for (let j=0; j< allArrays[i].length; j++) {
-        //console.log(allArrays[i][j]);
-        //I want to be able to check each value of the arrays and log out a sentence if there is one or more similarity. For example, since both Shannon and Amy like beer, the statement
-        //"both Shannon and Amy like beer!" would log to the console.
-        //along the same lines, since they all like summer, the statement "Amy, Brian, and Shannon all like summer!" would log to the console.
-  //  }
-//}
-
-
-
-
-
-//*****make all names on the input elements the same across the form ("interest" ) with a unique value . then use input.checked to find a boolean value***
-
-
-// function makeArrays1and2() {
-//  const person1interests = [addMeaningFoodCook(), musicArt.value, histCulture.value, fitSport.value, animalNature.value];
-//  const person2interests = [addMeaningFoodCook(), musicArt2.value, histCulture2.value, fitSport2.value, animalNature2.value];
-// console.log(person1interests);
-// console.log(person2interests);
-//     person1interests.forEach(interest => {
-//         for(i=0; i< person2interests.length; i++) {
-//             if(interest === person2interests[i]) {
-//                 console.log(`${person1.name} and ${person2.name} both like ${interest}!`);
-//                 console.log(interest, person2interests[i]);
-//             }
-//             //console.log("interest person 1" + interest + "interest person 2" + person2interests[i]);
-            
-//         }
-//     })
-// }
-
-//         else if (person1.favoriteBeverage == person2.favoriteBeverage)  {
-//             const suggestBev = document.createElement("p");
-//             suggestBev.textContent = `You and ${person2.name} both like ${person2.favoriteBeverage}!`;
-//             cardContainer.append(suggestBev);
-//         } else if (person1.favoriteDessert == person2.favoriteDessert) {
-//             const suggestBev = document.createElement("p");
-//             suggestDessert.textContent = `You and ${person2.name} both like ${person2.favoriteDessert}!`;
-//             cardContainer.append(suggestDessert);
-//         } else if (person1.favoriteFilmGenre == person2.favoriteFilmGenre) {
-//             const suggestFilm = document.createElement("p");
-//             suggestFilm.textContent = `You and ${person2.name} both like ${person2.favoriteFilmGenre}!`;
-//             cardContainer.append(suggestFilm);
-//         } else {
-//             suggestFood.textContent = "";
-//             suggestBev.textContent = "";
-//             suggestDessert.textContent = "";
-//             suggestFilm.textContent = "";
-//         }
-//     }
-// }
+})
 
 
