@@ -40,6 +40,12 @@ h2 {
     line-height: 2rem;
 }
 
+.container {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
 .container,
 .container2,
 .container3,
@@ -60,7 +66,8 @@ h2 {
 .container4 * button,
 .container5 * button,
 .container6 * button,
-.gobutton {
+.gobutton,
+.clearbutton {
     background-color: rgb(86, 128, 115);
     border-radius: 3px;
     font-family: inherit;
@@ -85,7 +92,6 @@ h2 {
     border-radius: 3px;
     font-family: inherit;
     transition: transform 250ms;
-   
 }
 
 input:focus {
