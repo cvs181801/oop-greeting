@@ -44,7 +44,10 @@ h2 {
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin: 0 auto;
 }
+
+
 
 .container,
 .container2,
@@ -123,8 +126,7 @@ input:focus {
     max-width: 75vw;
     margin: 0 auto;
     border-radius: 20px 20px 20px 20px;
-    padding: 2em;
-   
+    padding: 2em; 
 }
 
 
@@ -134,7 +136,8 @@ input:focus {
 .button__person4,
 .button__person5,
 .button__person6,
-.gobutton {
+.gobutton,
+.clearbutton {
     background-color: var(--slateGreen);
     border-radius: 7px;
     font-family: inherit;
